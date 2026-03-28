@@ -29,10 +29,6 @@ courses-plan/
 └── 📁 fastapi-course-plan/         # Modern asinxron backend texnologiyasi
 ```
 
-## 👤 Muallif: 
--[Telegram](https://t.me/abruisdev)
--[Instagram](https://t.me/abruisdev)
--[Youtube](https://t.me/abruisdev)
--[Linkedin](https://t.me/abruisdev)
+## 👤 Muallif: [Telegram](https://t.me/abruisdev) | [Instagram](https://t.me/abruisdev) | [Youtube](https://t.me/abruisdev) | [Linkedin](https://t.me/abruisdev)
 
 
