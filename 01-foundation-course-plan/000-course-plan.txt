@@ -1,0 +1,152 @@
+Python core.
+
+1. Kirish, Pythonni o'rnatish va birinchi dasturni tuzish
+✔️ Pythonni o'rnatish.
+✔️ PyCharm o'rnatish.
+✔️ PyCharm haqida ma'lumotlar.
+✔️ Bir nechta soda dastur yaratib ko'rish.
+✔️ Izoh yozishni ko'rib chiqish.
+✔️ Qo'shimcha ma'lumot sifatida (https://docs.python.org/3/tutorial/index.html) haqida ma'lumotlar.
+✔️ Qo'shimcha ma'lumot sifatida (https://www.w3schools.com/) haqida ma'lumotlar.
+
+2. O'zgaruvchilar, Data Types (number, string, Boolean, Casting), Input() va Sonlar bilan ishlash (+, -, *, /, %, //, **)
+✔️ O'zgaruvchilar
+✔️ Data types(str, int, float, complex)
+✔️ Casting (Bir turdan boshqa turga o'tkazish)
+✔️ Boolean (True, False)
+✔️ input()
+✔️ Pythonda Arifmetik operatorlar (+, -, *, /, %, //, **)
+
+3. Pythonda tarmoqlanuvchi operatorlar: if ... else (and, or, not)
+✔️ Shartlar bilan tanishish (a == b, a != b, a < b, a > b, a <= b, a >= b)
+✔️ Mantiq operatorlari (and, or, not)
+
+4. Pythonda While sikl operatori (breack, countinue)
+✔️ While sikli bilan tanishish
+✔️ breach, countinue va end=" "
+
+5. Pythonda For sikl operatori
+✔️ For sikli bilan tanishish
+✔️ Ichma-ich sikllar.
+
+6. Takrorlash
+✔️ O'tilgan mavzular bo'yicha misolar ishlash
+
+7. EXAM
+✔️ O'tilgan mavzulardan imtihon
+
+8. Pythonda String va string metodlar
+✔️ Matnlarni ustida ammalar bajarish (bita harfni chiqarish [0], so'z yoki matini qirqib olish [2:8])
+✔️ String metodlari (title(), upper(), lower(), capitalize(), replace("H", "J"), index(), count()
+✔️ format() -> (age = 36 txt = "My name is John, and I am {}" print(txt.format(age)))
+✔️ free matin ichida bor yki yoqligini tekshirish -> (txt = "The best things in life are free!" print("free" in txt))
+
+9. Pythonda List
+✔️ List nima?
+✔️ List elementlariga murojat qilish va o'zgartirish. (+, -)
+✔️ type(), len()
+✔️ Biz bergan ma'lumot listda mavjud yoki yoqligini tekshirish.
+✔️ Pythonda List metodlari insert(), append(), extend(), remove(), pop(), del, clear(), copy(), count()
+✔️ listt = list(range(1, 10))
+✔️ sort(), reverse()
+✔️ list ichida qidirilayotgan ma'lumot bor yoki yo'qligini tekshirish("qidirilayotgan ma'lumot" in (list nomi))
+
+10. Pythonda Tuple, Set
+✔️ Tuple() foydalanish, len(), type(), count(), index(), copy()
+✔️ Tuple elementlariga kirish. Tuplelarni bir biriga qo'shish va ko'paytirish. Kamchilik va afzaliklari.
+✔️ Set{} foydalanish, len(), type(), add(), update(), remove(), discard(), pop(), clear(), del
+✔️ Set elementlariga kirish.
+
+11. Dictionary
+✔️ Lug'atlar bilan tanishish. Key va Valyu, qiymatiga murojat qilish.
+✔️ Lug'at get(), dict(), len(), type(), keys(), values(), items(), update(), pop(), popitem(), del, clear(), copy()
+✔️ Ichma-ich lug'atlar
+
+12. Pythonda Funksiya va Lambda
+✔️ Funksiya bilan tanishish
+✔️ Argument qabul qiladigon funksiyalar
+✔️ return qiymat qaytaruvchi funksiya
+✔️ Lambda bilan tanishish
+
+13. Pythonda Map, Rekursiv funksiya va *args, **kwargs
+✔️ Funksiyaga doir misolar ishlash.
+✔️ Map nma?
+✔️ Rekursiv funksiya tanishish va bir nechta misolar ishlab ko'rish.
+✔️ *args, **kwargs haqida tushunchalar va foydalanish
+
+14. 2D arrays
+✔️ Misolar ishlash
+
+15. EXAM
+✔️ O'tilgan mavzulardan imtihon
+
+16. Pythonda Modul yaratish, Dates, Random, Math, QRcode, Shtrixcode, Opencv va Turtle modullar
+✔️ Modul yaratish
+✔️ Datatime moduli, datetime.datetime.now(), date(), time(), hour, microsecond, minute, second
+✔️ Random moduli, randint, choice, shuffle
+✔️ Math moduli, sqrt(), ceil(), floor(), pi, sin(), cos()
+✔️ QRcode
+✔️ Opencv
+✔️ Turtle
+✔️ Shtrixcode
+
+Pythonda OOP(obyektga yo'naltirilgan dasturlash).
+
+17. Pythonda OOP. Class va Object
+✔️ OOP nimaligi haqida umumiy tushuncha.
+✔️ Class yaratish
+✔️ Obyekt yaratish
+✔️ __init__() va __str__() funktsiyasi va self nima?
+✔️ Class methodlar
+
+18. Pythonda Vorisdorlik va Polimorfizm
+✔️ Ota class yaratish
+✔️ Voris olishlik
+✔️ super() funksiyasidan foydalanish
+✔️ Polimorfizm nima ekanligini tushunish
+
+19. Inkapsulatsiya va Abstrakshin
+✔️ Class xususiyatlarini yashirish, uuid dan foydalanish
+✔️ Abstrakshin
+
+20. Dunder metodlar
+✔️ __add__(self, other), __sub__(self, other), __pow__(self, power, module=None)->(**)
+
+21. Pythonda Fayllar bilan ishlash
+✔️ File open('new_file.txt'), (with open(faylnomi) as fayl), read(), readlines(), write(), ('r', 'w', 'rb', 'wb')
+
+22. Pythonda JSON (JavaScript Object Notation) va RegEx modullar
+
+23. Algoritmlash. Search
+✔️ Linear search
+✔️ Binery search
+
+24. Algoritmlash. Sorting
+✔️ Bublle sort
+✔️ Quicksort
+✔️ Marge sort
+
+25. Data Structure kirish va LinkedList
+✔️ LinkedList Turlari
+✔️ Tugun (Node)
+✔️ Tugunlarni bir-biriga bog'lash
+✔️ Methodlar push() insertAfter() Append(), deleteNode()
+
+26. Stack
+✔️ LIFO
+✔️ Methodlar push(), pop(), isEmpty(), isFull(), peek()
+✔️ Misol
+
+27. Queue
+✔️ FIFO
+✔️ Deque
+✔️ Misol
+
+28. Tree
+✔️ Misol
+
+29. LeetCode
+✔️ LeetCode bilan tanishish
+✔️ 8 ta misol
+
+30. Python bo'yicha bilimlarni umumlashtirish, Nazariy savol javoblar va Misolar ishlash.
