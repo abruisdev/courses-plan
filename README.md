@@ -27,7 +27,7 @@ courses-plan/
 ├── 📁 django-course-plan/          # Veb-saytlar yaratish asoslari
 ├── 📁 restapi-course-plan/         # Mobil ilovalar va Frontend uchun API
 └── 📁 fastapi-course-plan/         # Modern asinxron backend texnologiyasi
-
+```
 
 ## 👤 Muallif: 
 -[Telegram](https://t.me/abruisdev)
