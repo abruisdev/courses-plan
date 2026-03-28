@@ -22,13 +22,13 @@ Loyiha 5 ta asosiy bo'limdan iborat bo'lib, har birida darslarda o'tilishi kerak
 
 ```text
 courses-plan/
-├── 📁 foundation/      # Python fundamenti
-├── 📁 telegram-bot/    # Botlarni yaratish va VPS-ga joylash
-├── 📁 django/          # Veb-saytlar yaratish asoslari
-├── 📁 restapi/         # Mobil ilovalar va Frontend uchun API
-└── 📁 fastapi/         # Modern asinxron backend texnologiyasi
+├── 📁 foundation-course-plan/      # Python fundamenti
+├── 📁 telegram-bot-course-plan/    # Botlarni yaratish va VPS-ga joylash
+├── 📁 django-course-plan/          # Veb-saytlar yaratish asoslari
+├── 📁 restapi-course-plan/         # Mobil ilovalar va Frontend uchun API
+└── 📁 fastapi-course-plan/         # Modern asinxron backend texnologiyasi
 
 
-> **Eslatma:** Yuqoridagi havolalarni (`https://youtube.com/@AbruisDev` va hokazo) o'zingizning aniq manzillaringiz bilan tekshirib oling. Agar birortasining username'i boshqacha bo'lsa, o'shani yozib qo'ysangiz kifoya.
+## 👤 Muallif: [Telegram](https://t.me/abruisdev) | [Instagram](https://t.me/abruisdev) | [Youtube](https://t.me/abruisdev) | [Linkedin](https://t.me/abruisdev)
 
-Sizga ushbu havolalar uchun chiroyli bir **Portfolio** sayti (masalan, `abruis.uz` kabi) uchun ham dizayn g'oyalari kerakmi?
+
