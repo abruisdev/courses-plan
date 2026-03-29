@@ -1,33 +1,96 @@
 Python core.
 
 1. Kirish, Pythonni o'rnatish va birinchi dasturni tuzish
-✔️ Pythonni o'rnatish.
-✔️ PyCharm o'rnatish.
-✔️ PyCharm haqida ma'lumotlar.
-✔️ Bir nechta soda dastur yaratib ko'rish.
-✔️ Izoh yozishni ko'rib chiqish.
-✔️ Qo'shimcha ma'lumot sifatida (https://docs.python.org/3/tutorial/index.html) haqida ma'lumotlar.
-✔️ Qo'shimcha ma'lumot sifatida (https://www.w3schools.com/) haqida ma'lumotlar.
+✔️ Python nima va qayerlarda ishlatilishi
+✔️ Python va PyCharm o'rnatish
+✔️ PyCharm interfeysini tanish
+✔️ print() funksiyasi bilan ekranga chiqarish
+✔️ Izoh yozish (#)
+✔️ Arifmetik operatorlar:
+    +   Qo'shish
+    -   Ayirish
+    *   Ko'paytirish
+    /   Bo'lish          → natija har doim float (5.0)
+    %   Qoldiq           → 10 % 3 = 1
+    //  Butun bo'lish    → 10 // 3 = 3
+    **  Daraja           → 2 ** 8 = 256
 
-2. O'zgaruvchilar, Data Types (number, string, Boolean, Casting), Input() va Sonlar bilan ishlash (+, -, *, /, %, //, **)
-✔️ O'zgaruvchilar
-✔️ Data types(str, int, float, complex)
-✔️ Casting (Bir turdan boshqa turga o'tkazish)
-✔️ Boolean (True, False)
-✔️ input()
-✔️ Pythonda Arifmetik operatorlar (+, -, *, /, %, //, **)
+2. O'zgaruvchilar, Data Types (number, string, Boolean, Casting), Input() va Sonlar bilan ishlash
+✔️ O'zgaruvchilar — nom = qiymat
+✔️ Data Types:
+    str      — matn ("Salom", 'Ali')
+    int      — butun son (15, -3, 1000)
+    float    — kasr son (3.14, -0.5)
+    complex  — kompleks son (3+2j)
+✔️ type()   — qiymat turini aniqlash
+✔️ Casting:
+    str()   — matnga aylantirish
+    int()   — butun songa aylantirish
+    float() — kasr songa aylantirish
+✔️ Boolean:
+    True / False
+    Solishtirish operatorlari: >, <, ==, !=, >=, <=
+    bool() funksiyasi
+✔️ input()  — foydalanuvchidan ma'lumot olish (DOIM string qaytaradi!)
+✔️ Sonlar bilan ishlash:
+    abs()   — mutlaq qiymat
+    round() — yaxlitlash
+    max()   — eng katta son
+    min()   — eng kichik son
+    pow()   — daraja
 
-3. Pythonda tarmoqlanuvchi operatorlar: if ... else (and, or, not)
-✔️ Shartlar bilan tanishish (a == b, a != b, a < b, a > b, a <= b, a >= b)
-✔️ Mantiq operatorlari (and, or, not)
+3. Pythonda tarmoqlanuvchi operatorlar: if, elif, else (and, or, not)
+✔️ Solishtirish operatorlari:
+    ==   teng
+    !=   teng emas
+    >    katta
+    <    kichik
+    >=   katta yoki teng
+    <=   kichik yoki teng
+
+✔️ Mantiq operatorlari:
+    and  —  ikkalasi ham True bo'lsa → True
+    or   —  kamida biri True bo'lsa → True
+    not  —  True → False, False → True
+
+✔️ if       — shart to'g'ri bo'lsa bajara
+✔️ if-else  — aks holda boshqa narsa bajara
+✔️ if-elif-else — bir nechta shart ketma-ket
+✔️ Ichma-ich if (nested if)
+✔️ Qisqa if (ternary): natija = "a" if shart else "b"
 
 4. Pythonda While sikl operatori (breack, countinue)
-✔️ While sikli bilan tanishish
-✔️ breach, countinue va end=" "
+✔️ Sikl nima va nima uchun kerak
+✔️ while sikli — sintaksis va ishlash tartibi
+✔️ Hisoblagich (i = 0, i += 1) bilan ishlash
+✔️ break    — siklni butunlay to'xtatish
+✔️ continue — joriy qadamni o'tkazib, siklni davom ettirish
+✔️ end=" "  — print() da yangi qator o'rniga boshqa belgi
+✔️ while True — cheksiz sikl (break bilan to'xtatiladi)
+✔️ while + input() — foydalanuvchi bilan interaktiv ishlash
+✔️ while + else — odatiy tugashda qo'shimcha amal
+
+  break    →  ■ STOP — sikldan chiqadi
+  continue →  ↩ SKIP — joriy qadamni o'tkazadi, davom etadi
+  end=" "  →  yangi qator o'rniga bo'sh joy (yoki boshqa belgi)
 
 5. Pythonda For sikl operatori
-✔️ For sikli bilan tanishish
-✔️ Ichma-ich sikllar.
+✔️ for sikli — sintaksis va ishlash tartibi
+✔️ range() — uch xil ishlatish:
+     range(stop)
+     range(start, stop)
+     range(start, stop, step)
+✔️ for + matn  — har bir harfni birin-ketin olish
+✔️ for + ro'yxat — har bir elementni ko'rib chiqish
+✔️ break va continue — for siklida ham ishlaydi
+✔️ for + else — shart bajarilmay tugaganda
+✔️ Ichma-ich sikllar (nested loops):
+     tashqi sikl × ichki sikl = jami bajarilish
+✔️ Shakllar chizish:
+     to'rtburchak, uchburchak, piramida
+✔️ Amaliy misollar:
+     ko'paytma jadvali, tub sonlar, baholar tahlili
+✔️ for vs while — qachon qaysi birini tanlash
 
 6. Takrorlash
 ✔️ O'tilgan mavzular bo'yicha misolar ishlash
