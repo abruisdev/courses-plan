@@ -1,0 +1,147 @@
+# Django MVT — Professional sayt yaratish
+
+**Talab qilinadigan bilim:** Python Foundation kursi (OOP, fayllar, JSON — modellar va ORM tushunish uchun zarur)
+
+**Jami: 21 dars** — 16 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+
+---
+
+1. Kirish: Web dasturlash asoslari va Django bilan tanishish
+✔️ Client-server arxitekturasi, HTTP so'rov/javob (GET, POST, status kodlar)
+✔️ MVT (Model-View-Template) arxitekturasi — MVC bilan solishtirish
+✔️ Django nima uchun tanlanadi (Flask, FastAPI bilan qisqacha solishtirish)
+✔️ Muhitni sozlash: venv, pip install django
+✔️ django-admin startproject, manage.py buyruqlari
+✔️ runserver — birinchi loyihani ishga tushirish
+
+2. Django loyiha strukturasi va sozlamalar (settings.py)
+✔️ Project va App farqi, startapp — yangi ilova yaratish
+✔️ settings.py: INSTALLED_APPS, DATABASES, TEMPLATES, MIDDLEWARE
+✔️ django-environ / python-dotenv — .env fayl orqali SECRET_KEY, DEBUG boshqarish
+✔️ urls.py — asosiy va app darajasidagi routing, path(), include()
+✔️ Dev va production uchun alohida sozlamalar tuzish asoslari
+
+3. Views (Function-Based Views) va URL routing
+✔️ View nima — HttpRequest va HttpResponse
+✔️ Function-based view yozish, render() bilan shablonga ulanish
+✔️ URL parametrlar: <int:id>, <str:slug>, <uuid:id>
+✔️ GET va POST so'rovlarini ajratish
+✔️ redirect() va reverse() — nomlangan URL'lardan foydalanish
+
+4. Templates — Django Template Language (DTL)
+✔️ Template papkasi va TEMPLATES sozlamasi
+✔️ Teglar: {% if %}, {% for %}, {% block %}, {% extends %}, {% include %}
+✔️ Filterlar: |date, |lower, |truncatewords, |default, |length
+✔️ Template meros olish — base.html + child template'lar
+✔️ Static fayllar: {% load static %}, CSS/JS/rasm ulash
+✔️ Template Partials (Django 6.0) — kichik qism-shablonlarni qayta ishlatish
+
+5. Models va ORM — I qism
+✔️ Model nima, models.Model klassidan meros
+✔️ Maydon turlari: CharField, TextField, IntegerField, DateTimeField, BooleanField, ImageField
+✔️ Migratsiyalar: makemigrations, migrate, migratsiya faylini o'qish
+✔️ __str__() metodi va Meta klassi asoslari
+✔️ Modelni admin.py orqali admin panelga ulash
+
+6. Models va ORM — II qism: QuerySet va bog'lanishlar
+✔️ QuerySet: all(), filter(), get(), exclude(), order_by()
+✔️ ForeignKey (1:N), ManyToManyField (N:M), OneToOneField
+✔️ related_name va teskari bog'lanish (masalan: post.comments.all())
+✔️ select_related() va prefetch_related() — so'rovlarni optimallashtirish
+✔️ Q obyektlari — murakkab shartli so'rovlar (AND/OR)
+
+7. Forms va ModelForm
+✔️ forms.Form — maydonlar va validatsiya (required, validators)
+✔️ ModelForm — modeldan avtomatik forma yaratish
+✔️ Formani template'da chizish, {% csrf_token %}
+✔️ is_valid(), cleaned_data, form.save()
+✔️ Custom validatsiya — clean_<field>() va clean()
+
+8. Class-Based Views (CBV)
+✔️ CBV nima, FBV'dan farqi va afzalliklari
+✔️ ListView, DetailView
+✔️ CreateView, UpdateView, DeleteView
+✔️ get_queryset(), get_context_data() metodlarini override qilish
+✔️ Mixins: LoginRequiredMixin, PermissionRequiredMixin
+
+9. Autentifikatsiya va foydalanuvchilar tizimi
+✔️ Django built-in User modeli va auth tizimi
+✔️ Ro'yxatdan o'tish, kirish, chiqish (register/login/logout)
+✔️ @login_required va LoginRequiredMixin
+✔️ AbstractUser bilan Custom User modeli yaratish
+✔️ Permissions va Groups — ruxsatlar tizimi
+✔️ Parolni tiklash (password reset) oqimi
+
+10. Admin panelni professional sozlash
+✔️ ModelAdmin: list_display, list_filter, search_fields, list_editable
+✔️ Inline modellar — TabularInline, StackedInline
+✔️ Admin panelga custom action qo'shish
+✔️ Admin panel huquqlarini boshqarish (staff, superuser)
+
+11. Static va media fayllar, fayl yuklash
+✔️ STATIC_URL/STATIC_ROOT va MEDIA_URL/MEDIA_ROOT farqi
+✔️ ImageField, FileField — rasm/fayl yuklash formasi
+✔️ collectstatic — production uchun statik fayllarni yig'ish
+✔️ Pillow kutubxonasi — rasm bilan ishlash
+
+12. Model Meta, Signals va Custom Middleware
+✔️ Meta klassi: ordering, verbose_name, unique_together
+✔️ Signals: post_save, pre_save, m2m_changed — @receiver dekoratori
+✔️ Custom Middleware yozish va MIDDLEWARE ro'yxatiga qo'shish
+✔️ Django so'rov-javob siklida middleware o'rni
+
+13. Xavfsizlik va professional amaliyotlar
+✔️ CSRF, XSS, SQL Injection'dan Django qanday avtomatik himoya qiladi
+✔️ Content Security Policy (CSP) — Django 6.0'dagi o'rnatilgan qo'llab-quvvatlash
+✔️ settings.py: DEBUG=False, ALLOWED_HOSTS, HTTPS sozlamalari
+✔️ Parollarni hash qilish (PBKDF2, avtomatik)
+✔️ requirements.txt, .gitignore — loyihani to'g'ri versiyalash
+
+14. Testing (Test yozish)
+✔️ Nima uchun test yozish professional dasturchi uchun shart
+✔️ django.test.TestCase klassi
+✔️ Model va view'lar uchun testlar yozish
+✔️ Client() — so'rovlarni simulyatsiya qilish (test client)
+✔️ python manage.py test, coverage bilan qamrovni tekshirish
+
+15. Qidiruv, sahifalash va qo'shimcha imkoniyatlar
+✔️ Paginator — ro'yxatlarni sahifalarga bo'lish
+✔️ Qidiruv funksiyasi — Q obyektlari bilan murakkab qidiruv
+✔️ send_mail() — saytdan email yuborish
+✔️ django-filter — filtrlash tizimi (qisqacha kirish)
+
+16. Deploy qilish (Production'ga chiqarish)
+✔️ SQLite'dan PostgreSQL'ga o'tish
+✔️ Gunicorn — WSGI server, Nginx bilan static fayllarni ulash
+✔️ VPS'ga joylashtirish, muhit o'zgaruvchilarini sozlash
+✔️ Docker va docker-compose bilan konteynerlashtirish
+✔️ Domen ulash va SSL sertifikat (Let's Encrypt)
+
+17. Takrorlash va EXAM
+✔️ O'tilgan mavzular bo'yicha nazariy va amaliy imtihon
+
+18. Amaliy loyiha 1: Blog platformasi
+✔️ Postlar, kategoriyalar, teglar, izohlar (comments)
+✔️ To'liq CRUD, autentifikatsiya, admin panel orqali boshqaruv
+
+19. Amaliy loyiha 2: E-commerce (do'kon) sayti
+✔️ Mahsulotlar katalogi, savat (cart) logikasi
+✔️ Buyurtma tizimi, foydalanuvchi profili va buyurtmalar tarixi
+
+20. Amaliy loyiha 3: Erkin tanlov loyihasi
+✔️ O'quvchi o'zi tanlagan g'oya asosida to'liq loyiha qurishi (portfolio, forum, bron qilish tizimi va h.k.)
+
+21. Yakuniy taqdimot va deploy
+✔️ Loyihani jonli serverga chiqarish
+✔️ Kod review, GitHub'ga joylashtirish (README, requirements.txt)
+✔️ Loyihani taqdim etish
+
+---
+
+**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+✔️ Async views — Django 6.0'da to'liq native async/await qo'llab-quvvatlash (sync_to_async shart emas)
+✔️ Background Tasks — Django 6.0'ning o'rnatilgan fon vazifalar tizimi (oddiy holatlarda Celery'ga yengil alternativa)
+✔️ Celery + Redis — murakkab fon vazifalar va rejalashtirilgan ishlar uchun
+✔️ DRF (Django REST Framework) — Django'ni API sifatida ishlatish (**alohida modul sifatida tavsiya etiladi**)
+
+*Eslatma: reja Django 5.2 LTS (barqaror, 2028 yilgacha qo'llab-quvvatlanadi) asosida tuzilgan; Content Security Policy, Template Partials va Background Tasks kabi yangi imkoniyatlar Django 6.0'dan olingan va bonus sifatida belgilangan.*
