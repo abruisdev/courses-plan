@@ -1,0 +1,132 @@
+# FastAPI — Zamonaviy Python API framework
+
+**Talab qilinadigan bilim:** Python Foundation kursi (async/await tushunchasi Aiogram kursidan tanish bo'lsa qulay bo'ladi). DRF kursi shart emas, lekin o'tilgan bo'lsa solishtirish orqali tezroq o'zlashtiriladi.
+
+**Jami: 20 dars** — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+
+---
+
+1. Kirish: FastAPI bilan tanishish
+✔️ FastAPI nima — Starlette (ASGI) + Pydantic v2 asosida qurilgan framework
+✔️ Nima uchun tez — to'liq asinxron, avtomatik validatsiya, avtomatik hujjatlar
+✔️ FastAPI vs Django/DRF — qachon qaysi birini tanlash (mikroservis/tezkor API vs to'liq sayt)
+✔️ Muhitni sozlash: venv, pip install "fastapi[standard]"
+✔️ Birinchi endpoint: @app.get("/"), fastapi dev main.py bilan ishga tushirish
+✔️ Avtomatik interaktiv hujjatlar: /docs (Swagger UI) va /redoc
+
+2. Path va Query parametrlar, Type Hints
+✔️ Python type hints — FastAPI validatsiyaning asosi
+✔️ Path parametrlar: @app.get("/items/{item_id}")
+✔️ Query parametrlar — ixtiyoriy/majburiy, default qiymatlar
+✔️ Annotated + Path(), Query() — validatsiya qo'shish (min_length, gt, le)
+✔️ Enum bilan cheklangan qiymatlar
+
+3. Pydantic — Request Body va Response Model
+✔️ Pydantic BaseModel — request body sxemasi
+✔️ Ichma-ich (nested) modellar
+✔️ Field() — validatsiya va misol qiymatlar qo'shish
+✔️ response_model — javob shaklini nazorat qilish, maxfiy maydonlarni yashirish
+✔️ Pydantic v2: model_dump(), model_validate(), ConfigDict
+
+4. HTTP metodlar, status kodlar va xatoliklar
+✔️ @app.get, post, put, patch, delete
+✔️ status_code parametri va status moduli
+✔️ HTTPException — xato qaytarish
+✔️ Custom exception handler — @app.exception_handler()
+✔️ Validatsiya xatolarini avtomatik qaytarish (422)
+
+5. Dependency Injection (Depends)
+✔️ Depends() nima va nega FastAPI'ning markaziy g'oyasi
+✔️ Funksiya va klass ko'rinishidagi dependency'lar
+✔️ Dependency'larni bir nechta endpointda qayta ishlatish
+✔️ Sub-dependencies — dependency ichida dependency
+✔️ yield bilan dependency — resursni tozalash (masalan, DB session)
+
+6. APIRouter va professional loyiha strukturasi
+✔️ APIRouter — endpointlarni modullarga bo'lish
+✔️ prefix, tags — Swagger'da guruhlash
+✔️ include_router() — asosiy ilovaga ulash
+✔️ Loyiha strukturasi: routers/, models/, schemas/, services/, core/
+✔️ Pydantic Settings (BaseSettings) — .env orqali sozlamalarni boshqarish
+
+7. Ma'lumotlar bazasi — SQLAlchemy 2.0 (async)
+✔️ create_async_engine, AsyncSession, async_sessionmaker
+✔️ Model yaratish — Mapped va mapped_column (SQLAlchemy 2.0 sintaksisi)
+✔️ get_db() dependency — Depends(get_db) orqali session uzatish
+✔️ Alembic — migratsiyalarni boshqarish
+
+8. CRUD amallar va Repository pattern
+✔️ AsyncSession bilan select(), add(), commit(), refresh()
+✔️ Pydantic (schemas) va SQLAlchemy (models) qatlamlarini ajratish
+✔️ model_validate() — ORM obyektni Pydantic modelga o'tkazish (from_attributes=True)
+✔️ Repository/Service qatlami — biznes logikani route'dan ajratish
+
+9. Autentifikatsiya — OAuth2 va JWT
+✔️ OAuth2PasswordBearer va OAuth2PasswordRequestForm
+✔️ passlib — parolni hash qilish (bcrypt)
+✔️ JWT yaratish va tekshirish — python-jose yoki PyJWT
+✔️ get_current_user dependency — himoyalangan endpointlar
+✔️ Access va refresh token oqimi
+
+10. Avtorizatsiya va xavfsizlik
+✔️ Role-based ruxsatlar — foydalanuvchi rollariga qarab cheklash
+✔️ Security dependency'lar bilan permission tekshirish (masalan, faqat admin)
+✔️ CORS — CORSMiddleware bilan frontend ulanishi
+✔️ Rate limiting (slowapi) — so'rovlarni cheklash
+
+11. Asinxron dasturlash chuqurroq
+✔️ async def vs def — FastAPI qaysi birini qachon ishlatadi
+✔️ await, asyncio.gather() — parallel so'rovlar
+✔️ Sync kutubxonani async ichida ishlatish xavfi (event loop bloklanishi)
+✔️ BackgroundTasks — so'rovdan keyin fon vazifa (email yuborish va h.k.)
+
+12. Fayllar, forma va WebSocket
+✔️ File va UploadFile — fayl yuklash
+✔️ Form() — forma ma'lumotlarini qabul qilish
+✔️ StaticFiles — statik fayllarni ulash
+✔️ WebSocket — real-vaqt aloqa asoslari (@app.websocket)
+
+13. Middleware va Lifespan
+✔️ Custom middleware — @app.middleware("http")
+✔️ lifespan context manager — ilova ishga tushganda/to'xtaganda amallar
+✔️ Logging va so'rovlarni kuzatish
+✔️ Global xatoliklarni markazlashtirish
+
+14. Testing (Test yozish)
+✔️ TestClient / httpx.AsyncClient — so'rovlarni simulyatsiya qilish
+✔️ pytest va pytest-asyncio
+✔️ Dependency Override — testda get_db() ni almashtirish
+✔️ Fixture'lar bilan alohida test ma'lumotlar bazasi
+
+15. Deploy qilish (Production'ga chiqarish)
+✔️ Uvicorn — ASGI server, --workers parametri
+✔️ Gunicorn + Uvicorn workers — production konfiguratsiyasi
+✔️ Docker va docker-compose bilan konteynerlashtirish
+✔️ Nginx — reverse proxy sifatida
+✔️ Muhit o'zgaruvchilari va production sozlamalari
+
+16. Takrorlash va EXAM
+✔️ O'tilgan mavzular bo'yicha nazariy va amaliy imtihon
+
+17. Amaliy loyiha 1: Task Manager API
+✔️ To'liq CRUD, JWT autentifikatsiya, PostgreSQL bilan
+
+18. Amaliy loyiha 2: E-commerce / Marketplace API
+✔️ Mahsulotlar, savat, buyurtma, rollarga asoslangan ruxsatlar (admin/mijoz)
+
+19. Amaliy loyiha 3: Real-vaqt chat / bildirishnoma tizimi
+✔️ WebSocket asosida, BackgroundTasks bilan bildirishnomalar
+
+20. Yakuniy taqdimot
+✔️ API'ni Swagger UI orqali taqdim etish, Docker orqali ishga tushirish
+✔️ GitHub'ga joylashtirish (README, docker-compose.yml)
+
+---
+
+**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+✔️ FastAPI vs Django Ninja vs DRF — qisqacha taqqoslash jadvali
+✔️ GraphQL (Strawberry) — REST'ga alternativ so'rov tili
+✔️ gRPC — mikroservislar orasida tezkor aloqa
+✔️ Celery/ARQ — uzoq davom etadigan fon vazifalar uchun (BackgroundTasks yetmaganda)
+
+*Eslatma: reja FastAPI 0.139+ (joriy versiya, Python 3.12/3.13 va Pydantic v2 bilan) asosida tuzilgan.*
