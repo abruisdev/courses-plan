@@ -1,0 +1,135 @@
+# REST API — Django REST Framework (DRF)
+
+**Talab qilinadigan bilim:** Django MVT kursi (models, ORM, autentifikatsiya asoslari)
+
+**Jami: 20 dars** — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+
+---
+
+1. Kirish: REST API va DRF bilan tanishish
+✔️ REST arxitekturasi nima — resurslar, statelessness, HTTP metodlar (GET, POST, PUT, PATCH, DELETE)
+✔️ API nima uchun kerak — mobil ilova, frontend (React/Vue), boshqa xizmatlar bilan integratsiya
+✔️ DRF nima, MVT (shablon asosidagi) saytdan farqi
+✔️ DRF va Django Ninja — 2026'dagi ikki asosiy yondashuv, qachon qaysi birini tanlash
+✔️ O'rnatish: pip install djangorestframework, INSTALLED_APPS ga qo'shish
+✔️ Postman/Insomnia — API'ni qo'lda sinash vositalari
+
+2. Serializers — I qism
+✔️ Serializer nima — Python obyekt ↔ JSON o'zgartirish
+✔️ serializers.Serializer — qo'lda maydon yozish
+✔️ ModelSerializer — modeldan avtomatik serializer yaratish
+✔️ fields = '__all__' va aniq fields ro'yxati
+✔️ is_valid(), validated_data, errors
+✔️ .save(), .create(), .update() metodlari
+
+3. Serializers — II qism: chuqurroq
+✔️ Nested serializers — bog'liq modellarni birga serialize qilish
+✔️ SerializerMethodField — hisoblangan/qo'shimcha maydonlar
+✔️ Custom validatsiya: validate_<field>() va validate()
+✔️ read_only_fields va write_only=True (masalan, parol maydoni uchun)
+✔️ depth parametri — avtomatik nested ko'rinish
+
+4. API Views turlari
+✔️ Function-based view — @api_view(["GET", "POST"]) dekorator
+✔️ APIView klassi — get(), post(), put(), delete() metodlari
+✔️ DRF Request va Response obyektlari — Django'nikidan farqi
+✔️ status kodlar — rest_framework.status moduli (status.HTTP_200_OK va h.k.)
+✔️ Xato holatlarini to'g'ri status kod bilan qaytarish
+
+5. Generic Views va Mixins
+✔️ Generic views nima — takroriy kodni qisqartirish
+✔️ ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+✔️ ListCreateAPIView, RetrieveUpdateDestroyAPIView — birlashtirilgan variantlar
+✔️ Mixins: ListModelMixin, CreateModelMixin va boshqalar
+✔️ get_queryset() va get_serializer_class() metodlarini override qilish
+
+6. ViewSets va Routers
+✔️ ViewSet nima — bir nechta view'ni bitta klassga birlashtirish
+✔️ ModelViewSet — to'liq CRUD avtomatik (list, retrieve, create, update, destroy)
+✔️ @action dekorator — standart bo'lmagan custom endpoint qo'shish
+✔️ Router: DefaultRouter, SimpleRouter — URL'larni avtomatik generatsiya qilish
+✔️ router.register() va urls.py'ga ulash
+
+7. Authentication — Token va JWT
+✔️ DRF autentifikatsiya turlari: SessionAuthentication, BasicAuthentication, TokenAuthentication
+✔️ JWT (JSON Web Token) qanday ishlaydi — access va refresh token
+✔️ djangorestframework-simplejwt kutubxonasi bilan sozlash
+✔️ /api/token/, /api/token/refresh/ endpoint'lari
+✔️ Frontend/mobil ilova bilan JWT oqimi (Authorization: Bearer)
+
+8. Permissions (Ruxsatlar)
+✔️ DEFAULT_PERMISSION_CLASSES — global sozlash
+✔️ Built-in permissionlar: IsAuthenticated, IsAdminUser, AllowAny, IsAuthenticatedOrReadOnly
+✔️ Custom permission — BasePermission, has_permission(), has_object_permission()
+✔️ Obyekt darajasidagi ruxsat (masalan: faqat postning egasi tahrirlay oladi)
+
+9. Filtering, Searching va Ordering
+✔️ django-filter — DjangoFilterBackend bilan aniq maydon bo'yicha filtrlash
+✔️ SearchFilter — matnli qidiruv (?search=...)
+✔️ OrderingFilter — saralash (?ordering=...)
+✔️ Bir nechta filter backend'ni birga ishlatish
+
+10. Pagination (Sahifalash)
+✔️ Nima uchun API'da pagination shart (katta ma'lumotlarni bo'lib yuborish)
+✔️ PageNumberPagination — oddiy sahifalash
+✔️ LimitOffsetPagination — limit/offset asosida
+✔️ CursorPagination — katta jadvallar uchun 2026'da tavsiya etiladigan samarali usul
+✔️ Global (settings.py) va view darajasida sozlash
+
+11. Throttling va xatoliklarni boshqarish
+✔️ Throttling nima — API'ni ortiqcha so'rovlardan himoya qilish
+✔️ AnonRateThrottle va UserRateThrottle
+✔️ Custom exception_handler — xato formatini birxillashtirish
+✔️ Standart bo'lmagan xatolarni chiroyli JSON formatda qaytarish
+
+12. API hujjatlashtirish (Documentation)
+✔️ OpenAPI (Swagger) standarti nima va nima uchun kerak
+✔️ drf-spectacular — schema avtomatik generatsiya qilish
+✔️ Swagger UI va Redoc — interaktiv, sinab ko'rish mumkin bo'lgan hujjat
+✔️ Har bir endpoint/serializer uchun tavsif va misollar yozish
+
+13. Versiyalash, CORS va professional loyiha strukturasi
+✔️ API versiyalash — /api/v1/ (URL path versioning, eng ko'p qo'llaniladigan usul)
+✔️ CORS nima — django-cors-headers bilan frontend ulanishini sozlash
+✔️ Loyihani papkalarga tashkil qilish: serializers.py, permissions.py, apps bo'yicha ajratish
+✔️ .env orqali maxfiy sozlamalarni boshqarish (SECRET_KEY, JWT muddatlari)
+
+14. Testing (API testlari)
+✔️ APITestCase klassi — django.test'dan farqi
+✔️ APIClient — get(), post(), put(), delete() so'rovlarini simulyatsiya qilish
+✔️ Status kod va response.data'ni tekshirish
+✔️ Autentifikatsiyalangan so'rovlarni test qilish (force_authenticate)
+
+15. Deploy qilish
+✔️ Production uchun DEBUG=False, ALLOWED_HOSTS, CORS sozlamalari
+✔️ Gunicorn + Nginx orqali API'ni joylashtirish
+✔️ Docker va docker-compose bilan konteynerlashtirish
+✔️ PostgreSQL'ga o'tish, muhit o'zgaruvchilari
+
+16. Takrorlash va EXAM
+✔️ O'tilgan mavzular bo'yicha nazariy va amaliy imtihon
+
+17. Amaliy loyiha 1: Task Manager API
+✔️ To-do/vazifalar uchun to'liq CRUD API
+✔️ JWT autentifikatsiya bilan himoyalangan, har bir user faqat o'z vazifalarini ko'radi
+
+18. Amaliy loyiha 2: E-commerce API
+✔️ Mahsulotlar, savat, buyurtma — mobil ilova/frontend uchun to'liq backend
+✔️ Filtrlash, qidiruv va pagination bilan
+
+19. Amaliy loyiha 3: Ijtimoiy tarmoq / Blog API
+✔️ Postlar, izohlar, like, follow tizimi
+✔️ Nested serializers va obyekt darajasidagi permissions bilan
+
+20. Yakuniy taqdimot
+✔️ API'ni Swagger UI orqali taqdim etish
+✔️ Postman collection va README bilan GitHub'ga joylashtirish
+
+---
+
+**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+✔️ Django Ninja — Pydantic v2 asosidagi zamonaviy, async-first alternativa (qisqacha tanishish)
+✔️ Django Channels — WebSocket, real-vaqt funksiyalar (chat, bildirishnomalar)
+✔️ GraphQL (Graphene-Django) — REST'ga alternativ so'rov tili
+
+*Eslatma: reja DRF 3.17+ (Django 6.0'ni to'liq qo'llab-quvvatlaydigan joriy versiya) asosida tuzilgan.*
