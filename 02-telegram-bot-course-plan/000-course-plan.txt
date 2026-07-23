@@ -1,8 +1,8 @@
-# Telegram Bot yaratish — Aiogram 3+
+Telegram Bot yaratish — Aiogram 3+
 
-**Talab qilinadigan bilim:** Python Foundation kursi (o'zgaruvchilar, tsikllar, funksiyalar, OOP asoslari, fayllar bilan ishlash, JSON)
+Talab qilinadigan bilim: Python Foundation kursi (o'zgaruvchilar, tsikllar, funksiyalar, OOP asoslari, fayllar bilan ishlash, JSON)
 
-**Jami: 19 dars** — 14 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+Jami: 19 dars — 14 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
 
 ---
 
@@ -135,10 +135,10 @@
 
 ---
 
-**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):
 ✔️ Ko'p tillilik — aiogram-i18n / GNU Gettext
 ✔️ APScheduler — rejalashtirilgan xabarlar va eslatmalar
 ✔️ aiogram_dialog — murakkab menyu/UI uchun tayyor framework
 ✔️ Telegram Payments API — botda to'lov qabul qilish
 
-*Eslatma: reja aiogram 3.27+ (joriy versiya, Telegram Bot API 9.6+ qo'llab-quvvatlaydi) asosida tuzildi.*
+Eslatma: reja aiogram 3.27+ (joriy versiya, Telegram Bot API 9.6+ qo'llab-quvvatlaydi) asosida tuzildi.
