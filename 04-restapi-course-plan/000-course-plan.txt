@@ -1,8 +1,8 @@
-# REST API — Django REST Framework (DRF)
+REST API — Django REST Framework (DRF)
 
-**Talab qilinadigan bilim:** Django MVT kursi (models, ORM, autentifikatsiya asoslari)
+Talab qilinadigan bilim: Django MVT kursi (models, ORM, autentifikatsiya asoslari)
 
-**Jami: 20 dars** — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+Jami: 20 dars** — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
 
 ---
 
@@ -127,9 +127,9 @@
 
 ---
 
-**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):
 ✔️ Django Ninja — Pydantic v2 asosidagi zamonaviy, async-first alternativa (qisqacha tanishish)
 ✔️ Django Channels — WebSocket, real-vaqt funksiyalar (chat, bildirishnomalar)
 ✔️ GraphQL (Graphene-Django) — REST'ga alternativ so'rov tili
 
-*Eslatma: reja DRF 3.17+ (Django 6.0'ni to'liq qo'llab-quvvatlaydigan joriy versiya) asosida tuzilgan.*
+Eslatma: reja DRF 3.17+ (Django 6.0'ni to'liq qo'llab-quvvatlaydigan joriy versiya) asosida tuzilgan.
