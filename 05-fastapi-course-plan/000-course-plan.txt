@@ -1,8 +1,8 @@
-# FastAPI — Zamonaviy Python API framework
+FastAPI — Zamonaviy Python API framework
 
-**Talab qilinadigan bilim:** Python Foundation kursi (async/await tushunchasi Aiogram kursidan tanish bo'lsa qulay bo'ladi). DRF kursi shart emas, lekin o'tilgan bo'lsa solishtirish orqali tezroq o'zlashtiriladi.
+Talab qilinadigan bilim: Python Foundation kursi (async/await tushunchasi Aiogram kursidan tanish bo'lsa qulay bo'ladi). DRF kursi shart emas, lekin o'tilgan bo'lsa solishtirish orqali tezroq o'zlashtiriladi.
 
-**Jami: 20 dars** — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+Jami: 20 dars — 15 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
 
 ---
 
@@ -123,10 +123,10 @@
 
 ---
 
-**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):
 ✔️ FastAPI vs Django Ninja vs DRF — qisqacha taqqoslash jadvali
 ✔️ GraphQL (Strawberry) — REST'ga alternativ so'rov tili
 ✔️ gRPC — mikroservislar orasida tezkor aloqa
 ✔️ Celery/ARQ — uzoq davom etadigan fon vazifalar uchun (BackgroundTasks yetmaganda)
 
-*Eslatma: reja FastAPI 0.139+ (joriy versiya, Python 3.12/3.13 va Pydantic v2 bilan) asosida tuzilgan.*
+Eslatma: reja FastAPI 0.139+ (joriy versiya, Python 3.12/3.13 va Pydantic v2 bilan) asosida tuzilgan.
