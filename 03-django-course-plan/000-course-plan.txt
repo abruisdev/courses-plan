@@ -1,8 +1,8 @@
-# Django MVT — Professional sayt yaratish
+Django MVT — Professional sayt yaratish
 
-**Talab qilinadigan bilim:** Python Foundation kursi (OOP, fayllar, JSON — modellar va ORM tushunish uchun zarur)
+Talab qilinadigan bilim:** Python Foundation kursi (OOP, fayllar, JSON — modellar va ORM tushunish uchun zarur)
 
-**Jami: 21 dars** — 16 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
+Jami: 21 dars — 16 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
 
 ---
 
@@ -138,10 +138,10 @@
 
 ---
 
-**Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):**
+Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):
 ✔️ Async views — Django 6.0'da to'liq native async/await qo'llab-quvvatlash (sync_to_async shart emas)
 ✔️ Background Tasks — Django 6.0'ning o'rnatilgan fon vazifalar tizimi (oddiy holatlarda Celery'ga yengil alternativa)
 ✔️ Celery + Redis — murakkab fon vazifalar va rejalashtirilgan ishlar uchun
 ✔️ DRF (Django REST Framework) — Django'ni API sifatida ishlatish (**alohida modul sifatida tavsiya etiladi**)
 
-*Eslatma: reja Django 5.2 LTS (barqaror, 2028 yilgacha qo'llab-quvvatlanadi) asosida tuzilgan; Content Security Policy, Template Partials va Background Tasks kabi yangi imkoniyatlar Django 6.0'dan olingan va bonus sifatida belgilangan.*
+Eslatma: reja Django 5.2 LTS (barqaror, 2028 yilgacha qo'llab-quvvatlanadi) asosida tuzilgan; Content Security Policy, Template Partials va Background Tasks kabi yangi imkoniyatlar Django 6.0'dan olingan va bonus sifatida belgilangan.
