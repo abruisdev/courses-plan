@@ -1,212 +1,417 @@
 # ============================================================
-#   DARS 1: Kirish, Python O'rnatish va Birinchi Dastur
+#   DARS 1: Kirish, Python O‘rnatish, Terminal, GitHub
+#           va Birinchi Dastur
 #   Muallif: Isroilov Rustam (Abruisdev)
 # ============================================================
+
+
+# ------------------------------------------------------------
+# DARSNING MAQSADI
+# ------------------------------------------------------------
+
+"""
+Bugungi darsda:
+
+  ✔️ Python nima ekanini bilib olamiz
+  ✔️ Python dasturlash tilini o‘rnatamiz
+  ✔️ PyCharm dasturini o‘rnatamiz
+  ✔️ Terminal bilan tanishamiz
+  ✔️ Birinchi Python dasturimizni yozamiz
+  ✔️ print() funksiyasi bilan ishlaymiz
+  ✔️ Izoh (comment) yozishni o‘rganamiz
+  ✔️ Git va GitHub nima ekanini bilib olamiz
+  ✔️ Birinchi loyihamizni GitHub’ga yuklaymiz
+"""
+
 
 # ------------------------------------------------------------
 # PYTHON NIMA?
 # ------------------------------------------------------------
 
 """
-Python — bu 1991-yilda yaratilgan, hozirda dunyo bo'yicha
-eng mashhur dasturlash tillaridan biri.
+Python — bu dasturlash tili.
 
-Qayerlarda ishlatiladi?
-  - Web saytlar va ilovalar (Django, Flask)
-  - Telegram botlar
-  - Sun'iy intellekt va Machine Learning (AI/ML)
-  - Ma'lumotlar tahlili (Data Analysis)
-  - O'yinlar va animatsiyalar
+U 1991-yilda yaratilgan va hozirda dunyodagi eng mashhur
+dasturlash tillaridan biri hisoblanadi.
 
-Nega Python?
-  - O'qish va yozish oson (ingliz tiliga o'xshash)
-  - Katta jamoa va ko'p resurslar mavjud
-  - Bepul va ochiq kodli (open-source)
+Python qayerlarda ishlatiladi?
+
+  - Web saytlar va Backend yaratishda
+  - Telegram botlar yaratishda
+  - Sun’iy intellekt (AI) va Machine Learning’da
+  - Ma’lumotlar tahlilida
+  - Avtomatlashtirishda
+  - O‘yinlar va desktop dasturlarda
+  - API va serverlar yaratishda
+
+Nega aynan Python?
+
+  ✔️ O‘qish va yozish oson
+  ✔️ Ingliz tiliga yaqin
+  ✔️ Juda ko‘p kutubxonalari bor
+  ✔️ Bepul va open-source
+  ✔️ Telegram Bot va Backend uchun juda qulay
+  ✔️ Katta jamoa va ko‘p resurslar mavjud
 """
 
+
 # ------------------------------------------------------------
-# PYTHON O'RNATISH (qadam-ba-qadam)
+# PYTHON O‘RNATISH
 # ------------------------------------------------------------
 
 """
 QADAM 1 — Python yuklab olish:
-  1. https://python.org saytiga kiring
-  2. "Download Python" tugmasini bosing
-  3. Eng yangi versiyani tanlang (masalan: Python 3.12)
 
-QADAM 2 — O'rnatish:
+  1. https://www.python.org/downloads/ saytiga kiring
+  2. "Download Python" tugmasini bosing
+  3. Python 3 ning eng yangi barqaror versiyasini yuklab oling
+
+QADAM 2 — O‘rnatish:
+
   ✔️ "Add Python to PATH" katagini ALBATTA belgilang!
   ✔️ "Install Now" tugmasini bosing
-  ✔️ O'rnatish tugashini kuting
+  ✔️ O‘rnatish tugashini kuting
 
-QADAM 3 — Tekshirish:
-  Terminalni oching va quyidagini yozing:
+"Add Python to PATH" nima uchun kerak?
 
-      python --version
+  Bu belgi Python’ni terminal orqali istalgan joydan
+  ishga tushirish imkonini beradi.
 
-  Agar "Python 3.x.x" chiqsa — hammasi to'g'ri o'rnatilgan!
+Agar bu belgi belgilanmasa, terminalda python buyrug‘i
+ishlamasligi mumkin.
 """
+
 
 # ------------------------------------------------------------
-# PYCHARM O'RNATISH (kod yozish muhiti)
+# PYTHON O‘RNATILGANINI TEKSHIRISH
 # ------------------------------------------------------------
 
 """
-PyCharm — bu Python uchun maxsus dastur (IDE).
-Unda kod yozish, xatolarni topish va ishga tushirish oson.
+Terminalni oching.
 
-O'rnatish:
-  1. https://jetbrains.com/pycharm saytiga kiring
-  2. "PyCharm Community" (bepul versiya) ni yuklab oling
-  3. O'rnating va oching
+Windows:
+  Win + R → cmd → Enter
 
-Yangi project yaratish:
-  File → New Project → papka nomini bering → Create
+Mac:
+  Command + Space → Terminal deb qidiring
 
-PyCharm interfeysi:
-  ┌─────────────────────────────────────┐
-  │  Chap taraf   │   O'ng taraf        │
-  │  (Fayllar)    │   (Kod yoziladigan  │
-  │               │    joy)             │
-  │───────────────────────────────────  │
-  │       Pastki qism (Terminal)        │
-  └─────────────────────────────────────┘
+Linux:
+  Ctrl + Alt + T
+
+Terminalga quyidagi buyruqlardan birini yozing:
 """
+
+# Windows uchun:
+# python --version
+
+# Agar Windows’da ishlamasa:
+# py --version
+
+# Mac yoki Linux uchun:
+# python3 --version
+
+"""
+Agar quyidagiga o‘xshash natija chiqsa:
+
+  Python 3.x.x
+
+demak Python muvaffaqiyatli o‘rnatilgan.
+"""
+
+
+# ------------------------------------------------------------
+# PYCHARM O‘RNATISH
+# ------------------------------------------------------------
+
+"""
+PyCharm — bu Python uchun kod yozish muhiti (IDE).
+
+IDE yordamida:
+
+  ✔️ Kod yozish osonlashadi
+  ✔️ Xatolar tez topiladi
+  ✔️ Kodni ishga tushirish mumkin
+  ✔️ Terminal ishlatish mumkin
+  ✔️ GitHub bilan ishlash mumkin
+  ✔️ Debug qilish mumkin
+
+O‘rnatish:
+
+  1. https://www.jetbrains.com/pycharm/download/ saytiga kiring
+  2. Operatsion tizimingizga mos versiyani yuklab oling
+  3. Dasturni o‘rnating
+  4. PyCharm’ni oching
+"""
+
+
+# ------------------------------------------------------------
+# YANGI PROJECT YARATISH
+# ------------------------------------------------------------
+
+"""
+PyCharm’da yangi loyiha yaratish:
+
+  1. New Project tugmasini bosing
+  2. Loyiha nomini yozing:
+
+       python_foundation
+
+  3. Loyiha joylashadigan papkani tanlang
+  4. "Create" tugmasini bosing
+
+PyCharm avtomatik ravishda virtual environment yaratishi mumkin.
+Hozircha default holatda qoldiramiz.
+
+Virtual environment va pip mavzularini keyingi darslarda
+batafsil o‘rganamiz.
+"""
+
+
+# ------------------------------------------------------------
+# BIRINCHI PYTHON FAYLINI YARATISH
+# ------------------------------------------------------------
+
+"""
+Project ichida yangi Python fayl yaratamiz:
+
+  1. Chap tarafdagi loyiha papkasini bosing
+  2. Sichqonchaning o‘ng tugmasini bosing
+  3. New → Python File ni tanlang
+  4. Fayl nomini yozing:
+
+       dars_01
+
+Python fayllari .py kengaytmaga ega bo‘ladi:
+
+       dars_01.py
+"""
+
 
 # ------------------------------------------------------------
 # print() FUNKSIYASI — EKRANGA CHIQARISH
 # ------------------------------------------------------------
 
 """
-print() — bu Pythondagi eng asosiy buyruq.
-U qavs ichidagi narsani ekranga chiqaradi.
+print() — Pythondagi eng asosiy funksiyalardan biri.
+
+U qavs ichidagi ma’lumotni ekranga chiqaradi.
+
+Matn har doim qo‘shtirnoq ichida yoziladi.
 """
 
-# MISOL 1 — Matn (string) chiqarish
-# Matn har doim qo'shtirnoq ichida yoziladi
+# MISOL 1 — Oddiy matn chiqarish
 print("Assalomu alaykum!")
-print("Mening ismim Ali")
-print("Men Python o'rganmoqdaman")
+print("Python Foundation kursiga xush kelibsiz!")
+print("Men Python o‘rganishni boshladim.")
 
 # MISOL 2 — Son chiqarish
-# Sonlar qo'shtirnoqsiz yoziladi
-print(2025)
+# Sonlar qo‘shtirnoqsiz yoziladi
+print(2026)
 print(100)
+print(3.14)
 
-# MISOL 3 — Bir nechta print() ketma-ket
-print("Ism:  Ali")
+# MISOL 3 — Bir nechta qator chiqarish
+print("Ism: Ali")
 print("Yosh: 15")
-print("Sinf: 9-A")
+print("Kasb: Dasturchi bo‘laman")
 
-# MISOL 4 — Bo'sh qator chiqarish (ajratgich sifatida)
+# MISOL 4 — Bo‘sh qator chiqarish
 print("Birinchi qator")
-print()            # Bo'sh qator
+print()
 print("Uchinchi qator")
 
+# MISOL 5 — Matn va belgilar chiqarish
+print("---------------------------")
+print("    PYTHON FOUNDATION")
+print("---------------------------")
+
+
 # ------------------------------------------------------------
-# IZOHLAR (Comments)
+# KODNI ISHGA TUSHIRISH
+# ------------------------------------------------------------
+
+"""
+PyCharm’da kodni ishga tushirish uchun:
+
+  1. Kod yozilgan fayl ustiga o‘ng tugmani bosing
+  2. Run 'dars_01' tugmasini tanlang
+
+Yoki klaviaturadan:
+
+  Windows / Linux:
+      Shift + F10
+
+  Mac:
+      Control + R
+
+Natija pastdagi Run oynasida chiqadi.
+"""
+
+
+# ------------------------------------------------------------
+# IZOHLAR (COMMENTS)
 # ------------------------------------------------------------
 
 """
 Izoh — bu kod ichidagi tushuntirish matni.
-Python uni o'qimaydi va bajarmaydi.
-# belgisidan keyin yozilgan har qanday narsa izoh hisoblanadi.
 
-Izohlar nima uchun kerak?
-  - Kodingizni boshqalarga tushuntirish uchun
-  - O'zingiz qaytib kelbsangiz eslatma sifatida
-  - Muammoli qatorni vaqtincha o'chirish uchun
+Python izohlarni bajarmaydi.
+Izoh yozish uchun # belgisi ishlatiladi.
+
+Izoh nima uchun kerak?
+
+  ✔️ Kodni tushuntirish uchun
+  ✔️ Keyinchalik o‘zingiz eslab olishingiz uchun
+  ✔️ Boshqa dasturchilar kodingizni tushunishi uchun
+  ✔️ Muammoli qatorni vaqtincha o‘chirish uchun
 """
 
-# Bu izoh — Python buni bajarmaydi
-print("Salom!")   # Bu qator ishlaydi, lekin yonidagi izoh emas
+# Bu izoh, Python uni bajarmaydi
 
-# Izoh bilan hisob-kitob tushuntirish:
-print(365 * 24)   # 1 yildagi soatlar soni
-print(24 * 60)    # 1 kundagi daqiqalar soni
-print(60 * 60)    # 1 soatdagi soniyalar soni
+print("Salom!")  # Bu qator ishlaydi, yonidagi qism izoh
+
+# Quyidagi qator vaqtincha o‘chirilgan:
+# print("Bu qator hozir ishlamaydi")
+
+# Dasturchi haqida ma’lumot chiqarish
+print("Ism: Rustam")
+print("Yo‘nalish: Python Backend")
+
 
 # ------------------------------------------------------------
-# ARIFMETIK OPERATORLAR
+# TERMINAL BILAN TANISHISH
 # ------------------------------------------------------------
 
 """
-Operator — bu ikki son ustida amal bajaruvchi belgi.
-Python 7 ta asosiy arifmetik operatorga ega:
+Terminal — bu kompyuterga buyruq yozib boshqariladigan oyna.
 
-  Operator   Nomi                    Misol       Natija
-  ────────   ──────────────────────  ─────────   ──────
-  +          Qo'shish                5 + 3       8
-  -          Ayirish                 10 - 4      6
-  *          Ko'paytirish            3 * 7       21
-  /          Bo'lish                 20 / 4      5.0
-  %          Qoldiq (Modulo)         10 % 3      1
-  //         Butun bo'lish           10 // 3     3
-  **         Daraja (Quvvat)         2 ** 8      256
+PyCharm ichida terminalni ochish:
+
+  View → Tool Windows → Terminal
+
+yoki pastki qismdagi Terminal tugmasini bosing.
+
+Asosiy buyruqlar:
+
+  pwd
+      Hozir qaysi papkada turganingizni ko‘rsatadi
+      (Mac va Linux’da)
+
+  dir
+      Papka ichidagi fayllarni ko‘rsatadi
+      (Windows’da)
+
+  ls
+      Papka ichidagi fayllarni ko‘rsatadi
+      (Mac va Linux’da)
+
+  cd papka_nomi
+      Boshqa papkaga kirish
+
+  cd ..
+      Bir pog‘ona yuqoridagi papkaga chiqish
+
+  python dars_01.py
+      Python faylini ishga tushirish
+      (Windows’da)
+
+  python3 dars_01.py
+      Python faylini ishga tushirish
+      (Mac va Linux’da)
 """
 
-# ── + Qo'shish ──────────────────────────────────────────────
-print(5 + 3)        # Natija: 8
-print(100 + 250)    # Natija: 350
 
-# ── - Ayirish ───────────────────────────────────────────────
-print(10 - 4)       # Natija: 6
-print(1000 - 375)   # Natija: 625
+# ------------------------------------------------------------
+# GIT VA GITHUB NIMA?
+# ------------------------------------------------------------
 
-# ── * Ko'paytirish ──────────────────────────────────────────
-print(3 * 7)        # Natija: 21
-print(12 * 12)      # Natija: 144
+"""
+Git — koddagi o‘zgarishlarni saqlab boruvchi dastur.
 
-# ── / Bo'lish ───────────────────────────────────────────────
-# Natija har doim o'nlik son (float) bo'ladi
-print(20 / 4)       # Natija: 5.0
-print(7 / 2)        # Natija: 3.5
+GitHub — loyihalarni internetda saqlash va boshqalar bilan
+ulashish platformasi.
 
-# ── % Qoldiq (Modulo) ───────────────────────────────────────
-# Bo'linganda qoladigan qoldiqni beradi
-# Masalan: 10 ni 3 ga bo'lsak → 3*3=9, qoldiq = 1
-print(10 % 3)       # Natija: 1
-print(15 % 4)       # Natija: 3
-print(10 % 2)       # Natija: 0  (juft son — qoldiq yo'q)
+Oddiy misol:
 
-# ── // Butun bo'lish ────────────────────────────────────────
-# Bo'lganda faqat butun qismini beradi, kasr qismini tashlab yuboradi
-# Masalan: 10 / 3 = 3.333...  →  // bilan natija: 3
-print(10 // 3)      # Natija: 3
-print(7 // 2)       # Natija: 3
-print(15 // 4)      # Natija: 3
+  Git       → kompyuteringizdagi o‘zgarishlar tarixi
+  GitHub    → loyihangizning internetdagi manzili
 
-# ── ** Daraja (Quvvat) ──────────────────────────────────────
-# Birinchi sonni ikkinchi son darajasiga ko'taradi
-# Masalan: 2 ** 8  →  2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 = 256
-print(2 ** 8)       # Natija: 256
-print(3 ** 3)       # Natija: 27   (3 kub)
-print(5 ** 2)       # Natija: 25   (5 kvadrat)
+GitHub nima uchun kerak?
 
-# ── Amaliy misollar ─────────────────────────────────────────
+  ✔️ Loyihalarni xavfsiz saqlash uchun
+  ✔️ Portfolio yaratish uchun
+  ✔️ Ishga topshirishda kodni ko‘rsatish uchun
+  ✔️ Boshqa dasturchilar bilan ishlash uchun
+  ✔️ Eski kodlarga qaytish uchun
 
-# MISOL 1 — Doiraning yuzini hisoblash (r = 7)
-print(3.14 * 7 ** 2)        # Natija: 153.86
+Repository (repo) — GitHub’dagi loyiha papkasi.
+"""
 
-# MISOL 2 — Sonning juft yoki toq ekanini tekshirish
-# Agar % 2 == 0 bo'lsa — juft, bo'lmasa — toq
-print(14 % 2)               # Natija: 0  → 14 juft son
-print(17 % 2)               # Natija: 1  → 17 toq son
 
-# MISOL 3 — Daqiqani soat va daqiqaga aylantirish
-daqiqalar = 150
-print(daqiqalar // 60)      # Natija: 2  (soat)
-print(daqiqalar % 60)       # Natija: 30 (qolgan daqiqa)
-# Ya'ni 150 daqiqa = 2 soat 30 daqiqa
+# ------------------------------------------------------------
+# GITHUB AKKAUNT VA REPOSITORY YARATISH
+# ------------------------------------------------------------
 
-# MISOL 4 — Amallari ketma-ketligi (matematikadagi kabi)
-# Python: avval ** → keyin *, / → keyin +, -
-print(2 + 3 * 4)            # Natija: 14  (avval 3*4=12, keyin 2+12)
-print((2 + 3) * 4)          # Natija: 20  (qavs ichini avval hisoblaydi)
+"""
+QADAM 1 — GitHub akkaunt ochish:
 
-# MISOL 5 — Kombinatsiyalangan hisob
-# 1 yilda nechta soniya bor?
-print(365 * 24 * 60 * 60)   # Natija: 31536000
+  1. https://github.com/signup saytiga kiring
+  2. Email orqali akkaunt yarating
+  3. Email manzilingizni tasdiqlang
+  4. Username tanlang
+
+Masalan:
+
+  rustamdev
+  ali_python
+  kodchi_uz
+
+QADAM 2 — Repository yaratish:
+
+  1. GitHub’ga kiring
+  2. Yuqori o‘ng tarafdagi + belgisini bosing
+  3. New repository ni tanlang
+  4. Repository nomini yozing:
+
+       python-foundation
+
+  5. Public tanlang
+  6. "Add a README file" belgisini HOZIRCHA belgilang
+  7. Create repository tugmasini bosing
+
+README.md — loyiha haqida qisqacha ma’lumot yoziladigan fayl.
+"""
+
+
+# ------------------------------------------------------------
+# GIT O‘RNATISH VA BIRINCHI COMMIT
+# ------------------------------------------------------------
+
+"""
+Git o‘rnatilganini terminalda tekshiring:
+
+    git --version
+
+Agar versiya chiqmasa, Git’ni quyidagi saytdan o‘rnating:
+
+    https://git-scm.com/downloads
+
+PyCharm ichida loyihani Git bilan bog‘lash:
+
+  1. Git → Create Git Repository ni tanlang
+  2. Project papkasini belgilang
+  3. GitHub’ga login qiling
+  4. Commit oynasini oching
+  5. Fayllarni belgilang
+  6. Commit message yozing:
+
+       Dars 1: birinchi Python dasturi
+
+  7. Commit and Push tugmasini bosing
+
+Commit — koddaki o‘zgarishlarni saqlash.
+Push — saqlangan kodni GitHub’ga yuklash.
+"""
 
 
 # ------------------------------------------------------------
@@ -215,73 +420,72 @@ print(365 * 24 * 60 * 60)   # Natija: 31536000
 
 """
 TOPSHIRIQ 1 — Oson:
-  Quyidagi ma'lumotlarni ekranga chiqaring:
+
+  Quyidagi ma’lumotlarni print() orqali ekranga chiqaring:
+
     - Ismingiz
     - Yoshingiz
-    - Sevimli rangingiz
+    - Yashaydigan shahringiz
+    - Kelajakdagi kasbingiz
 
-TOPSHIRIQ 2 — O'rta:
-  Quyidagi hisob-kitoblarni print() orqali chiqaring:
-    - 2025 yildan tug'ilgan yilingizni ayiring (yoshingiz)
-    - 7 kunda nechta soat borligini hisoblang (7 * 24)
-    - 1 oy nechta daqiqa ekanligini hisoblang (30 * 24 * 60)
 
-TOPSHIRIQ 3 — Qiziqarli:
-  O'zingiz haqingizda "ID karta" chiqaring:
-    ┌─────────────────────┐
-    │   SHAXSIY ID KARTA  │
-    │  Ism  : Ali Karimov │
-    │  Yosh : 15          │
-    │  Sinf : 9-A         │
-    └─────────────────────┘
+TOPSHIRIQ 2 — O‘rta:
 
-TOPSHIRIQ 4 — Izoh bilan:
-  5 ta turli hisob-kitob yozing.
-  Har birining yoniga izoh qo'ying, nima hisoblanayotganini tushuntiring.
+  Quyidagiga o‘xshash “Dasturchi kartasi” chiqaring:
 
-TOPSHIRIQ 5 — Ijodiy:
-  Sevimli qo'shig'ingiz yoki kitobingizning
-  nomini ekranga chiqaring va yoniga izoh bilan
-  nima ekanligini tushuntiring.
+    ┌──────────────────────────────┐
+    │      DASTURCHI KARTASI       │
+    │                              │
+    │  Ism     : Ali Karimov       │
+    │  Yosh    : 15                │
+    │  Yo‘nalish: Python Backend   │
+    │  Maqsad  : Dasturchi bo‘lish │
+    └──────────────────────────────┘
+
+
+TOPSHIRIQ 3 — Izoh bilan:
+
+  5 ta print() yozing.
+
+  Har bir kod qatorining ustiga yoki yoniga izoh yozing.
+  Izohda ushbu qator nima qilishini tushuntiring.
+
+
+TOPSHIRIQ 4 — Terminal:
+
+  Terminalni oching va quyidagilarni bajaring:
+
+    - Python versiyasini tekshiring
+    - Git versiyasini tekshiring
+    - dars_01.py faylini terminal orqali ishga tushiring
+
+
+TOPSHIRIQ 5 — GitHub:
+
+  GitHub akkaunt oching.
+
+  Quyidagi nom bilan repository yarating:
+
+      python-foundation
+
+  Birinchi darsdagi dars_01.py faylini repository’ga yuklang.
 """
 
 
 # ------------------------------------------------------------
-# QUSHIMCHA RESURSLAR (Uyga vazifa uchun)
-# ------------------------------------------------------------
-
-"""
-📚 RASMIY HUJJATLAR:
-   https://docs.python.org/3/tutorial/index.html
-   — Python yaratuvchilari yozgan to'liq qo'llanma (inglizcha)
-
-🌐 W3SCHOOLS (boshlang'ichlar uchun eng qulay):
-   https://www.w3schools.com/python/
-   — Oson tushuntirishlar va amaliy misollar
-
-🎥 YOUTUBE (o'zbekcha darslar):
-   "Python o'zbekcha" deb qidiring
-   — Ko'plab bepul video darslar mavjud
-"""
-
-
-# ------------------------------------------------------------
-# BUGUNGI DARSDA NIMALAR O'RGANDIK?
+# BUGUNGI DARSDA NIMALAR O‘RGANDIK?
 # ------------------------------------------------------------
 
 """
 ✔️ Python nima va qayerlarda ishlatilishi
-✔️ Python va PyCharm o'rnatish
-✔️ PyCharm interfeysini tanish
+✔️ Python dasturini o‘rnatish
+✔️ Terminal orqali Python versiyasini tekshirish
+✔️ PyCharm o‘rnatish
+✔️ Yangi project va Python fayl yaratish
 ✔️ print() funksiyasi bilan ekranga chiqarish
-✔️ Izoh yozish (#)
-✔️ Arifmetik operatorlar:
-    +   Qo'shish
-    -   Ayirish
-    *   Ko'paytirish
-    /   Bo'lish          → natija har doim float (5.0)
-    %   Qoldiq           → 10 % 3 = 1
-    //  Butun bo'lish    → 10 // 3 = 3
-    **  Daraja           → 2 ** 8 = 256
+✔️ Izoh yozish
+✔️ Terminal nima ekanligi
+✔️ Git va GitHub nima ekanligi
+✔️ GitHub repository yaratish
+✔️ Birinchi Python loyihasini GitHub’ga yuklash
 """
-
