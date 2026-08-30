@@ -1,45 +1,40 @@
-Python core.
+Python Foundation.
 
-1. Kirish, Pythonni o'rnatish va birinchi dasturni tuzish
+1. Kirish, Pythonni o‘rnatish va birinchi dasturni tuzish
 ✔️ Python nima va qayerlarda ishlatilishi
-✔️ Python va PyCharm o'rnatish
-✔️ PyCharm interfeysini tanish
+✔️ Python va PyCharm yoki VS Code o‘rnatish
+✔️ Terminal bilan tanishish
 ✔️ print() funksiyasi bilan ekranga chiqarish
 ✔️ Izoh yozish (#)
-✔️ Arifmetik operatorlar:
-    +   Qo'shish
-    -   Ayirish
-    *   Ko'paytirish
-    /   Bo'lish          → natija har doim float (5.0)
-    %   Qoldiq           → 10 % 3 = 1
-    //  Butun bo'lish    → 10 // 3 = 3
-    **  Daraja           → 2 ** 8 = 256
+✔️ Birinchi dastur yaratish va ishga tushirish
+✔️ GitHub nima va nima uchun kerakligi
+✔️ GitHub akkaunt ochish va birinchi repository yaratish
 
-2. O'zgaruvchilar, Data Types (number, string, Boolean, Casting), Input() va Sonlar bilan ishlash
-✔️ O'zgaruvchilar — nom = qiymat
+2. O‘zgaruvchilar, Data Types, Casting, Input() va sonlar bilan ishlash
+✔️ O‘zgaruvchilar — nom = qiymat
 ✔️ Data Types:
-    str      — matn ("Salom", 'Ali')
-    int      — butun son (15, -3, 1000)
-    float    — kasr son (3.14, -0.5)
-    complex  — kompleks son (3+2j)
-✔️ type()   — qiymat turini aniqlash
+    str      — matn
+    int      — butun son
+    float    — kasr son
+    bool     — True / False
+✔️ type() — qiymat turini aniqlash
 ✔️ Casting:
-    str()   — matnga aylantirish
-    int()   — butun songa aylantirish
-    float() — kasr songa aylantirish
-✔️ Boolean:
-    True / False
-    Solishtirish operatorlari: >, <, ==, !=, >=, <=
-    bool() funksiyasi
-✔️ input()  — foydalanuvchidan ma'lumot olish (DOIM string qaytaradi!)
-✔️ Sonlar bilan ishlash:
-    abs()   — mutlaq qiymat
-    round() — yaxlitlash
-    max()   — eng katta son
-    min()   — eng kichik son
-    pow()   — daraja
+    str()
+    int()
+    float()
+    bool()
+✔️ input() — foydalanuvchidan ma’lumot olish
+✔️ Arifmetik operatorlar:
+    +   Qo‘shish
+    -   Ayirish
+    *   Ko‘paytirish
+    /   Bo‘lish
+    %   Qoldiq
+    //  Butun bo‘lish
+    **  Daraja
+✔️ abs(), round(), max(), min(), pow()
 
-3. Pythonda tarmoqlanuvchi operatorlar: if, elif, else (and, or, not)
+3. Pythonda tarmoqlanuvchi operatorlar: if, elif, else
 ✔️ Solishtirish operatorlari:
     ==   teng
     !=   teng emas
@@ -47,453 +42,331 @@ Python core.
     <    kichik
     >=   katta yoki teng
     <=   kichik yoki teng
-
 ✔️ Mantiq operatorlari:
-    and  —  ikkalasi ham True bo'lsa → True
-    or   —  kamida biri True bo'lsa → True
-    not  —  True → False, False → True
+    and
+    or
+    not
+✔️ if
+✔️ if-else
+✔️ if-elif-else
+✔️ Ichma-ich if
+✔️ Qisqa if (ternary operator)
+✔️ Amaliy misollar:
+    - Yosh aniqlash
+    - Parol tekshirish
+    - Baho hisoblash
+    - Kalkulyator
 
-✔️ if       — shart to'g'ri bo'lsa bajara
-✔️ if-else  — aks holda boshqa narsa bajara
-✔️ if-elif-else — bir nechta shart ketma-ket
-✔️ Ichma-ich if (nested if)
-✔️ Qisqa if (ternary): natija = "a" if shart else "b"
-
-4. Pythonda While sikl operatori (breack, countinue)
+4. Pythonda While sikl operatori
 ✔️ Sikl nima va nima uchun kerak
-✔️ while sikli — sintaksis va ishlash tartibi
-✔️ Hisoblagich (i = 0, i += 1) bilan ishlash
-✔️ break    — siklni butunlay to'xtatish
-✔️ continue — joriy qadamni o'tkazib, siklni davom ettirish
-✔️ end=" "  — print() da yangi qator o'rniga boshqa belgi
-✔️ while True — cheksiz sikl (break bilan to'xtatiladi)
-✔️ while + input() — foydalanuvchi bilan interaktiv ishlash
-✔️ while + else — odatiy tugashda qo'shimcha amal
-
-  break    →  ■ STOP — sikldan chiqadi
-  continue →  ↩ SKIP — joriy qadamni o'tkazadi, davom etadi
-  end=" "  →  yangi qator o'rniga bo'sh joy (yoki boshqa belgi)
+✔️ while sikli
+✔️ Hisoblagich bilan ishlash
+✔️ break — sikldan chiqish
+✔️ continue — joriy qadamni o‘tkazib yuborish
+✔️ while True bilan ishlash
+✔️ while + input()
+✔️ while + else
+✔️ Amaliy misollar:
+    - Parolni tekshirish
+    - Menyu tizimi
+    - Son topish o‘yini
 
 5. Pythonda For sikl operatori
-✔️ for sikli — sintaksis va ishlash tartibi
-✔️ range() — uch xil ishlatish:
-     range(stop)
-     range(start, stop)
-     range(start, stop, step)
-✔️ for + matn  — har bir harfni birin-ketin olish
-✔️ for + ro'yxat — har bir elementni ko'rib chiqish
-✔️ break va continue — for siklida ham ishlaydi
-✔️ for + else — shart bajarilmay tugaganda
-✔️ Ichma-ich sikllar (nested loops):
-     tashqi sikl × ichki sikl = jami bajarilish
-✔️ Shakllar chizish:
-     to'rtburchak, uchburchak, piramida
+✔️ for sikli
+✔️ range() funksiyasi:
+    range(stop)
+    range(start, stop)
+    range(start, stop, step)
+✔️ for + string
+✔️ for + list
+✔️ break va continue
+✔️ Ichma-ich sikllar
 ✔️ Amaliy misollar:
-     ko'paytma jadvali, tub sonlar, baholar tahlili
-✔️ for vs while — qachon qaysi birini tanlash
+    - Ko‘paytma jadvali
+    - Tub sonni aniqlash
+    - Baholar tahlili
+    - Shakllar chizish
+✔️ for va while farqi
 
-6. Takrorlash
-✔️ O'tilgan mavzular bo'yicha misolar ishlash
-
-7. EXAM
-✔️ O'tilgan mavzulardan imtihon
-
-8. Pythonda String va string metodlar
-✔️ String nima va yaratish usullari
-✔️ Indekslash — matn[0], matn[-1]
-✔️ Qirqish (Slicing) — matn[2:8], matn[::-1]
-✔️ len() — uzunlikni aniqlash
-✔️ + (birlashtirish) va * (takrorlash)
-✔️ f-string — f"Salom, {ism}!"
-✔️ Registr metodlari:
-    upper()      — KATTA HARF
-    lower()      — kichik harf
-    capitalize() — Birinchi katta
-    title()      — Har So'z Katta
-    swapcase()   — Almashtirish
-✔️ Qidirish metodlari:
-    find()       — indeks yoki -1
-    index()      — indeks yoki XATO
-    count()      — necha marta
-    startswith() — shu bilan boshlanadi?
-    endswith()   — shu bilan tugaydi?
-    "x" in matn — mavjudmi?
-✔️ O'zgartirish metodlari:
-    replace()    — almashtirish
-    strip()      — bo'sh joy/belgi olib tashlash
-✔️ Bo'lish/Birlashtirish:
-    split()      — listga ajratish
-    join()       — listdan string
-✔️ format()      — {} bilan formatlash
-✔️ Tekshirish metodlari:
-    isdigit()    — faqat raqammi?
-    isalpha()    — faqat harfmi?
-    isalnum()    — harf yoki raqammi?
-    isupper()    — hammasi katta harfmi?
-    islower()    — hammasi kichik harfmi?
-
-9. Pythonda List
-✔️ List nima va yaratish usullari []
-✔️ Indekslash va slicing — list[0], list[-1], list[1:3]
-✔️ len(), type()
-✔️ Elementni o'zgartirish — list[i] = yangi_qiymat
-✔️ "element" in list — mavjudligini tekshirish
-✔️ List metodlari:
-    append()  — oxiriga qo'shish
-    insert()  — belgilangan joyga qo'shish
-    extend()  — boshqa listni biriktirish
-    remove()  — qiymat bo'yicha o'chirish
-    pop()     — indeks bo'yicha o'chirib qaytarish
-    del       — o'chirish
-    clear()   — tozalash
-    copy()    — nusxa olish
-    count()   — elementni sanash
-    index()   — elementning indeksini topish
-✔️ sort(), sorted(), reverse()
-✔️ list(range(...)) bilan list yaratish
-✔️ List Comprehension — [x**2 for x in range(5)]
-✔️ for sikli bilan listni ko'rib chiqish
-✔️ enumerate() — indeks va qiymat birga
-
-10. Pythonda Tuple, Set
-TUPLE:
-  ✔️ Tuple nima — () o'zgarmas to'plam
-  ✔️ Bitta elementli tuple — (5,)  (vergul shart!)
-  ✔️ Indekslash va slicing — tuple[0], tuple[1:3]
-  ✔️ Metodlar: count(), index()
-  ✔️ len(), type(), in
-  ✔️ + qo'shish, * takrorlash
-  ✔️ Packing va Unpacking
-  ✔️ Swap: x, y = y, x
-
-SET:
-  ✔️ Set nima — {} tartibsiz, takrorlashsiz to'plam
-  ✔️ Bo'sh set — set()  ({} emas!)
-  ✔️ Takrorlar avtomatik olib tashlanadi
-  ✔️ Indeks ishlamaydi — for sikli bilan ko'rish
-  ✔️ Metodlar:
-      add()     — bitta qo'shish
-      update()  — ko'p qo'shish
-      remove()  — o'chirish (xato beradi)
-      discard() — o'chirish (xato bermaydi)
-      pop()     — tasodifiy o'chirish
-      clear()   — tozalash
-      copy()    — nusxa
-  ✔️ Set amaliyotlari:
-      |  union()               — birlashtirish
-      &  intersection()        — kesishma
-      -  difference()          — farq
-      ^  symmetric_difference()— simmetrik farq
-
-11. Dictionary
-✔️ Dictionary nima — {kalit: qiymat} to'plam
-✔️ Qiymatga murojaat: dict[kalit] va dict.get(kalit)
-✔️ Kalit mavjudligi: "kalit" in dict
-✔️ Qiymat qo'shish/yangilash: dict[kalit] = qiymat
-✔️ Dictionary metodlari:
-    keys()      — barcha kalitlar
-    values()    — barcha qiymatlar
-    items()     — kalit-qiymat juftlari
-    get()       — xavfsiz qiymat olish
-    update()    — yangilash/qo'shish
-    pop()       — kalit bo'yicha o'chirish
-    popitem()   — oxirgi elementni o'chirish
-    del         — o'chirish
-    clear()     — tozalash
-    copy()      — nusxa
-    dict()      — konstruktor
-    len()       — uzunlik
-✔️ for sikli bilan dictionary
-✔️ Ichma-ich dictionary
-✔️ Dictionary comprehension
-
-12. Pythonda Funksiya va Lambda
+6. Pythonda Funksiyalar
 ✔️ Funksiya nima va nima uchun kerak
 ✔️ def bilan funksiya yaratish
 ✔️ Parametr va argument farqi
-✔️ Kalit so'z argumentlar (keyword args)
 ✔️ return — qiymat qaytarish
-✔️ Bir nechta qiymat return (tuple)
-✔️ Default parametr qiymatlari
-✔️ *args  — noma'lum miqdor argumentlar (tuple)
-✔️ **kwargs — noma'lum miqdor kalit-qiymat (dict)
-✔️ Scope — local va global o'zgaruvchilar
-✔️ global kalit so'zi
-✔️ Lambda funksiya — lambda x: x*2
-✔️ Lambda + sorted(), max(), min()
-✔️ filter() — filtrlash
-✔️ map()    — o'zgartirish
-
-13. Pythonda Map, Rekursiv funksiya va *args, **kwargs
-✔️ map(f, lst)    — har elementga funksiya qo'llash
-✔️ filter(f, lst) — shartga mos elementlarni olish
-✔️ zip(a, b)      — ikki ketma-ketlikni birlashtirish
-✔️ Rekursiya nima:
-    - Baza holat (to'xtash sharti)
-    - Rekursiv chaqiruv
-✔️ Rekursiv misollar:
-    - sanash(n)
-    - faktorial(n)
-    - fibonacci(n)
-    - raqamlar_yig'indisi(n)
-    - quvvat(asos, daraja)
-✔️ *args   — noma'lum miqdor pozitsion arg → tuple
-✔️ **kwargs — noma'lum miqdor kalit-qiymat → dict
-✔️ *args va **kwargs birga ishlatish
-
-14. 2D arrays
-✔️ 2D Array nima — list ichida listlar
-✔️ Murojaat: matritsa[qator][ustun]
-✔️ For sikli bilan ko'rib chiqish (ichma-ich)
-✔️ 2D Array yaratish usullari:
-    - Qo'lda
-    - List comprehension: [[0]*n for _ in range(n)]
-    - XATO usul: [[0]*n]*n (hammasi bir xil ob'ekt!)
-✔️ Elementni o'zgartirish
-✔️ Amaliy amallar:
-    - Yig'indi
-    - Maksimal/minimal element
-    - Diagonal elementlar
-    - Transponirish
-    - Ikki matritsani qo'shish
-✔️ Amaliy dasturlar:
-    - Baholar jadvali
-    - Tic-Tac-Toe o'yini
-
-15. EXAM
-✔️ O'tilgan mavzulardan imtihon
-
-16. Pythonda Modul yaratish, Dates, Random, Math, QRcode, Shtrixcode, Opencv va Turtle modullar
-✔️ Modul nima va qanday ulanadi (import)
-✔️ O'z modulingizni yaratish
-✔️ datetime moduli:
-    datetime.now()      — hozirgi vaqt
-    date.today()        — bugungi sana
-    strftime()          — formatlash
-    strptime()          — stringdan parsing
-    timedelta()         — vaqt farqi
-✔️ random moduli:
-    randint(a, b)       — butun son
-    random()            — 0.0 dan 1.0
-    choice(lst)         — bitta tanlash
-    choices(lst, k=n)   — n ta tanlash
-    sample(lst, k)      — n ta takrorisiz
-    shuffle(lst)        — aralash
-    seed(n)             — qayta takrorlanadigan
-✔️ math moduli:
-    pi, e               — konstantalar
-    sqrt()              — kvadrat ildiz
-    ceil(), floor()     — yaxlitlash
-    pow(), log()        — quvvat, logarifm
-    sin(), cos(), tan() — trigonometrik
-    factorial()         — faktorial
-    gcd(), lcm()        — EKUB, EKUK
-✔️ qrcode, barcode     — kod yaratish (pip)
-✔️ opencv              — rasm/video (pip)
-✔️ turtle              — grafika (standart)
-
-Pythonda OOP(obyektga yo'naltirilgan dasturlash).
-
-17. Pythonda OOP. Class va Object
-✔️ OOP nima — class, object, attribute, method
-✔️ class yaratish sintaksisi
-✔️ __init__() — konstruktor (ob'ekt yaratilganda chaqiriladi)
-✔️ self — ob'ektning o'ziga ishora
-✔️ __str__() — print() qilganda ko'rinadigan matn
-✔️ Metodlar — class ichidagi funksiyalar
-✔️ Atributlarga murojaat: ob'ekt.xususiyat
-✔️ Xususiyatni o'zgartirish: ob'ekt.xususiyat = yangi
-✔️ Instance attribute vs Class attribute
-✔️ Amaliy misollar: BankHisobi, Mashina, O'quvchi
-
-18. Pythonda Vorisdorlik va Polimorfizm
-✔️ Vorisdorlik nima — ota va bola class
-✔️ class Bola(Ota): — sintaksis
-✔️ super() — ota classga murojaat
-✔️ Metodlarni override qilish (qayta yozish)
-✔️ Ko'p darajali vorisdorlik
-✔️ isinstance() va issubclass()
-✔️ Polimorfizm nima — bir nom, turli xatti-harakat
+✔️ Default parametr
+✔️ Keyword argumentlar
+✔️ *args va **kwargs
+✔️ Local va global o‘zgaruvchilar
+✔️ Lambda funksiya
 ✔️ Amaliy misollar:
-    - Hayvonlar ierarxiyasi
-    - Geometrik shakllar
-    - Xodimlar tizimi
+    - Kalkulyator funksiyalari
+    - Baho hisoblash
+    - Parol tekshirish funksiyasi
 
-19. Inkapsulatsiya va Abstrakshin
-✔️ Inkapsulatsiya nima — ma'lumotni yashirish
-✔️ Kirish darajalari:
-    public     ism     — hamma ko'radi
-    protected  _ism    — konventsiya (majburiy emas)
-    private    __ism   — haqiqiy yashirish (name mangling)
-✔️ @property   — getter (o'qish)
-✔️ @nom.setter — setter (tekshirib yozish)
-✔️ uuid.uuid4() — unikal ID yaratish
-✔️ Abstraktsiya nima — murakkablikni yashirish
-✔️ ABC va @abstractmethod:
-    from abc import ABC, abstractmethod
-    class Shakl(ABC):
-        @abstractmethod
-        def yuzi(self): pass
-✔️ Abstract classdan to'g'ridan-to'g'ri ob'ekt yaratib bo'lmaydi
-✔️ Bola class barcha @abstractmethod larni amalga oshirishi SHART
+7. Takrorlash va EXAM
+✔️ O‘tilgan mavzular bo‘yicha misollar ishlash
+✔️ Mini loyiha:
+    - Konsol kalkulyatori
+    - Quiz dasturi
+    - ATM dasturi
+✔️ EXAM
 
-20. Dunder metodlar
-✔️ Dunder (Magic) metodlar nima
-✔️ __str__ va __repr__ farqi
-✔️ __len__    — len() uchun
-✔️ Arifmetik:
-    __add__      — a + b
-    __sub__      — a - b
-    __mul__      — a * b
-    __truediv__  — a / b
-    __pow__      — a ** b  (daraja, module=None)
-    __rmul__     — b * a (teskari tartib)
-✔️ Taqqoslash:
-    __eq__, __ne__, __lt__, __le__, __gt__, __ge__
-✔️ __contains__ — in operatori
-✔️ __getitem__, __setitem__ — [] operatori
-✔️ __call__   — ob'ektni funksiya kabi chaqirish
-✔️ __iter__, __next__ — for sikli uchun
-✔️ Amaliy misol: Kasr sinfi (barcha arifmetik operatorlar)
+8. Pythonda String va string metodlari
+✔️ String nima va yaratish usullari
+✔️ Indekslash
+✔️ Slicing
+✔️ len()
+✔️ f-string
+✔️ upper(), lower(), title(), capitalize()
+✔️ find(), index(), count()
+✔️ startswith(), endswith()
+✔️ replace(), strip()
+✔️ split(), join()
+✔️ isdigit(), isalpha(), isalnum()
+✔️ Amaliy misollar:
+    - Ism formatlash
+    - Telefon raqam tekshirish
+    - Matndan so‘z sanash
 
-21. Pythonda Fayllar bilan ishlash
-✔️ open() — fayl ochish va rejimlar: 'r', 'w', 'a', 'rb', 'wb'
-✔️ with open(...) as f — tavsiya etiladigan usul (avtomatik yopadi)
-✔️ read()      — barcha matnni o'qiydi
-✔️ readline()  — bitta qator o'qiydi
-✔️ readlines() — barcha qatorlar → list
-✔️ write()     — yozish
-✔️ writelines()— list dan yozish
-✔️ os.path.exists() — fayl mavjudligini tekshirish
-✔️ try/except bilan xatoliklarni ushlash
-✔️ encoding="utf-8" — o'zbek/lotin harflari uchun
+9. Pythonda List
+✔️ List nima va yaratish usullari
+✔️ Indekslash va slicing
+✔️ append(), insert(), extend()
+✔️ remove(), pop(), del(), clear()
+✔️ sort(), sorted(), reverse()
+✔️ count(), index()
+✔️ for sikli bilan list
+✔️ enumerate()
+✔️ List comprehension
+✔️ Amaliy misollar:
+    - Xarajatlar ro‘yxati
+    - Baholar tizimi
+    - To-do list
 
-22. Pythonda JSON (JavaScript Object Notation) va RegEx modullar
+10. Pythonda Tuple, Set va Dictionary
+TUPLE:
+  ✔️ Tuple nima
+  ✔️ Packing va unpacking
+  ✔️ count(), index()
+  ✔️ x, y = y, x
+
+SET:
+  ✔️ Set nima
+  ✔️ add(), update()
+  ✔️ remove(), discard()
+  ✔️ union(), intersection(), difference()
+  ✔️ Takroriy elementlarni olib tashlash
+
+DICTIONARY:
+  ✔️ Dictionary nima — {kalit: qiymat}
+  ✔️ dict[kalit] va get()
+  ✔️ keys(), values(), items()
+  ✔️ update(), pop(), del()
+  ✔️ for sikli bilan dictionary
+  ✔️ Ichma-ich dictionary
+  ✔️ Dictionary comprehension
+  ✔️ Amaliy loyiha:
+      - Kontaktlar daftari
+      - O‘quvchilar baholari tizimi
+
+11. Xatolar bilan ishlash va Debugging
+✔️ SyntaxError, TypeError, ValueError, KeyError nima
+✔️ Xato matnini o‘qish
+✔️ try / except
+✔️ else / finally
+✔️ raise — o‘zimiz xato chiqarish
+✔️ PyCharm yoki VS Code Debugger
+✔️ Breakpoint qo‘yish
+✔️ print() bilan debugging
+✔️ Amaliy misollar:
+    - Xavfsiz son kiritish
+    - Login tizimi
+    - Xato ma’lumotlarni tekshirish
+
+12. Pythonda Fayllar bilan ishlash
+✔️ open() va fayl rejimlari:
+    r   — o‘qish
+    w   — yozish
+    a   — qo‘shib yozish
+✔️ with open(...) as f
+✔️ read(), readline(), readlines()
+✔️ write(), writelines()
+✔️ encoding="utf-8"
+✔️ pathlib moduli bilan fayl va papkalar
+✔️ Amaliy loyiha:
+    - To-do listni faylga saqlash
+    - O‘quvchi ma’lumotlarini saqlash
+
+13. Pythonda JSON, Date, Random va Modullar
 JSON:
-  ✔️ json.dumps()  — Python ob'ekt → JSON string
-  ✔️ json.loads()  — JSON string → Python ob'ekt
-  ✔️ json.dump()   — Python ob'ekt → JSON fayl
-  ✔️ json.load()   — JSON fayl → Python ob'ekt
-  ✔️ indent=4      — chiroyli formatlash
-  ✔️ ensure_ascii=False — unicode harflar
+  ✔️ json.dumps()
+  ✔️ json.loads()
+  ✔️ json.dump()
+  ✔️ json.load()
+  ✔️ ensure_ascii=False
+  ✔️ indent=4
 
-RegEx:
-  ✔️ re.match()    — boshidan moslik
-  ✔️ re.search()   — istalgan joydan
-  ✔️ re.findall()  — barcha mosliklar → list
-  ✔️ re.sub()      — almashtirish
-  ✔️ re.split()    — bo'lish
-  ✔️ re.compile()  — naqshni oldindan tayyorlash
-  ✔️ Asosiy belgilar: \d \w \s . * + ? {n} [] ^ $
-  ✔️ Amaliy: email, telefon, parol validatsiyasi
+DATETIME:
+  ✔️ datetime.now()
+  ✔️ date.today()
+  ✔️ strftime()
+  ✔️ strptime()
+  ✔️ timedelta()
 
-23. Algoritmlash. Search
-✔️ Algoritm nima va nima uchun muhim
-✔️ Vaqt murakkabligi — O(n) va O(log n)
+RANDOM:
+  ✔️ randint()
+  ✔️ choice()
+  ✔️ sample()
+  ✔️ shuffle()
 
-LINEAR SEARCH:
-  ✔️ Tartiblangan bo'lishi shart emas
-  ✔️ Boshlangichdan oxirigacha tekshiradi
-  ✔️ O(n) — katta massivlarda sekin
+MODULLAR:
+  ✔️ import
+  ✔️ from ... import ...
+  ✔️ O‘z modulini yaratish
 
-BINARY SEARCH:
-  ✔️ Massiv TARTIBLANGAN bo'lishi shart
-  ✔️ Har qadamda yarmini kesib tashlaydi
-  ✔️ O(log n) — katta massivlarda juda tez
-  ✔️ Iterativ va rekursiv usullarda yozish
-  ✔️ 1 million elementda faqat 20 ta qadam!
+14. Virtual Environment, pip va tashqi kutubxonalar
+✔️ pip nima
+✔️ pip install
+✔️ pip uninstall
+✔️ venv nima va nima uchun kerak
+✔️ Virtual environment yaratish
+✔️ requirements.txt
+✔️ requests kutubxonasini o‘rnatish
+✔️ python-dotenv bilan tanishish
+✔️ .env fayli nima
+✔️ Token, parol va API keylarni kodga yozmaslik
 
-24. Algoritmlash. Sorting
-✔️ Bubble Sort:
-    — Qo'shni elementlarni solishtiradi va almashtiradi
-    — O(n²) — katta massivlarda sekin
-    — Erta to'xtash optimallashtirishi
+15. API va requests kutubxonasi
+✔️ API nima
+✔️ HTTP nima
+✔️ GET so‘rov yuborish
+✔️ response.status_code
+✔️ response.json()
+✔️ API’dan kelgan JSON bilan ishlash
+✔️ try/except bilan API xatolarini ushlash
+✔️ Amaliy loyiha:
+    - Ob-havo ma’lumotini olish
+    - Valyuta kursini olish
+    - Random foydalanuvchi ma’lumotini olish
 
-✔️ Quick Sort:
-    — Pivot tanlab, ikkiga bo'ladi
-    — O(n log n) o'rtacha, amalda eng tez
-    — Rekursiv algorit, "bo'l va boshqar"
-
-✔️ Merge Sort:
-    — Ikkiga bo'ladi, saralaydi, birlashtiradi
-    — Har doim O(n log n) — eng barqaror
-    — Qo'shimcha xotira talab qiladi
-
-✔️ Taqqoslash va qachon qaysinisini ishlatish
-✔️ Python sorted() va sort() — Timsort (Merge + Insertion)
-
-25. Data Structure kirish va LinkedList
-✔️ Data Structure nima va turlari
-✔️ Array vs LinkedList farqi va qachon nima ishlatish
-✔️ Tugun (Node) — data va next
-✔️ Bir tomonlama LinkedList:
-    push()        — boshiga qo'shish     O(1)
-    append()      — oxiriga qo'shish     O(n)
-    insertAfter() — oraliqqa qo'shish    O(n)
-    deleteNode()  — o'chirish            O(n)
-    search()      — qidirish             O(n)
-    teskari()     — tartibni teskari     O(n)
-    o_rta_topish()— o'rta elementni top  O(n)
-✔️ Ikki tomonlama LinkedList (Doubly LinkedList)
-✔️ LinkedList turlari: Singly, Doubly, Circular
-
-26. Stack
-✔️ Stack nima — LIFO (Last In, First Out)
-✔️ Kundalik misollari: kitoblar, undo, brauzer
-✔️ Stack metodlari:
-    push()   — tepaga qo'shish       O(1)
-    pop()    — tepadan olish         O(1)
-    peek()   — tepaga qarash         O(1)
-    isEmpty()— bo'shligini tekshirish O(1)
-    isFull() — to'lganini tekshirish  O(1)
-✔️ 3 xil amalga oshirish:
-    - Python list bilan (oddiy)
-    - Stack klassi (chegarasiz)
-    - Chegaralangan Stack (maxsize)
-    - LinkedList bilan Stack
+16. Pythonda OOP. Class va Object
+✔️ OOP nima
+✔️ Class va Object
+✔️ Attribute va Method
+✔️ __init__() — konstruktor
+✔️ self
+✔️ __str__()
+✔️ Instance attribute va Class attribute
 ✔️ Amaliy misollar:
-    - Qavslar muvozanati
-    - Undo/Redo tizimi
-    - Postfix kalkulyator
+    - BankHisobi
+    - Mashina
+    - O‘quvchi
+    - Mahsulot
 
-27. Queue
-✔️ Queue nima — FIFO (First In, First Out)
-✔️ Kundalik misollari: bank, printer, xabar navbati
-✔️ Queue metodlari:
-    enqueue() — orqadan qo'shish   O(1)
-    dequeue() — oldidan olish      O(1)
-    peek()    — oldiga qarash      O(1)
-    isEmpty() — bo'shligini tekshirish O(1)
-✔️ 3 xil amalga oshirish:
-    - Python list (sekin, pop(0) O(n))
-    - collections.deque (tezkor, O(1))
-    - Queue klassi (to'liq)
-✔️ Deque — ikki tomonlama navbat (appendleft, popleft)
+17. Pythonda Vorisdorlik va Polimorfizm
+✔️ Vorisdorlik nima — ota va bola class
+✔️ class Bola(Ota): sintaksisi
+✔️ super() — ota classga murojaat
+✔️ Method override — metodni qayta yozish
+✔️ Ko‘p darajali vorisdorlik
+✔️ isinstance() va issubclass()
+✔️ Polimorfizm nima — bir xil metod, turli xatti-harakat
 ✔️ Amaliy misollar:
-    - Bank navbat tizimi
-    - Printer navbati
-    - Palindrom tekshirish (Deque bilan)
-✔️ Stack vs Queue taqqoslash
+    - Hayvonlar ovozi: it.ovoz(), mushuk.ovoz()
+    - Xodimlar: oylik_hisobla()
+    - Geometrik shakllar: yuzi()
 
-28. Tree
-✔️ Tree (Daraxt) nima va terminologiyasi:
-    Root, Node, Edge, Parent, Child, Leaf, Height, Depth
-✔️ Binary Tree — har tugunning max 2 ta bolasi
-✔️ Tugun (TreeNode) — data, left, right
-✔️ Traversal usullari:
-    Inorder   (LNR)  → Chap → Ildiz → O'ng (BST da tartiblangan!)
-    Preorder  (NLR)  → Ildiz → Chap → O'ng
-    Postorder (LRN)  → Chap → O'ng → Ildiz
-    Level Order (BFS)→ Qatl-qatl (Queue yordamida)
-✔️ Binary Search Tree (BST):
-    Chap < Ildiz ≤ O'ng qoidasi
-    insert(), search(), min(), max(), height(), count()
-    Qidirish/qo'shish: O(log n) o'rtacha
-✔️ N-ary Tree — n ta bolali daraxt (fayl tizimi)
-✔️ Daraxt turlari: Binary, BST, AVL, Heap, Trie
+18. Pythonda Inkapsulatsiya va Abstraktsiya
+INKAPSULATSIYA:
+  ✔️ Ma’lumotni himoyalash va yashirish
+  ✔️ public attribute
+  ✔️ protected attribute — _ism
+  ✔️ private attribute — __ism
+  ✔️ @property
+  ✔️ Getter va Setter
 
-29. LeetCode
+ABSTRAKTSIYA:
+  ✔️ Abstraktsiya nima
+  ✔️ Murakkablikni foydalanuvchidan yashirish
+  ✔️ ABC — Abstract Base Class
+  ✔️ abstractmethod
+  ✔️ Abstract classdan object yaratib bo‘lmasligi
+  ✔️ Bola class abstract methodni yozishi shart
+
+✔️ Amaliy loyiha:
+    - To‘lov tizimi
+    - Xodimlar tizimi
+    - Transportlar tizimi
+
+19. SQLite ma’lumotlar bazasi
+✔️ Database nima
+✔️ SQLite va sqlite3 moduli
+✔️ Jadval yaratish
+✔️ INSERT — ma’lumot qo‘shish
+✔️ SELECT — ma’lumotlarni olish
+✔️ UPDATE — ma’lumotni yangilash
+✔️ DELETE — ma’lumotni o‘chirish
+✔️ Amaliy loyiha:
+    - O‘quvchilar bazasi
+    - Kontaktlar bazasi
+    - Xarajatlar bazasi
+
+20. Kod sifati va AI bilan dasturlash
+✔️ PEP 8 — kod yozish qoidalari
+✔️ O‘zgaruvchi va funksiya nomlarini to‘g‘ri tanlash
+✔️ Kodni kichik funksiyalarga bo‘lish
+✔️ Type Hint:
+    def add(a: int, b: int) -> int:
+✔️ Docstring yozish
+✔️ AI’dan kod so‘rash
+✔️ AI yozgan kodni tushunish
+✔️ AI yozgan koddagi xatolarni topish
+✔️ AI bilan test va dokumentatsiya yozish
+✔️ GitHub’ga toza loyiha yuklash
+
+21. Algoritmlashga kirish
+✔️ Algoritm nima
+✔️ Vaqt murakkabligi — O(1), O(n), O(log n)
+✔️ List, Set va Dictionary farqi
+✔️ Linear Search
+✔️ Binary Search
+✔️ Python sorted() va sort()
+✔️ Qachon list, set yoki dictionary ishlatish
 ✔️ LeetCode bilan tanishish
-✔️ 8 ta misol
+✔️ 5 ta sodda masala ishlash
 
-30. Python bo'yicha bilimlarni umumlashtirish, Nazariy savol javoblar va Misolar ishlash.
+21. Yakuniy loyiha rejasini tuzish
+✔️ Loyiha tanlash
+✔️ Loyiha uchun texnik topshiriq yozish
+✔️ GitHub repository yaratish
+✔️ Papkalar strukturasini tuzish
+✔️ Funksiyalar va classlarni rejalash
+✔️ JSON yoki SQLite tanlash
+
+23. Yakuniy loyiha
+✔️ O‘quvchi o‘z loyihasini yozadi
+✔️ Fayl yoki SQLite bilan ishlash
+✔️ Funksiya va OOP ishlatish
+✔️ Xatolarni ushlash
+✔️ GitHub’ga yuklash
+
+Loyiha variantlari:
+  ✔️ O‘quv markazi boshqaruv tizimi
+  ✔️ Xarajatlar hisoblash dasturi
+  ✔️ Kontaktlar boshqaruv tizimi
+  ✔️ Mini online do‘kon
+  ✔️ Kutubxona tizimi
+  ✔️ Ombor tizimi
+
+24. Python bo‘yicha umumlashtirish
+✔️ Nazariy savol-javoblar
+✔️ Murakkab misollar ishlash
+✔️ GitHub portfolio tekshirish
+✔️ Backend va Telegram Bot kursiga tayyorgarlik
+
+25. FINAL EXAM va Demo Day
+✔️ Nazariy imtihon
+✔️ Amaliy imtihon
+✔️ Yakuniy loyiha taqdimoti
+✔️ GitHub portfolio ko‘rib chiqish
+✔️ Eng yaxshi loyihalarni tanlash
