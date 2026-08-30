@@ -1,144 +1,212 @@
-Telegram Bot yaratish — Aiogram 3+
-
-Talab qilinadigan bilim: Python Foundation kursi (o'zgaruvchilar, tsikllar, funksiyalar, OOP asoslari, fayllar bilan ishlash, JSON)
-
-Jami: 19 dars — 14 nazariy mavzu + 1 takrorlash/EXAM + 3 amaliy loyiha + 1 yakuniy taqdimot
-
----
-
-1. Kirish: Telegram Bot API va Aiogram bilan tanishish
-✔️ Bot nima va Telegram Bot API qanday ishlaydi (update, message, webhook/polling)
-✔️ Aiogram nima — to'liq asinxron (async) framework, boshqa kutubxonalardan (pyTelegramBotAPI, python-telegram-bot) farqi
-✔️ @BotFather orqali bot yaratish: token olish, nom/rasm/tavsif sozlash
-✔️ Muhitni tayyorlash: virtual environment (venv), pip install aiogram
-✔️ python-dotenv — tokenni .env faylda xavfsiz saqlash
-✔️ Birinchi oddiy bot: polling orqali ishga tushirish (echo bot)
-
-2. Aiogram arxitekturasi: Bot, Dispatcher, Router
-✔️ Bot obyekti — Telegram serveriga so'rov yuboruvchi
-✔️ Dispatcher — kiruvchi update'larni handlerlarga yo'naltiruvchi
-✔️ asyncio asoslari: async def, await, asyncio.run() — nega aiogram asinxron ishlaydi
-✔️ Router — handlerlarni mantiqiy guruhlash (user_handlers.py, admin_handlers.py)
-✔️ Handler ro'yxatdan o'tkazish: @router.message(), @router.callback_query()
-✔️ dp.include_router() — routerlarni Dispatcher'ga ulash
-✔️ Professional loyiha strukturasi: handlers/, keyboards/, database/, utils/, config.py, main.py
-
-3. Komandalar, matnli xabarlar va content-turlari
-✔️ CommandStart() va Command("nomi") filterlari
-✔️ Message obyekti: message.text, message.from_user, message.chat, message.date
-✔️ message.answer() va message.reply() farqi
-✔️ Content-turlari: photo, video, document, voice, audio, sticker, location, contact
-✔️ ContentType filter — faqat kerakli turdagi xabarni qabul qilish
-✔️ parse_mode — HTML va MarkdownV2 bilan matnni formatlash (bold, italic, link)
-
-4. Filterlar va Magic Filters (F)
-✔️ Built-in filterlar: Command, CommandStart, Text
-✔️ Magic filter — F obyekti: F.text, F.photo, F.text.contains(), F.text.startswith()
-✔️ Filterlarni birlashtirish: & (va), | (yoki), ~ (emas)
-✔️ Custom filter yaratish — masalan, faqat admin uchun filter
-✔️ StateFilter haqida qisqacha (FSM bilan bog'liq, 7-darsda chuqur o'rganiladi)
-
-5. Reply Keyboard (oddiy klaviaturalar)
-✔️ ReplyKeyboardMarkup va KeyboardButton
-✔️ ReplyKeyboardBuilder — dinamik klaviatura qurish, .adjust()
-✔️ resize_keyboard, one_time_keyboard, input_field_placeholder
-✔️ ReplyKeyboardRemove() — klaviaturani olib tashlash
-✔️ Amaliy misol: bot uchun asosiy menyu
-
-6. Inline Keyboard va CallbackQuery
-✔️ InlineKeyboardMarkup va InlineKeyboardButton
-✔️ InlineKeyboardBuilder, .adjust() — tugmalarni qatorlarga joylash
-✔️ callback_data — tugmaga "yashirin" ma'lumot biriktirish
-✔️ @router.callback_query(F.data == "...") handler
-✔️ callback.answer() va callback.message.edit_text()
-✔️ Amaliy misol: sahifalash (pagination), Ha/Yo'q tasdiqlash tugmalari
-
-7. FSM (Holatlar mashinasi) — I qism
-✔️ FSM nima va nima uchun kerak — ko'p bosqichli forma/dialog
-✔️ StatesGroup va State — holatlarni e'lon qilish
-✔️ state.set_state() — foydalanuvchiga holat berish
-✔️ state.update_data() va state.get_data() — ma'lumotni vaqtincha saqlash
-✔️ Har bir holat uchun alohida handler yozish
-✔️ Amaliy misol: ro'yxatdan o'tish (ism → yosh → telefon)
-
-8. FSM — II qism: Storage va murakkab dialoglar
-✔️ state.clear() — forma tugaganda holatni tozalash
-✔️ Storage turlari: MemoryStorage (oddiy) vs RedisStorage (production uchun)
-✔️ "Ortga" tugmasi bilan bosqichlar orasida yurish
-✔️ FSM + Inline Keyboard birgalikda ishlatish
-✔️ Amaliy loyiha: buyurtma qabul qilish dialogi
-
-9. Middleware
-✔️ Middleware nima — handlerdan oldin/keyin ishlaydigan qatlam
-✔️ Outer middleware vs Inner middleware farqi
-✔️ Custom middleware: foydalanuvchini avtomatik bazaga yozish
-✔️ Throttling middleware — spam/flooddan himoya
-✔️ Middleware orqali handlerga qo'shimcha obyekt (masalan, DB session) uzatish
-
-10. Ma'lumotlar bazasi bilan ishlash
-✔️ Botga nega baza kerak (foydalanuvchilar, buyurtmalar, statistika)
-✔️ SQLite va PostgreSQL farqi, qachon qaysi birini tanlash
-✔️ SQLAlchemy (async) yoki aiosqlite bilan ulanish
-✔️ Model yaratish: User, Order kabi jadvallar
-✔️ CRUD amallar — async metodlar bilan qo'shish/o'qish/yangilash/o'chirish
-✔️ Baza sessiyasini middleware orqali handlerlarga uzatish
-
-11. Media va fayllar bilan ishlash
-✔️ Fayl yuborish: FSInputFile (lokal), URLInputFile (link orqali)
-✔️ Foydalanuvchi yuborgan faylni yuklab olish — bot.download()
-✔️ Media guruh (albom) yuborish — MediaGroupBuilder
-✔️ Voice va audio farqi
-✔️ Telegram tomonidan fayl hajmi cheklovlari
-
-12. Qo'shimcha imkoniyatlar
-✔️ Bot komandalarini menyuga chiqarish — set_my_commands()
-✔️ Deep linking — /start orqali maxsus parametr (referal/invite tizimi)
-✔️ Kanal/guruhga a'zolikni tekshirish — chat_member statusi
-✔️ Inline mode (InlineQuery) — qisqacha kirish
-
-13. Xatoliklarni boshqarish va Logging
-✔️ try/except bilan API xatolarini ushlash (masalan, botni bloklagan foydalanuvchi)
-✔️ Global error handler — @router.error()
-✔️ logging moduli — botning ishlashini fayl/konsolga yozib borish
-✔️ Foydalanuvchiga tushunarli xato xabari ko'rsatish
-
-14. Bot deploy qilish
-✔️ Polling vs Webhook — farqi va qachon qaysi birini tanlash
-✔️ .env va muhit o'zgaruvchilari — tokenni production'da xavfsiz saqlash
-✔️ VPS'ga joylashtirish, systemd bilan botni doimiy ishlatish
-✔️ Webhook'ni aiohttp/FastAPI orqali ishga tushirish
-✔️ Docker bilan konteynerlashtirish (qisqacha kirish)
-
+Telegram Bot & Mini Apps Fullstack
+Talab qilinadigan bilimlar: Python Foundation, Git/GitHub, venv, pip.
+Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha, Final Sprint va Demo Day.
+1-modul: Aiogram 3 asoslari
+1. Kirish: Telegram Bot API va ish muhitini tayyorlash
+✔️ Telegram Bot API, update, polling va webhook tushunchasi
+✔️ @BotFather orqali bot yaratish
+✔️ Token, .env, .gitignore
+✔️ venv, pip install aiogram
+✔️ Birinchi Echo Bot
+✔️ GitHub repository yaratish  
+2. Asyncio va Aiogram arxitekturasi
+✔️ async def, await, asyncio.run()
+✔️ Bot, Dispatcher, Router
+✔️ Handler nima
+✔️ dp.include_router()
+✔️ Professional loyiha strukturasi: handlers/, keyboards/, services/, database/, config/
+✔️ Polling orqali botni ishga tushirish  
+3. Komandalar, xabarlar va filterlar
+✔️ CommandStart() va Command()
+✔️ message.answer() va message.reply()
+✔️ F.text, F.photo, F.document, F.contact
+✔️ Magic Filterlarni birlashtirish: &, |, ~
+✔️ HTML formatlash
+✔️ Foydalanuvchi ma’lumotlarini olish  
+2-modul: Bot interfeysi va dialoglar
+4. Reply Keyboard
+✔️ ReplyKeyboardMarkup
+✔️ KeyboardButton
+✔️ ReplyKeyboardBuilder
+✔️ Dinamik menyu
+✔️ Kontakt va location so‘rash
+✔️ Asosiy menyu yaratish  
+5. Inline Keyboard va Callback Query
+✔️ InlineKeyboardButton
+✔️ InlineKeyboardBuilder
+✔️ callback_data
+✔️ callback.answer()
+✔️ edit_text() va edit_reply_markup()
+✔️ Ha/Yo‘q tasdiqlash oynasi
+✔️ Pagination  
+6. FSM — I qism
+✔️ FSM nima
+✔️ StatesGroup, State
+✔️ FSMContext
+✔️ set_state(), update_data(), get_data()
+✔️ Ro‘yxatdan o‘tish formasi: ism → yosh → telefon  
+7. FSM — II qism
+✔️ state.clear()
+✔️ Bekor qilish tugmasi
+✔️ Ortga qaytish
+✔️ Input validatsiyasi
+✔️ FSM va Inline Keyboard
+✔️ Buyurtma berish dialogi  
+3-modul: Professional bot arxitekturasi
+8. Database: PostgreSQL va SQLAlchemy Async
+✔️ SQLite va PostgreSQL farqi
+✔️ PostgreSQL o‘rnatish
+✔️ SQLAlchemy Async
+✔️ Model: User, Product, Order
+✔️ Migration tushunchasi
+✔️ Professional database strukturasi  
+9. CRUD, Service va Repository qatlamlari
+✔️ Foydalanuvchi qo‘shish
+✔️ Ma’lumotni olish, yangilash, o‘chirish
+✔️ services/ va repositories/ nima
+✔️ Bot handlerini database kodidan ajratish
+✔️ Savat va buyurtmalar logikasi  
+10. Middleware va Dependency Injection
+✔️ Middleware nima
+✔️ Outer va Inner middleware
+✔️ Foydalanuvchini avtomatik bazaga yozish
+✔️ Database session uzatish
+✔️ Admin tekshirish
+✔️ Spamdan himoya qilish  
+11. Media, Deep Link va qo‘shimcha imkoniyatlar
+✔️ Rasm, video, audio, document yuborish
+✔️ Foydalanuvchi yuborgan faylni yuklab olish
+✔️ Media Group
+✔️ set_my_commands()
+✔️ Deep linking va referral
+✔️ Kanalga a’zolikni tekshirish  
+12. Background task, Error Handling va Logging
+✔️ Global error handler
+✔️ try / except
+✔️ Logging
+✔️ Spam va flooddan himoya
+✔️ Rejalashtirilgan eslatmalar
+✔️ Bot bloklanganda xatoni boshqarish  
+13. Testing, Security va Configuration
+✔️ Handler testlari
+✔️ .env, Pydantic Settings
+✔️ Tokenni GitHub’ga yuklamaslik
+✔️ requirements.txt
+✔️ .gitignore
+✔️ Logging va xatolarni tekshirish  
+14. Deploy: Polling, Webhook, Docker
+✔️ Polling va Webhook farqi
+✔️ Docker asoslari
+✔️ VPS’ga joylashtirish
+✔️ systemd
+✔️ Webhook uchun HTTPS
+✔️ Production .env sozlamalari  
 15. Takrorlash va EXAM
-✔️ O'tilgan mavzular bo'yicha nazariy savollar
-✔️ Amaliy topshiriq: kichik botni noldan yozish
-
-16. Amaliy loyiha 1: Eslatmalar / To-do bot
-✔️ FSM orqali vazifa qo'shish
-✔️ Baza orqali vazifalarni saqlash
-✔️ Inline tugmalar bilan "bajarildi" deb belgilash va o'chirish
-
-17. Amaliy loyiha 2: Do'kon boti
-✔️ Mahsulotlar katalogi — inline keyboard + pagination
-✔️ Savat (cart) logikasi
-✔️ Buyurtma rasmiylashtirish — FSM orqali (manzil, telefon)
-✔️ To'liq baza integratsiyasi
-
-18. Amaliy loyiha 3: Viktorina / Test boti
-✔️ Guruh uchun savol-javob mexanizmi
-✔️ Ball hisoblash va reyting jadvali (leaderboard)
-✔️ Vaqt bilan cheklangan javob (timer, ixtiyoriy)
-
-19. Yakuniy taqdimot
-✔️ O'z loyihasini taqdim etish va kod review
-✔️ GitHub'ga joylashtirish (README, .gitignore, requirements.txt)
-
----
-
-Bonus / qo'shimcha mavzular (ixtiyoriy, vaqt bo'lsa):
-✔️ Ko'p tillilik — aiogram-i18n / GNU Gettext
-✔️ APScheduler — rejalashtirilgan xabarlar va eslatmalar
-✔️ aiogram_dialog — murakkab menyu/UI uchun tayyor framework
-✔️ Telegram Payments API — botda to'lov qabul qilish
-
-Eslatma: reja aiogram 3.27+ (joriy versiya, Telegram Bot API 9.6+ qo'llab-quvvatlaydi) asosida tuzildi.
+✔️ Nazariy savol-javob
+✔️ Noldan kichik bot yozish
+✔️ GitHub repository tekshirish  
+4-modul: Telegram Web App / Mini App
+Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochiladigan mobil web-ilova.
+16. Telegram Mini Apps asoslari
+✔️ Web App nima
+✔️ Bot va Mini App arxitekturasi
+✔️ HTML, CSS, JavaScript roli
+✔️ Web App ochish usullari
+✔️ WebAppInfo, Menu Button, inline tugma
+✔️ HTTPS nima uchun majburiyligi  
+17. Web App uchun HTML va CSS
+✔️ HTML struktura
+✔️ Form, button, card, image
+✔️ CSS asoslari
+✔️ Flexbox
+✔️ Mobilga mos responsive dizayn
+✔️ Telegram ranglariga mos UI  
+18. JavaScript va Frontend mantiqi
+✔️ O‘zgaruvchi, funksiya, event
+✔️ DOM bilan ishlash
+✔️ Formdan ma’lumot olish
+✔️ fetch() orqali API so‘rov yuborish
+✔️ Savat holatini boshqarish
+✔️ LocalStorage asoslari  
+19. Telegram WebApp JavaScript API
+✔️ window.Telegram.WebApp
+✔️ ready() va expand()
+✔️ Telegram theme ranglari
+✔️ MainButton
+✔️ BackButton
+✔️ showAlert(), showPopup()
+✔️ Foydalanuvchi interfeysini Telegram ichiga moslashtirish  
+20. Botdan Web App’ni ochish
+✔️ KeyboardButton(web_app=...)
+✔️ InlineKeyboardButton(web_app=...)
+✔️ Menu Button
+✔️ sendData() qachon ishlatilishi
+✔️ web_app_data update qabul qilish
+✔️ Cheklovlar: Web App tugmalari user va botning private chatida ishlashini tushuntirish. Telegram Bot API
+21. FastAPI: Mini App backend yaratish
+✔️ FastAPI asoslari
+✔️ GET va POST endpoint
+✔️ Pydantic schema
+✔️ Frontenddan fetch() bilan so‘rov yuborish
+✔️ Static frontendni servis qilish
+✔️ CORS tushunchasi va sozlash  
+22. Telegram Web App autentifikatsiyasi
+✔️ initData va initDataUnsafe farqi
+✔️ Nega frontenddagi user ID’ga ishonib bo‘lmaydi
+✔️ initDatani backendga yuborish
+✔️ Telegram signature tekshiruvi
+✔️ Foydalanuvchini database bilan bog‘lash
+✔️ Eskirgan auth_dateni tekshirish  
+23. Mini App: Katalog va Savat
+✔️ Mahsulotlar kartasi
+✔️ Kategoriyalar
+✔️ Savatga qo‘shish
+✔️ Jami narxni hisoblash
+✔️ Quantity oshirish/kamaytirish
+✔️ Main Button orqali buyurtma berish  
+24. Mini App: Buyurtma va Bot integratsiyasi
+✔️ Frontenddan buyurtma yuborish
+✔️ FastAPI’da buyurtmani qabul qilish
+✔️ PostgreSQL’ga saqlash
+✔️ Bot orqali administratorga xabar yuborish
+✔️ Foydalanuvchiga buyurtma holatini ko‘rsatish  
+25. Bot + Mini App deploy
+✔️ Bot, FastAPI va PostgreSQL arxitekturasi
+✔️ Docker Compose
+✔️ HTTPS domen
+✔️ Nginx reverse proxy
+✔️ Webhook
+✔️ Production tekshiruvlari  
+5-modul: Loyihalar
+26. Amaliy loyiha 1: To-do / Eslatma bot
+✔️ FSM orqali vazifa qo‘shish
+✔️ PostgreSQL’da saqlash
+✔️ Bajarildi tugmasi
+✔️ Eslatma yuborish
+✔️ Logging  
+27. Amaliy loyiha 2: Viktorina yoki Admin bot
+✔️ Savol-javob
+✔️ Ball va leaderboard
+✔️ Admin panel funksiyalari
+✔️ Kanal a’zoligini tekshirish
+✔️ Database integratsiyasi  
+28. Amaliy loyiha 3: Mini Store Web App
+✔️ Bot ichidan Mini App ochish
+✔️ HTML/CSS/JS katalog
+✔️ Savat
+✔️ FastAPI API
+✔️ PostgreSQL buyurtmalar
+✔️ Admin uchun bot xabarnomasi  
+29. Final Sprint va Code Review
+✔️ O‘quvchi o‘z loyihasini yakunlaydi
+✔️ Kod strukturasi
+✔️ README
+✔️ .env.example
+✔️ Docker va deploy
+✔️ Mentor code review  
+30. Final Demo Day
+✔️ Loyihani taqdim etish
+✔️ GitHub portfolio
+✔️ Bot + Web App ishlashini ko‘rsatish
+✔️ Xavfsizlik va arxitektura savollari
+✔️ Backend kursiga keyingi yo‘l xaritasi
