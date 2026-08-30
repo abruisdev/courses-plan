@@ -1,392 +1,674 @@
 # ============================================================
-#   DARS 2: O'zgaruvchilar, Data Types, Casting, Boolean, Input()
+#   DARS 2: O‘zgaruvchilar, Data Types, Casting, Input()
+#           va Sonlar bilan Ishlash
 #   Muallif: Isroilov Rustam (Abruisdev)
 # ============================================================
 
+
 # ------------------------------------------------------------
-# O'ZGARUVCHILAR (Variables)
+# DARSNING MAQSADI
 # ------------------------------------------------------------
 
 """
-O'zgaruvchi — bu ma'lumotni saqlash uchun ishlatiladigan "quti".
-Unga nom beramiz va ichiga qiymat joylashtiramiz.
+Bugungi darsda:
 
-Qoida:
-  nom = qiymat
-
-Misol:
-  ism = "Ali"     →  "ism" nomli qutiga "Ali" yozildi
-  yosh = 15       →  "yosh" nomli qutiga 15 raqami yozildi
+  ✔️ O‘zgaruvchi nima ekanini bilib olamiz
+  ✔️ Python’dagi asosiy data typelarni o‘rganamiz
+  ✔️ type() bilan ma’lumot turini aniqlaymiz
+  ✔️ Casting — ma’lumot turini o‘zgartirishni o‘rganamiz
+  ✔️ input() orqali foydalanuvchidan ma’lumot olamiz
+  ✔️ Arifmetik operatorlar bilan ishlaymiz
+  ✔️ abs(), round(), max(), min(), pow() funksiyalarini o‘rganamiz
 """
 
-# O'zgaruvchi yaratish
+
+# ------------------------------------------------------------
+# O‘ZGARUVCHI NIMA?
+# ------------------------------------------------------------
+
+"""
+O‘zgaruvchi — bu ma’lumotni saqlash uchun ishlatiladigan nom.
+
+Oddiy misol:
+
+    ism = "Ali"
+
+Bu yerda:
+
+    ism       → o‘zgaruvchi nomi
+    =         → qiymat berish belgisi
+    "Ali"     → qiymat
+
+O‘zgaruvchini quti deb tasavvur qilish mumkin:
+
+    ism  ┌───────┐
+         │  Ali  │
+         └───────┘
+"""
+
+
+# O‘zgaruvchiga matn saqlash
 ism = "Ali"
-yosh = 15
+familiya = "Karimov"
+
+print(ism)
+print(familiya)
+
+# O‘zgaruvchiga son saqlash
+yosh = 18
+baho = 95
+
+print(yosh)
+print(baho)
+
+# O‘zgaruvchiga kasr son saqlash
+narx = 12500.50
+harorat = 36.6
+
+print(narx)
+print(harorat)
+
+
+# ------------------------------------------------------------
+# O‘ZGARUVCHI NOMLASH QOIDALARI
+# ------------------------------------------------------------
+
+"""
+O‘zgaruvchi nomini yozishda quyidagi qoidalarga amal qilinadi:
+
+  ✔️ Harf bilan boshlanishi mumkin
+  ✔️ _ (pastki chiziq) bilan boshlanishi mumkin
+  ✔️ Raqam bilan BOSHLANISHI mumkin emas
+  ✔️ Bo‘sh joy ishlatib bo‘lmaydi
+  ✔️ Maxsus belgilar ishlatib bo‘lmaydi: !, @, #, $, %
+  ✔️ Python kalit so‘zlarini ishlatib bo‘lmaydi:
+      if, else, for, while, class, def va hokazo
+"""
+
+
+# TO‘G‘RI yozilgan o‘zgaruvchilar
+ism = "Vali"
+yosh = 20
+telefon_raqam = "998901234567"
+tugilgan_yil = 2005
+_fayl_nomi = "malumot.txt"
+
+# NOTO‘G‘RI o‘zgaruvchilar:
+# 1ism = "Ali"              # Raqam bilan boshlanmaydi
+# mening ismim = "Ali"      # Bo‘sh joy ishlatib bo‘lmaydi
+# telefon-raqam = "123"     # - belgisi ishlatib bo‘lmaydi
+# class = "Python"          # class — Python kalit so‘zi
+
+
+# ------------------------------------------------------------
+# SNAKE_CASE USULI
+# ------------------------------------------------------------
+
+"""
+Python’da bir nechta so‘zdan iborat o‘zgaruvchilarni
+snake_case usulida yozish tavsiya qilinadi.
+
+So‘zlar _ belgisi bilan ajratiladi.
+"""
+
+talaba_ismi = "Aziz"
+talaba_yoshi = 19
+telefon_raqami = "+998 90 123 45 67"
+oylik_maosh = 4500000
+
+print(talaba_ismi)
+print(talaba_yoshi)
+
+
+# ------------------------------------------------------------
+# O‘ZGARUVCHI QIYMATINI O‘ZGARTIRISH
+# ------------------------------------------------------------
+
+"""
+O‘zgaruvchining qiymatini istalgan vaqtda o‘zgartirish mumkin.
+"""
+
+yosh = 18
+print(yosh)      # Natija: 18
+
+yosh = 19
+print(yosh)      # Natija: 19
+
+ism = "Ali"
+print(ism)       # Natija: Ali
+
+ism = "Vali"
+print(ism)       # Natija: Vali
+
+
+# ------------------------------------------------------------
+# BIR NECHTA O‘ZGARUVCHI BILAN ISHLASH
+# ------------------------------------------------------------
+
+# Har bir o‘zgaruvchiga alohida qiymat berish
+ism = "Madina"
+yosh = 20
 shahar = "Toshkent"
 
-# O'zgaruvchini ekranga chiqarish
-print(ism)        # Natija: Ali
-print(yosh)       # Natija: 15
-print(shahar)     # Natija: Toshkent
+print(ism)
+print(yosh)
+print(shahar)
 
-# O'zgaruvchini matn bilan birga chiqarish
-print("Mening ismim:", ism)
-print("Men", yosh, "yoshdaman")
-print("Men", shahar, "da yashayman")
+# Bir qatorda bir nechta o‘zgaruvchiga qiymat berish
+ism, yosh, shahar = "Ali", 18, "Samarqand"
 
-# O'zgaruvchi qiymatini o'zgartirish
-# Istalgan vaqtda yangi qiymat berish mumkin
-ball = 80
-print(ball)       # Natija: 80
-ball = 95
-print(ball)       # Natija: 95  (yangi qiymat)
+print(ism)
+print(yosh)
+print(shahar)
 
-# ── O'zgaruvchi nomlash qoidalari ───────────────────────────
-"""
-  ✅ To'g'ri:
-    ism = "Ali"
-    birinchi_ism = "Vali"
-    yosh2 = 16
-    _maxfiy = 1234
+# Bir xil qiymatni bir nechta o‘zgaruvchiga berish
+x = y = z = 10
 
-  ❌ Noto'g'ri:
-    2ism = "Ali"       →  raqam bilan boshlanmaydi!
-    birinchi ism = "X" →  bo'sh joy bo'lmaydi!
-    ism! = "Ali"       →  maxsus belgi bo'lmaydi!
-
-  ⚠️ Diqqat:
-    ism = "Ali"
-    Ism = "Vali"
-    ISM = "Jasur"
-    Bu uchta TURLI o'zgaruvchi! (Python katta-kichik harfni farqlaydi)
-"""
-
-# ── Bir nechta o'zgaruvchini bir qatorda yaratish ────────────
-x, y, z = 10, 20, 30
-print(x)    # 10
-print(y)    # 20
-print(z)    # 30
-
-# Barcha o'zgaruvchilarga bir xil qiymat berish
-a = b = c = 0
-print(a, b, c)    # Natija: 0 0 0
+print(x)
+print(y)
+print(z)
 
 
 # ------------------------------------------------------------
-# DATA TYPES (Ma'lumot Turlari)
+# DATA TYPES — MA’LUMOT TURLARI
 # ------------------------------------------------------------
 
 """
-Python'da har bir qiymatning turi (type) bor.
-Asosiy turlar:
+Data Type — bu o‘zgaruvchi ichida qanday turdagi ma’lumot
+saqlanayotganini bildiradi.
 
-  Tur       Nomi          Misol
-  ───────   ───────────   ─────────────────
-  str       String        "Salom", 'Ali'
-  int       Integer       10, -5, 1000
-  float     Float         3.14, -0.5, 2.0
-  complex   Complex       3+2j, 1j
-  bool      Boolean       True, False
+Bugun 4 ta asosiy data type bilan ishlaymiz:
 
-type() funksiyasi — qiymatning turini ko'rsatadi
+    str      — matn
+    int      — butun son
+    float    — kasr son
+    bool     — True yoki False
 """
-
-# ── str (String — Matn) ─────────────────────────────────────
-"""
-String — bu matn ma'lumoti.
-Qo'shtirnoq (" ") yoki apostrof (' ') ichida yoziladi.
-"""
-ism      = "Ali Karimov"
-manzil   = 'Toshkent, O\'zbekiston'   # apostrof ichida apostrof: \'
-xabar    = "Bugun ob-havo yaxshi"
-
-print(ism)                  # Ali Karimov
-print(type(ism))            # <class 'str'>
-
-# Uzun matn — uch qo'shtirnoq
-tarjimai_hol = """
-Men Ali Karimov.
-15 yoshdaman.
-Toshkentda yashayman.
-"""
-print(tarjimai_hol)
-
-# ── int (Integer — Butun Son) ────────────────────────────────
-"""
-Integer — bu manfiy yoki musbat butun son.
-Kasr qismi bo'lmaydi.
-"""
-yosh     = 15
-xona     = -3
-aholi    = 1_000_000   # _ yirik sonlarni o'qishni osonlashtiradi
-
-print(yosh)             # 15
-print(type(yosh))       # <class 'int'>
-print(aholi)            # 1000000
-
-# ── float (Haqiqiy Son — O'nlik kasr) ───────────────────────
-"""
-Float — bu kasr qismli son.
-Nuqta (.) bilan yoziladi.
-"""
-narx     = 29.99
-harorat  = -5.5
-pi       = 3.14159
-
-print(narx)             # 29.99
-print(type(narx))       # <class 'float'>
-
-# DIQQAT: Bo'lish (/) har doim float qaytaradi
-print(10 / 2)           # Natija: 5.0  (int emas, float!)
-print(type(10 / 2))     # <class 'float'>
-
-# ── complex (Kompleks Son) ───────────────────────────────────
-"""
-Complex — bu haqiqiy va mavhum qismdan iborat son.
-Matematikada: a + bi  →  Python'da: a + bj
-"""
-z1 = 3 + 2j
-z2 = 1j
-
-print(z1)               # (3+2j)
-print(type(z1))         # <class 'complex'>
-print(z1.real)          # 3.0  — haqiqiy qism
-print(z1.imag)          # 2.0  — mavhum qism
-
-# ── type() funksiyasi — turni aniqlash ───────────────────────
-print(type("Salom"))    # <class 'str'>
-print(type(42))         # <class 'int'>
-print(type(3.14))       # <class 'float'>
-print(type(2+3j))       # <class 'complex'>
-print(type(True))       # <class 'bool'>
 
 
 # ------------------------------------------------------------
-# CASTING (Bir Turdan Boshqa Turga O'tkazish)
+# str — STRING (MATN)
 # ------------------------------------------------------------
 
 """
-Casting — bu qiymatning turini o'zgartirish.
+str — string so‘zidan olingan.
 
-  str()    →  istalgan narsani matnga aylantiradi
-  int()    →  butun songa aylantiradi
-  float()  →  o'nlik songa aylantiradi
-
-Qachon kerak?
-  - input() faqat string qaytaradi,
-    shuning uchun sonlar bilan hisob qilish uchun
-    int() yoki float() ishlatish kerak.
+Matnlar qo‘shtirnoq yoki birtirnoq ichida yoziladi.
 """
 
-# ── str() — Songa aylantirish ────────────────────────────────
-son = 42
-matn = str(son)
-print(matn)               # "42"
-print(type(matn))         # <class 'str'>
+ism = "Rustam"
+familiya = 'Isroilov'
+shahar = "Farg‘ona"
+telefon = "+998901234567"
 
-# Foydalanish misoli: son va matnni birlashtirish
-yosh = 15
-print("Men " + str(yosh) + " yoshdaman")   # Men 15 yoshdaman
-
-# ── int() — Butun songa aylantirish ─────────────────────────
-# Matndan songa
-matn_son = "25"
-son = int(matn_son)
-print(son)                # 25
-print(type(son))          # <class 'int'>
-
-# Floatdan intga (kasr qismini tashlab ketadi)
-print(int(3.9))           # Natija: 3  (3.9 → 3, YAXLITLAMAYDI!)
-print(int(7.1))           # Natija: 7
-print(int(-2.8))          # Natija: -2
-
-# ── float() — O'nlik songa aylantirish ───────────────────────
-print(float("3.14"))      # 3.14
-print(float(5))           # 5.0
-print(float("10"))        # 10.0
-
-# ── XATO holatlari ───────────────────────────────────────────
-"""
-Quyidagilar XATOGA olib keladi:
-
-  int("3.14")      →  XATO! (float ko'rinishidagi matnni int() qabul qilmaydi)
-  int("salom")     →  XATO! (harf bo'lsa, songa aylantirish mumkin emas)
-
-To'g'ri usul:
-  int(float("3.14"))  →  avval floatga, keyin intga
-"""
-
-# To'g'ri yo'l:
-print(int(float("3.14")))  # Natija: 3
+print(ism)
+print(familiya)
+print(shahar)
+print(telefon)
 
 
 # ------------------------------------------------------------
-# BOOLEAN (Mantiqiy Qiymat)
+# int — BUTUN SON
 # ------------------------------------------------------------
 
 """
-Boolean — faqat ikkita qiymat oladi:
-  True   (To'g'ri, Ha, 1)
-  False  (Noto'g'ri, Yo'q, 0)
+int — integer so‘zidan olingan.
 
-Katta harf bilan boshlanadi: True, False
-
-Qachon ishlatiladi?
-  - Shartlarni tekshirishda
-  - Solishtirishlarda
+Butun sonlar kasrsiz bo‘ladi.
 """
 
-# Boolean qiymatlar
-rost   = True
-yolg_on = False
-print(rost)              # True
-print(yolg_on)           # False
-print(type(rost))        # <class 'bool'>
+yosh = 20
+sinf = 11
+aholi_soni = 37000000
+qarz = -50000
 
-# ── Solishtirish natijalari Boolean qaytaradi ─────────────────
-print(5 > 3)             # True   (5 katta)
-print(5 < 3)             # False  (5 kichik emas)
-print(5 == 5)            # True   (teng)
-print(5 != 3)            # True   (teng emas)
-print(10 >= 10)          # True   (katta yoki teng)
-print(7 <= 5)            # False  (kichik yoki teng emas)
-
-# ── bool() funksiyasi ────────────────────────────────────────
-"""
-bool() — qiymatning True yoki False ekanini ko'rsatadi.
-
-Quyidagilar DOIM False:
-  0, 0.0, "" (bo'sh matn), None
-
-Boshqa barcha qiymatlar True.
-"""
-print(bool(0))            # False
-print(bool(1))            # True
-print(bool(-5))           # True
-print(bool(""))           # False  (bo'sh matn)
-print(bool("Salom"))      # True
-print(bool(0.0))          # False
-print(bool(3.14))         # True
-
-# ── Boolean va sonlar ─────────────────────────────────────────
-# True = 1, False = 0 sifatida hisob-kitobda ishlatiladi
-print(True + True)        # 2
-print(True + False)       # 1
-print(False + False)      # 0
+print(yosh)
+print(sinf)
+print(aholi_soni)
+print(qarz)
 
 
 # ------------------------------------------------------------
-# input() FUNKSIYASI — FOYDALANUVCHIDAN MA'LUMOT OLISH
+# float — KASR SON
 # ------------------------------------------------------------
 
 """
-input() — bu foydalanuvchidan klaviaturadan ma'lumot oladi.
-Qavs ichidagi matn ekranda ko'rsatiladi (so'rov sifatida).
+float — kasr sonlar uchun ishlatiladi.
 
-MUHIM: input() DOIM string (matn) qaytaradi!
-       Hisob-kitob qilish uchun int() yoki float() ishlatish kerak.
+Python’da kasr son ajratishda vergul emas, nuqta ishlatiladi.
 """
 
-# ASOSIY ISHLATISH:
-# (Quyidagi qatorlar dastur ishga tushganda so'raydi)
+narx = 12500.50
+boy = 1.75
+harorat = 36.6
+pi = 3.14
+
+print(narx)
+print(boy)
+print(harorat)
+print(pi)
+
+# NOTO‘G‘RI:
+# narx = 12,5       # Bu Python’da kasr son hisoblanmaydi
+
+# TO‘G‘RI:
+narx = 12.5
+
+
+# ------------------------------------------------------------
+# bool — BOOLEAN
+# ------------------------------------------------------------
+
+"""
+bool — faqat 2 ta qiymat saqlaydi:
+
+    True    — rost, ha, to‘g‘ri
+    False   — yolg‘on, yo‘q, noto‘g‘ri
+
+True va False katta harf bilan yoziladi.
+"""
+
+talaba = True
+tizim_ochiq = False
+
+print(talaba)
+print(tizim_ochiq)
+
+# Misollar
+yosh = 20
+balog_atga_yetgan = yosh >= 18
+
+print(balog_atga_yetgan)     # Natija: True
+
+baho = 45
+imtihondan_otdi = baho >= 60
+
+print(imtihondan_otdi)       # Natija: False
+
+
+# ------------------------------------------------------------
+# type() — MA’LUMOT TURINI ANIQLASH
+# ------------------------------------------------------------
+
+"""
+type() funksiyasi o‘zgaruvchining data type’ini ko‘rsatadi.
+"""
+
+ism = "Ali"
+yosh = 18
+narx = 12.5
+talaba = True
+
+print(type(ism))       # Natija: <class 'str'>
+print(type(yosh))      # Natija: <class 'int'>
+print(type(narx))      # Natija: <class 'float'>
+print(type(talaba))    # Natija: <class 'bool'>
+
+
+# ------------------------------------------------------------
+# CASTING — MA’LUMOT TURINI O‘ZGARTIRISH
+# ------------------------------------------------------------
+
+"""
+Casting — ma’lumot turini boshqa turga o‘zgartirish.
+
+Asosiy casting funksiyalari:
+
+    str()       → matnga aylantiradi
+    int()       → butun songa aylantiradi
+    float()     → kasr songa aylantiradi
+    bool()      → True yoki False’ga aylantiradi
+"""
+
+
+# ------------------------------------------------------------
+# str() — MATNGA AYLANTIRISH
+# ------------------------------------------------------------
+
+yosh = 18
+yosh_matn = str(yosh)
+
+print(yosh_matn)             # Natija: 18
+print(type(yosh_matn))       # Natija: <class 'str'>
+
+# Son va matnni birlashtirish
+ism = "Ali"
+yosh = 18
+
+print(ism + " " + str(yosh) + " yoshda")
+
+
+# ------------------------------------------------------------
+# int() — BUTUN SONGA AYLANTIRISH
+# ------------------------------------------------------------
+
+yosh_matn = "20"
+yosh = int(yosh_matn)
+
+print(yosh)                  # Natija: 20
+print(type(yosh))            # Natija: <class 'int'>
+
+# float sonni int ga aylantirish
+narx = 12.9
+butun_narx = int(narx)
+
+print(butun_narx)            # Natija: 12
+# int() kasr qismini tashlab yuboradi
+
+# DIQQAT:
+# int("12.5") xato beradi!
+# Chunki "12.5" matn ichida kasr son bor.
+
+
+# ------------------------------------------------------------
+# float() — KASR SONGA AYLANTIRISH
+# ------------------------------------------------------------
+
+son = 25
+kasr_son = float(son)
+
+print(kasr_son)              # Natija: 25.0
+print(type(kasr_son))        # Natija: <class 'float'>
+
+narx_matn = "12500.50"
+narx = float(narx_matn)
+
+print(narx)                  # Natija: 12500.5
+
+
+# ------------------------------------------------------------
+# bool() — BOOLEAN’GA AYLANTIRISH
+# ------------------------------------------------------------
+
+"""
+bool() funksiyasi qiymatni True yoki False’ga aylantiradi.
+
+Quyidagilar False bo‘ladi:
+
+    bool(False)
+    bool(0)
+    bool(0.0)
+    bool("")
+    bool(None)
+
+Qolgan deyarli barcha qiymatlar True bo‘ladi.
+"""
+
+print(bool(True))        # Natija: True
+print(bool(False))       # Natija: False
+
+print(bool(1))           # Natija: True
+print(bool(0))           # Natija: False
+
+print(bool("Ali"))       # Natija: True
+print(bool(""))          # Natija: False
+
+# DIQQAT:
+# "False" — bu matn, shuning uchun True hisoblanadi!
+print(bool("False"))     # Natija: True
+
+
+# ------------------------------------------------------------
+# input() — FOYDALANUVCHIDAN MA’LUMOT OLISH
+# ------------------------------------------------------------
+
+"""
+input() — foydalanuvchidan ma’lumot olish uchun ishlatiladi.
+
+Muhim qoida:
+
+    input() DOIM str, ya’ni matn qaytaradi.
+
+Foydalanuvchi 18 sonini yozsa ham,
+input() uni "18" ko‘rinishida matn sifatida oladi.
+"""
 
 ism = input("Ismingizni kiriting: ")
-print("Salom,", ism)
 
-# ── Sonlar bilan ishlash: int() orqali o'tkazish ─────────────
+print("Assalomu alaykum, " + ism + "!")
+
+# input() orqali yosh olish
+yosh = input("Yoshingizni kiriting: ")
+
+print("Sizning yoshingiz: " + yosh)
+
+# type() bilan tekshirish
+print(type(yosh))        # Natija: <class 'str'>
+
+
+# ------------------------------------------------------------
+# input() VA CASTING BILAN ISHLASH
+# ------------------------------------------------------------
+
 """
-Agar raqam kiritishni so'rasak:
-  n = input("Son: ")     →  n = "15"  (string!)
-  print(n + 1)           →  XATO! Matnga son qo'shib bo'lmaydi
-
-To'g'ri yo'l:
-  n = int(input("Son: "))  →  n = 15  (int)
-  print(n + 1)             →  16  ✅
+Agar input orqali son olish kerak bo‘lsa,
+uni int() yoki float() bilan aylantirish kerak.
 """
 
-# MISOLLAR (# ni olib tashlang va ishga tushiring):
+yosh = int(input("Yoshingizni kiriting: "))
+print(yosh)
+print(type(yosh))        # Natija: <class 'int'>
 
-# MISOL 1 — Ismni so'rash
+narx = float(input("Mahsulot narxini kiriting: "))
+print(narx)
+print(type(narx))        # Natija: <class 'float'>
+
+
+# ------------------------------------------------------------
+# ARIFMETIK OPERATORLAR
+# ------------------------------------------------------------
+
+"""
+Operator — bu sonlar ustida amal bajaruvchi belgi.
+
+Python’da 7 ta asosiy arifmetik operator bor:
+
+  Operator   Nomi                    Misol       Natija
+  ────────   ──────────────────────  ─────────   ──────
+  +          Qo‘shish                5 + 3       8
+  -          Ayirish                 10 - 4      6
+  *          Ko‘paytirish            3 * 7       21
+  /          Bo‘lish                 20 / 4      5.0
+  %          Qoldiq                  10 % 3      1
+  //         Butun bo‘lish           10 // 3     3
+  **         Daraja                   2 ** 8     256
+"""
+
+
+# ── + Qo‘shish ──────────────────────────────────────────────
+
+print(5 + 3)            # Natija: 8
+print(100 + 250)        # Natija: 350
+
+
+# ── - Ayirish ───────────────────────────────────────────────
+
+print(10 - 4)           # Natija: 6
+print(1000 - 375)       # Natija: 625
+
+
+# ── * Ko‘paytirish ──────────────────────────────────────────
+
+print(3 * 7)            # Natija: 21
+print(12 * 12)          # Natija: 144
+
+
+# ── / Bo‘lish ───────────────────────────────────────────────
+
+"""
+/ bilan bo‘lishda natija har doim float bo‘ladi.
+"""
+
+print(20 / 4)           # Natija: 5.0
+print(7 / 2)            # Natija: 3.5
+
+
+# ── % Qoldiq ────────────────────────────────────────────────
+
+"""
+% — bo‘lishdan qolgan qoldiqni beradi.
+"""
+
+print(10 % 3)           # Natija: 1
+print(15 % 4)           # Natija: 3
+print(10 % 2)           # Natija: 0
+
+# Sonning juft yoki toqligini aniqlash
+print(14 % 2)           # Natija: 0 → juft son
+print(17 % 2)           # Natija: 1 → toq son
+
+
+# ── // Butun bo‘lish ────────────────────────────────────────
+
+"""
+// bilan bo‘lganda faqat butun qismi olinadi.
+
+Masalan:
+
+    10 / 3     → 3.333...
+    10 // 3    → 3
+"""
+
+print(10 // 3)          # Natija: 3
+print(7 // 2)           # Natija: 3
+print(15 // 4)          # Natija: 3
+
+
+# ── ** Daraja ───────────────────────────────────────────────
+
+"""
+** — bir sonni boshqa son darajasiga ko‘taradi.
+"""
+
+print(2 ** 8)           # Natija: 256
+print(3 ** 3)           # Natija: 27
+print(5 ** 2)           # Natija: 25
+
+
+# ------------------------------------------------------------
+# ARIFMETIK AMALLAR KETMA-KETLIGI
+# ------------------------------------------------------------
+
+"""
+Python amallarni quyidagi tartibda bajaradi:
+
+  1. Qavs ichidagi amal: ()
+  2. Daraja: **
+  3. Ko‘paytirish va bo‘lish: *, /, //, %
+  4. Qo‘shish va ayirish: +, -
+"""
+
+print(2 + 3 * 4)        # Natija: 14
+# Avval 3 * 4 = 12, keyin 2 + 12 = 14
+
+print((2 + 3) * 4)      # Natija: 20
+# Avval qavs ichidagi 2 + 3 = 5, keyin 5 * 4 = 20
+
+
+# ------------------------------------------------------------
+# SONLAR BILAN ISHLASH FUNKSIYALARI
+# ------------------------------------------------------------
+
+"""
+Python’da sonlar bilan ishlash uchun foydali funksiyalar bor:
+
+    abs()       → sonning mutlaq qiymati
+    round()     → sonni yaxlitlash
+    max()       → eng katta son
+    min()       → eng kichik son
+    pow()       → darajaga ko‘tarish
+"""
+
+
+# ── abs() — Mutlaq qiymat ───────────────────────────────────
+
+"""
+abs() manfiy sonni musbat qiymatga aylantiradi.
+"""
+
+print(abs(-10))         # Natija: 10
+print(abs(15))          # Natija: 15
+print(abs(-3.5))        # Natija: 3.5
+
+
+# ── round() — Yaxlitlash ────────────────────────────────────
+
+print(round(3.4))       # Natija: 3
+print(round(3.7))       # Natija: 4
+print(round(12.567))    # Natija: 13
+
+# Verguldan keyin nechta xona qolishini ko‘rsatish
+print(round(3.14159, 2))    # Natija: 3.14
+print(round(12.5678, 3))    # Natija: 12.568
+
+
+# ── max() — Eng katta son ───────────────────────────────────
+
+print(max(5, 10, 3))        # Natija: 10
+print(max(100, 25, 999))    # Natija: 999
+
+
+# ── min() — Eng kichik son ──────────────────────────────────
+
+print(min(5, 10, 3))        # Natija: 3
+print(min(100, 25, 999))    # Natija: 25
+
+
+# ── pow() — Darajaga ko‘tarish ──────────────────────────────
+
+print(pow(2, 8))            # Natija: 256
+print(pow(5, 2))            # Natija: 25
+
+# pow(2, 8) va 2 ** 8 bir xil natija beradi
+print(2 ** 8)               # Natija: 256
+
+
+# ------------------------------------------------------------
+# AMALIY MISOLLAR
+# ------------------------------------------------------------
+
+# MISOL 1 — Foydalanuvchi ma’lumotlari
 ism = input("Ismingizni kiriting: ")
-print("Assalomu alaykum,", ism + "!")
+yosh = int(input("Yoshingizni kiriting: "))
 
-# MISOL 2 — Yosh hisoblash
-tugilgan_yil = int(input("Tug'ilgan yilingizni kiriting: "))
-yosh = 2025 - tugilgan_yil
-print("Sizning yoshingiz:", yosh)
-
-# MISOL 3 — Ikki son qo'shish
-a = int(input("Birinchi son: "))
-b = int(input("Ikkinchi son: "))
-natija = a + b
-print("Yig'indi:", natija)
-
-# MISOL 4 — Kasr son bilan ishlash
-narx = float(input("Narxni kiriting: "))
-soni = int(input("Nechta? "))
-jami = narx * soni
-print("Jami to'lov:", jami)
+print("Assalomu alaykum, " + ism + "!")
+print("Siz " + str(yosh) + " yoshdasiz.")
 
 
-# ------------------------------------------------------------
-# SONLAR BILAN ISHLASH (Qo'shimcha funksiyalar)
-# ------------------------------------------------------------
+# MISOL 2 — Tug‘ilgan yilni aniqlash
+joriy_yil = 2026
+yosh = int(input("Yoshingizni kiriting: "))
 
-"""
-Python'da sonlar bilan ishlash uchun qulay funksiyalar:
+tugilgan_yil = joriy_yil - yosh
 
-  abs(x)       — mutlaq qiymat (manfiy bo'lsa musbatga aylantiradi)
-  round(x, n)  — yaxlitlash (n — o'nlik raqamlar soni)
-  max(a, b, c) — eng katta son
-  min(a, b, c) — eng kichik son
-  pow(x, y)    — x ** y  (darajaga ko'tarish)
-"""
-
-# abs() — mutlaq qiymat
-print(abs(-15))          # 15
-print(abs(7))            # 7
-print(abs(-3.14))        # 3.14
-
-# round() — yaxlitlash
-print(round(3.7))        # 4
-print(round(3.2))        # 3
-print(round(3.14159, 2)) # 3.14   (2 ta o'nlik raqam)
-print(round(3.14159, 4)) # 3.1416 (4 ta o'nlik raqam)
-
-# max() va min()
-print(max(10, 5, 8))     # 10  (eng katta)
-print(min(10, 5, 8))     # 5   (eng kichik)
-print(max(3, 3, 3))      # 3
-
-# pow()
-print(pow(2, 8))         # 256  (2 ** 8 bilan bir xil)
-print(pow(3, 3))         # 27
+print("Siz taxminan " + str(tugilgan_yil) + "-yilda tug‘ilgansiz.")
 
 
-# ------------------------------------------------------------
-# AMALIY MISOL — Hammasi birgalikda
-# ------------------------------------------------------------
+# MISOL 3 — Ikki sonning yig‘indisi
+son1 = int(input("Birinchi sonni kiriting: "))
+son2 = int(input("Ikkinchi sonni kiriting: "))
 
-"""
-Quyidagi kod foydalanuvchidan ma'lumot olib,
-hisob-kitob qiladi va chiqaradi.
-(# ni olib tashlang va ishga tushiring)
-"""
+yigindi = son1 + son2
 
-# --- MISOL: To'liq hisob ---
-ism         = input("Ismingiz: ")
-tugilgan    = int(input("Tug'ilgan yilingiz: "))
-boy_cm      = float(input("Bo'yingiz (sm da): "))
+print("Yig‘indi:", yigindi)
 
-yosh        = 2025 - tugilgan
-boy_m       = round(boy_cm / 100, 2)
 
-print()
-print("=== SHAXSIY MA'LUMOTLAR ===")
-print("Ism      :", ism)
-print("Yosh     :", yosh)
-print("Bo'y (sm):", boy_cm)
-print("Bo'y (m) :", boy_m)
+# MISOL 4 — Doiraning yuzini hisoblash
+radius = float(input("Doira radiusini kiriting: "))
+
+pi = 3.14
+yuza = pi * radius ** 2
+
+print("Doiraning yuzasi:", yuza)
+
+
+# MISOL 5 — Daqiqani soat va daqiqaga aylantirish
+daqiqalar = int(input("Daqiqani kiriting: "))
+
+soat = daqiqalar // 60
+qolgan_daqiqa = daqiqalar % 60
+
+print(daqiqalar, "daqiqa =", soat, "soat", qolgan_daqiqa, "daqiqa")
 
 
 # ------------------------------------------------------------
@@ -394,93 +676,99 @@ print("Bo'y (m) :", boy_m)
 # ------------------------------------------------------------
 
 """
-TOPSHIRIQ 1 — O'zgaruvchilar:
-  Quyidagi o'zgaruvchilarni yarating va ekranga chiqaring:
-    - sevimli_rang  (string)
-    - sinf_raqami   (int)
-    - o'rtacha_ball (float)
-    - faol          (bool — True/False)
+TOPSHIRIQ 1 — Oson:
 
-TOPSHIRIQ 2 — Casting:
-  Quyidagilarni hisoblang va turini tekshiring:
-    - "2025" mantn  →  int ga aylantiring
-    - 7 soni        →  float ga aylantiring
-    - 3.99 float    →  int ga aylantiring (natija qanday?)
+  Quyidagi o‘zgaruvchilarni yarating:
 
-TOPSHIRIQ 3 — Boolean:
-  Quyidagilarni tasavvur qiling va True/False ni chiqaring:
-    - 100 > 50
-    - 7 == 8
-    - "python" != "java"
-    - bool(0) va bool(100)
+    - ism
+    - familiya
+    - yosh
+    - shahar
+    - talaba
 
-TOPSHIRIQ 4 — input() bilan kalkulator:
-  Foydalanuvchidan ikkita son oling (int yoki float sifatida),
-  keyin ekranga chiqaring:
-    - Yig'indi (+)
-    - Ayirma  (-)
-    - Ko'paytma (*)
-    - Bo'linma  (/)
+  So‘ng ularni print() orqali ekranga chiqaring.
 
-TOPSHIRIQ 5 — Yoshni hisoblash:
-  Foydalanuvchidan ismini va tug'ilgan yilini so'rang.
-  Yoshini hisoblab, quyidagi formatda chiqaring:
-    "Salom, [ism]! Siz [yosh] yoshdasiz."
+
+TOPSHIRIQ 2 — Data Type:
+
+  Quyidagi qiymatlarning type()ini ekranga chiqaring:
+
+    "Python"
+    2026
+    3.14
+    True
+    -50
+
+
+TOPSHIRIQ 3 — Casting:
+
+  Quyidagi o‘zgaruvchilarni kerakli type’ga o‘tkazing:
+
+    yosh = "18"        → int
+    narx = "12500.5"   → float
+    son = 50           → str
+
+
+TOPSHIRIQ 4 — Foydalanuvchi ma’lumotlari:
+
+  Foydalanuvchidan quyidagilarni so‘rang:
+
+    - Ismi
+    - Yoshi
+    - Shahrini
+
+  Quyidagiga o‘xshash natija chiqaring:
+
+    Assalomu alaykum, Ali!
+    Siz 18 yoshdasiz.
+    Siz Toshkent shahrida yashaysiz.
+
+
+TOPSHIRIQ 5 — Hisob-kitob:
+
+  Foydalanuvchidan 2 ta son oling.
+
+  Quyidagilarni ekranga chiqaring:
+
+    - Yig‘indisi
+    - Ayirmasi
+    - Ko‘paytmasi
+    - Bo‘linmasi
+
+
+TOPSHIRIQ 6 — Qiziqarli:
+
+  Foydalanuvchidan umumiy soniyalarni so‘rang.
+
+  Uni soat, daqiqa va soniyaga aylantiring.
+
+  Masalan:
+
+    3675 soniya = 1 soat 1 daqiqa 15 soniya
 """
 
 
 # ------------------------------------------------------------
-# QUSHIMCHA RESURSLAR (Uyga vazifa uchun)
+# BUGUNGI DARSDA NIMALAR O‘RGANDIK?
 # ------------------------------------------------------------
 
 """
-📚 RASMIY HUJJATLAR:
-   https://docs.python.org/3/library/stdtypes.html
-   — Python ma'lumot turlari haqida to'liq ma'lumot (inglizcha)
-
-🌐 W3SCHOOLS:
-   https://www.w3schools.com/python/python_variables.asp
-   — O'zgaruvchilar
-
-   https://www.w3schools.com/python/python_datatypes.asp
-   — Data Types
-
-   https://www.w3schools.com/python/python_casting.asp
-   — Casting
-
-   https://www.w3schools.com/python/python_booleans.asp
-   — Boolean
-
-   https://www.w3schools.com/python/python_user_input.asp
-   — input() funksiyasi
-"""
-
-
-# ------------------------------------------------------------
-# BUGUNGI DARSDA NIMALAR O'RGANDIK?
-# ------------------------------------------------------------
-
-"""
-✔️ O'zgaruvchilar — nom = qiymat
-✔️ Data Types:
-    str      — matn ("Salom", 'Ali')
-    int      — butun son (15, -3, 1000)
-    float    — kasr son (3.14, -0.5)
-    complex  — kompleks son (3+2j)
-✔️ type()   — qiymat turini aniqlash
-✔️ Casting:
-    str()   — matnga aylantirish
-    int()   — butun songa aylantirish
-    float() — kasr songa aylantirish
-✔️ Boolean:
-    True / False
-    Solishtirish operatorlari: >, <, ==, !=, >=, <=
-    bool() funksiyasi
-✔️ input()  — foydalanuvchidan ma'lumot olish (DOIM string qaytaradi!)
-✔️ Sonlar bilan ishlash:
-    abs()   — mutlaq qiymat
-    round() — yaxlitlash
-    max()   — eng katta son
-    min()   — eng kichik son
-    pow()   — daraja
+✔️ O‘zgaruvchi nima ekanini
+✔️ O‘zgaruvchi nomlash qoidalarini
+✔️ str — matn
+✔️ int — butun son
+✔️ float — kasr son
+✔️ bool — True va False
+✔️ type() bilan data type aniqlashni
+✔️ str(), int(), float(), bool() casting funksiyalarini
+✔️ input() bilan foydalanuvchidan ma’lumot olishni
+✔️ Arifmetik operatorlarni:
+    +   Qo‘shish
+    -   Ayirish
+    *   Ko‘paytirish
+    /   Bo‘lish
+    %   Qoldiq
+    //  Butun bo‘lish
+    **  Daraja
+✔️ abs(), round(), max(), min(), pow() funksiyalarini
 """
