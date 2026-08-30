@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- =========================================================
+     DARS 23: Mini App — Katalog va Savat
+     Muallif: Isroilov Rustam (Abruisdev)
+     ========================================================= -->
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Store</title>
+  <style>
+    body { margin: 0; padding: 16px; font-family: Arial; background: var(--tg-theme-bg-color, #fff); color: var(--tg-theme-text-color, #111); }
+    #catalog { display: grid; gap: 12px; }
+    .product { padding: 14px; border: 1px solid #ccc; border-radius: 12px; }
+    button { padding: 10px; border: 0; border-radius: 8px; background: var(--tg-theme-button-color, #2481cc); color: var(--tg-theme-button-text-color, #fff); }
+    #cart { position: sticky; bottom: 0; padding: 12px; background: var(--tg-theme-secondary-bg-color, #f2f2f2); }
+  </style>
+</head>
+<body>
+  <h1>Mini Store</h1>
+  <section id="catalog"></section>
+  <footer id="cart">Savat bo‘sh</footer>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    const tg = window.Telegram?.WebApp;
+    const catalog = document.querySelector("#catalog");
+    const cartElement = document.querySelector("#cart");
+    const cart = new Map();
+
+    if (tg) {
+      tg.ready();
+      tg.expand();
+      tg.MainButton.setText("Buyurtma berish");
+      tg.MainButton.onClick(createOrder);
+    }
+
+    async function loadProducts() {
+      const response = await fetch("/api/products");
+      const products = await response.json();
+
+      catalog.innerHTML = products.map((product) => `
+        <article class="product">
+          <h2>${product.name}</h2>
+          <p>${product.price.toLocaleString("uz-UZ")} so‘m</p>
+          <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Savatga qo‘shish</button>
+        </article>
+      `).join("");
+    }
+
+    function addToCart(id, name, price) {
+      const oldProduct = cart.get(id) ?? { id, name, price, quantity: 0 };
+      cart.set(id, { ...oldProduct, quantity: oldProduct.quantity + 1 });
+      renderCart();
+    }
+
+    function renderCart() {
+      const items = [...cart.values()];
+      const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cartElement.textContent = `Savat: ${items.length} tur mahsulot | ${total.toLocaleString("uz-UZ")} so‘m`;
+
+      if (tg) {
+        tg.MainButton.setParams({ is_visible: items.length > 0 });
+      }
+    }
+
+    async function createOrder() {
+      const items = [...cart.values()];
+
+      if (!items.length) return;
+
+      tg?.MainButton.showProgress();
+
+      try {
+        const response = await fetch("/api/orders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Telegram-Init-Data": tg?.initData ?? "",
+          },
+          body: JSON.stringify({ items }),
+        });
+        const result = await response.json();
+        tg?.showAlert(`Buyurtma #${result.order_id} qabul qilindi.`);
+        cart.clear();
+        renderCart();
+      } catch (error) {
+        tg?.showAlert("Buyurtma yuborilmadi. Qayta urinib ko‘ring.");
+      } finally {
+        tg?.MainButton.hideProgress();
+      }
+    }
+
+    loadProducts();
+  </script>
