@@ -1,7 +1,10 @@
 Telegram Bot & Mini Apps Fullstack
+
 Talab qilinadigan bilimlar: Python Foundation, Git/GitHub, venv, pip.
 Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha, Final Sprint va Demo Day.
+
 1-modul: Aiogram 3 asoslari
+
 1. Kirish: Telegram Bot API va ish muhitini tayyorlash
 ✔️ Telegram Bot API, update, polling va webhook tushunchasi
 ✔️ @BotFather orqali bot yaratish
@@ -9,6 +12,7 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ venv, pip install aiogram
 ✔️ Birinchi Echo Bot
 ✔️ GitHub repository yaratish  
+
 2. Asyncio va Aiogram arxitekturasi
 ✔️ async def, await, asyncio.run()
 ✔️ Bot, Dispatcher, Router
@@ -16,6 +20,7 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ dp.include_router()
 ✔️ Professional loyiha strukturasi: handlers/, keyboards/, services/, database/, config/
 ✔️ Polling orqali botni ishga tushirish  
+
 3. Komandalar, xabarlar va filterlar
 ✔️ CommandStart() va Command()
 ✔️ message.answer() va message.reply()
@@ -23,14 +28,17 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ Magic Filterlarni birlashtirish: &, |, ~
 ✔️ HTML formatlash
 ✔️ Foydalanuvchi ma’lumotlarini olish  
+
 2-modul: Bot interfeysi va dialoglar
+
 4. Reply Keyboard
 ✔️ ReplyKeyboardMarkup
 ✔️ KeyboardButton
 ✔️ ReplyKeyboardBuilder
 ✔️ Dinamik menyu
 ✔️ Kontakt va location so‘rash
-✔️ Asosiy menyu yaratish  
+✔️ Asosiy menyu yaratish 
+
 5. Inline Keyboard va Callback Query
 ✔️ InlineKeyboardButton
 ✔️ InlineKeyboardBuilder
@@ -39,12 +47,14 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ edit_text() va edit_reply_markup()
 ✔️ Ha/Yo‘q tasdiqlash oynasi
 ✔️ Pagination  
+
 6. FSM — I qism
 ✔️ FSM nima
 ✔️ StatesGroup, State
 ✔️ FSMContext
 ✔️ set_state(), update_data(), get_data()
 ✔️ Ro‘yxatdan o‘tish formasi: ism → yosh → telefon  
+
 7. FSM — II qism
 ✔️ state.clear()
 ✔️ Bekor qilish tugmasi
@@ -52,27 +62,32 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ Input validatsiyasi
 ✔️ FSM va Inline Keyboard
 ✔️ Buyurtma berish dialogi  
+
 3-modul: Professional bot arxitekturasi
+
 8. Database: PostgreSQL va SQLAlchemy Async
 ✔️ SQLite va PostgreSQL farqi
 ✔️ PostgreSQL o‘rnatish
 ✔️ SQLAlchemy Async
 ✔️ Model: User, Product, Order
 ✔️ Migration tushunchasi
-✔️ Professional database strukturasi  
+✔️ Professional database strukturasi
+
 9. CRUD, Service va Repository qatlamlari
 ✔️ Foydalanuvchi qo‘shish
 ✔️ Ma’lumotni olish, yangilash, o‘chirish
 ✔️ services/ va repositories/ nima
 ✔️ Bot handlerini database kodidan ajratish
 ✔️ Savat va buyurtmalar logikasi  
+
 10. Middleware va Dependency Injection
 ✔️ Middleware nima
 ✔️ Outer va Inner middleware
 ✔️ Foydalanuvchini avtomatik bazaga yozish
 ✔️ Database session uzatish
 ✔️ Admin tekshirish
-✔️ Spamdan himoya qilish  
+✔️ Spamdan himoya qilish
+
 11. Media, Deep Link va qo‘shimcha imkoniyatlar
 ✔️ Rasm, video, audio, document yuborish
 ✔️ Foydalanuvchi yuborgan faylni yuklab olish
@@ -80,6 +95,7 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ set_my_commands()
 ✔️ Deep linking va referral
 ✔️ Kanalga a’zolikni tekshirish  
+
 12. Background task, Error Handling va Logging
 ✔️ Global error handler
 ✔️ try / except
@@ -87,6 +103,7 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ Spam va flooddan himoya
 ✔️ Rejalashtirilgan eslatmalar
 ✔️ Bot bloklanganda xatoni boshqarish  
+
 13. Testing, Security va Configuration
 ✔️ Handler testlari
 ✔️ .env, Pydantic Settings
@@ -94,19 +111,24 @@ Jami: 30 dars — 15 ta Bot mavzusi, 10 ta Mini App/Backend mavzusi, 3 ta loyiha
 ✔️ requirements.txt
 ✔️ .gitignore
 ✔️ Logging va xatolarni tekshirish  
+
 14. Deploy: Polling, Webhook, Docker
 ✔️ Polling va Webhook farqi
 ✔️ Docker asoslari
 ✔️ VPS’ga joylashtirish
 ✔️ systemd
 ✔️ Webhook uchun HTTPS
-✔️ Production .env sozlamalari  
+✔️ Production .env sozlamalari
+
 15. Takrorlash va EXAM
 ✔️ Nazariy savol-javob
 ✔️ Noldan kichik bot yozish
 ✔️ GitHub repository tekshirish  
+
 4-modul: Telegram Web App / Mini App
+
 Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochiladigan mobil web-ilova.
+
 16. Telegram Mini Apps asoslari
 ✔️ Web App nima
 ✔️ Bot va Mini App arxitekturasi
@@ -114,20 +136,23 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ Web App ochish usullari
 ✔️ WebAppInfo, Menu Button, inline tugma
 ✔️ HTTPS nima uchun majburiyligi  
+
 17. Web App uchun HTML va CSS
 ✔️ HTML struktura
 ✔️ Form, button, card, image
 ✔️ CSS asoslari
 ✔️ Flexbox
 ✔️ Mobilga mos responsive dizayn
-✔️ Telegram ranglariga mos UI  
+✔️ Telegram ranglariga mos UI 
+
 18. JavaScript va Frontend mantiqi
 ✔️ O‘zgaruvchi, funksiya, event
 ✔️ DOM bilan ishlash
 ✔️ Formdan ma’lumot olish
 ✔️ fetch() orqali API so‘rov yuborish
 ✔️ Savat holatini boshqarish
-✔️ LocalStorage asoslari  
+✔️ LocalStorage asoslari 
+
 19. Telegram WebApp JavaScript API
 ✔️ window.Telegram.WebApp
 ✔️ ready() va expand()
@@ -136,6 +161,7 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ BackButton
 ✔️ showAlert(), showPopup()
 ✔️ Foydalanuvchi interfeysini Telegram ichiga moslashtirish  
+
 20. Botdan Web App’ni ochish
 ✔️ KeyboardButton(web_app=...)
 ✔️ InlineKeyboardButton(web_app=...)
@@ -143,13 +169,15 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ sendData() qachon ishlatilishi
 ✔️ web_app_data update qabul qilish
 ✔️ Cheklovlar: Web App tugmalari user va botning private chatida ishlashini tushuntirish. Telegram Bot API
+
 21. FastAPI: Mini App backend yaratish
 ✔️ FastAPI asoslari
 ✔️ GET va POST endpoint
 ✔️ Pydantic schema
 ✔️ Frontenddan fetch() bilan so‘rov yuborish
 ✔️ Static frontendni servis qilish
-✔️ CORS tushunchasi va sozlash  
+✔️ CORS tushunchasi va sozlash 
+
 22. Telegram Web App autentifikatsiyasi
 ✔️ initData va initDataUnsafe farqi
 ✔️ Nega frontenddagi user ID’ga ishonib bo‘lmaydi
@@ -157,6 +185,7 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ Telegram signature tekshiruvi
 ✔️ Foydalanuvchini database bilan bog‘lash
 ✔️ Eskirgan auth_dateni tekshirish  
+
 23. Mini App: Katalog va Savat
 ✔️ Mahsulotlar kartasi
 ✔️ Kategoriyalar
@@ -164,12 +193,14 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ Jami narxni hisoblash
 ✔️ Quantity oshirish/kamaytirish
 ✔️ Main Button orqali buyurtma berish  
+
 24. Mini App: Buyurtma va Bot integratsiyasi
 ✔️ Frontenddan buyurtma yuborish
 ✔️ FastAPI’da buyurtmani qabul qilish
 ✔️ PostgreSQL’ga saqlash
 ✔️ Bot orqali administratorga xabar yuborish
-✔️ Foydalanuvchiga buyurtma holatini ko‘rsatish  
+✔️ Foydalanuvchiga buyurtma holatini ko‘rsatish
+
 25. Bot + Mini App deploy
 ✔️ Bot, FastAPI va PostgreSQL arxitekturasi
 ✔️ Docker Compose
@@ -177,19 +208,23 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ Nginx reverse proxy
 ✔️ Webhook
 ✔️ Production tekshiruvlari  
+
 5-modul: Loyihalar
+
 26. Amaliy loyiha 1: To-do / Eslatma bot
 ✔️ FSM orqali vazifa qo‘shish
 ✔️ PostgreSQL’da saqlash
 ✔️ Bajarildi tugmasi
 ✔️ Eslatma yuborish
 ✔️ Logging  
+
 27. Amaliy loyiha 2: Viktorina yoki Admin bot
 ✔️ Savol-javob
 ✔️ Ball va leaderboard
 ✔️ Admin panel funksiyalari
 ✔️ Kanal a’zoligini tekshirish
-✔️ Database integratsiyasi  
+✔️ Database integratsiyasi 
+
 28. Amaliy loyiha 3: Mini Store Web App
 ✔️ Bot ichidan Mini App ochish
 ✔️ HTML/CSS/JS katalog
@@ -197,13 +232,15 @@ Web App’ni darsda Telegram Mini App deb ham ayting. Bu Telegram ichida ochilad
 ✔️ FastAPI API
 ✔️ PostgreSQL buyurtmalar
 ✔️ Admin uchun bot xabarnomasi  
+
 29. Final Sprint va Code Review
 ✔️ O‘quvchi o‘z loyihasini yakunlaydi
 ✔️ Kod strukturasi
 ✔️ README
 ✔️ .env.example
 ✔️ Docker va deploy
-✔️ Mentor code review  
+✔️ Mentor code review 
+
 30. Final Demo Day
 ✔️ Loyihani taqdim etish
 ✔️ GitHub portfolio
