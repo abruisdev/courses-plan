@@ -1,375 +1,230 @@
 # ============================================================
-#   DARS 11: Pythonda Dictionary (Lug'at)
+#   DARS 11: Xatolar bilan Ishlash va Debugging
 #   Muallif: Isroilov Rustam (Abruisdev)
 # ============================================================
 
+"""
+BUGUNGI DARSDA:
+  ✔️ SyntaxError, TypeError, ValueError, KeyError
+  ✔️ Xato matnini o‘qish
+  ✔️ try / except / else / finally
+  ✔️ raise bilan o‘zimiz xato chiqarish
+  ✔️ print() va Debugger bilan xato topish
+"""
+
+
 # ------------------------------------------------------------
-# DICTIONARY NIMA?
+# XATO (ERROR) NIMA?
 # ------------------------------------------------------------
 
 """
-Dictionary — bu "kalit: qiymat" (key: value) juftlarini saqlaydi.
-Jingalak qavs {} ichida, kalit va qiymat ikki nuqta (:) bilan ajratiladi.
+Xato — dastur ishlashiga to‘sqinlik qiladigan muammo.
 
-Kundalik hayotda:
-  - Telefon kitobi: {"Ali": "93-123-45-67", "Vali": "90-987-65-43"}
-  - Mahsulot narxlari: {"non": 3000, "sut": 8000, "tuxum": 15000}
-  - O'quvchi ma'lumoti: {"ism": "Ali", "yosh": 15, "sinf": "9-A"}
-
-Xususiyatlari:
-  ✔️ Kalit (key) — YAGONA va O'ZGARMAS bo'lishi kerak (str, int, tuple)
-  ✔️ Qiymat (value) — istalgan tur bo'lishi mumkin
-  ✔️ O'zgaruvchan — qo'shish, o'chirish, o'zgartirish mumkin
-  ✔️ Python 3.7+ da TARTIBLI (kiritilgan tartibda saqlaydi)
+Traceback matnini pastdan yuqoriga qarab o‘qing:
+  1. Oxirgi qatorda xato turi va sababi yoziladi.
+  2. Undan yuqorida xato qaysi fayl va qatorda bo‘lgani ko‘rsatiladi.
 """
 
-# ── Dictionary yaratish ───────────────────────────────────────
-bo_sh     = {}
-talaba    = {"ism": "Ali", "yosh": 15, "sinf": "9-A"}
-narxlar   = {"non": 3000, "sut": 8000, "tuxum": 15000}
-aralash   = {1: "bir", 2: "ikki", 3: "uch"}
 
-print(talaba)        # {'ism': 'Ali', 'yosh': 15, 'sinf': '9-A'}
-print(type(talaba))  # <class 'dict'>
-
-
-# ============================================================
-# QIYMATGA MUROJAAT — KEY ORQALI
-# ============================================================
+# ------------------------------------------------------------
+# ASOSIY XATO TURLARI
+# ------------------------------------------------------------
 
 """
-dict[kalit]    — qiymatni oladi (topilmasa XATO!)
-dict.get(kalit)— qiymatni oladi (topilmasa None yoki default)
+SyntaxError — kod yozish qoidasi buzilgan.
+  Misol: if dan keyin : qo‘ymaslik.
+
+TypeError — noto‘g‘ri turdagi qiymatlar bilan amal qilish.
+  Misol: "5" + 3.
+
+ValueError — turi to‘g‘ri, lekin qiymati noto‘g‘ri.
+  Misol: int("salom").
+
+KeyError — dictionary’da yo‘q kalitga murojaat qilish.
+  Misol: talaba["telefon"].
+
+IndexError — listdagi mavjud bo‘lmagan indeksga murojaat qilish.
+  Misol: [1, 2][5].
 """
 
-talaba = {"ism": "Ali", "yosh": 15, "sinf": "9-A", "ball": 87.5}
-
-# ── [] bilan murojaat ─────────────────────────────────────────
-print(talaba["ism"])    # Ali
-print(talaba["yosh"])   # 15
-print(talaba["ball"])   # 87.5
-
-# Mavjud bo'lmagan kalit — XATO!
-# print(talaba["manzil"])  →  KeyError: 'manzil'
-
-# ── get() bilan murojaat — xavfsiz usul ──────────────────────
-print(talaba.get("ism"))       # Ali
-print(talaba.get("manzil"))    # None  (XATO yo'q!)
-print(talaba.get("manzil", "Noma'lum"))   # Noma'lum  (default qiymat)
-
-# ── Kalit mavjudligini tekshirish ─────────────────────────────
-print("ism" in talaba)        # True
-print("manzil" in talaba)     # False
-
-if "ball" in talaba:
-    print(f"Ball: {talaba['ball']}")
+# Quyidagi qatorlar xato berishi mumkin, shuning uchun commentda:
+# print("Yosh: " + 18)        # TypeError
+# print(int("o‘n"))           # ValueError
+# print({"ism": "Ali"}["yosh"])  # KeyError
+# print([10, 20][5])           # IndexError
 
 
-# ============================================================
-# QIYMATNI O'ZGARTIRISH VA QO'SHISH
-# ============================================================
+# ------------------------------------------------------------
+# try VA except
+# ------------------------------------------------------------
 
-talaba = {"ism": "Ali", "yosh": 15}
+"""
+try ichiga xato bo‘lishi mumkin bo‘lgan kod yoziladi.
+except ichiga xatoni boshqaradigan kod yoziladi.
+"""
 
-# ── Mavjud kalitni yangilash ──────────────────────────────────
-talaba["yosh"] = 16
-print(talaba)    # {'ism': 'Ali', 'yosh': 16}
-
-# ── Yangi kalit qo'shish ──────────────────────────────────────
-talaba["sinf"]  = "10-A"
-talaba["ball"]  = 92
-print(talaba)    # {'ism': 'Ali', 'yosh': 16, 'sinf': '10-A', 'ball': 92}
+try:
+    son = int(input("Butun son kiriting: "))
+    print("Siz kiritgan son:", son)
+except ValueError:
+    print("Xato: butun son kiritishingiz kerak")
 
 
-# ============================================================
-# DICTIONARY METODLARI
-# ============================================================
+# Bir nechta xato turini ushlash
+try:
+    son1 = int(input("Birinchi son: "))
+    son2 = int(input("Ikkinchi son: "))
+    print("Natija:", son1 / son2)
+except ValueError:
+    print("Xato: son kiritishingiz kerak")
+except ZeroDivisionError:
+    print("Xato: 0 ga bo‘lish mumkin emas")
 
-ma_lumot = {
-    "ism"   : "Jasur",
-    "yosh"  : 22,
-    "kasb"  : "Dasturchi",
-    "shahar": "Toshkent"
+
+# Exception as error — xato matnini olish
+try:
+    fayl = open("mavjud_emas.txt", "r", encoding="utf-8")
+except FileNotFoundError as error:
+    print("Fayl topilmadi:", error)
+
+
+# ------------------------------------------------------------
+# else VA finally
+# ------------------------------------------------------------
+
+"""
+else — try ichida xato bo‘lmasa ishlaydi.
+finally — xato bo‘lsa ham, bo‘lmasa ham doim ishlaydi.
+"""
+
+try:
+    yosh = int(input("Yoshingizni kiriting: "))
+except ValueError:
+    print("Yosh son bo‘lishi kerak")
+else:
+    print("Siz", yosh, "yoshdasiz")
+finally:
+    print("Dastur yakunlandi")
+
+
+# ------------------------------------------------------------
+# raise — O‘ZIMIZ XATO CHIQARISH
+# ------------------------------------------------------------
+
+"""
+raise — dasturchi belgilagan qoida buzilganda xato chiqaradi.
+"""
+
+
+def yoshni_tekshir(yosh):
+    if yosh < 0:
+        raise ValueError("Yosh manfiy bo‘lishi mumkin emas")
+
+    return "Yosh qabul qilindi"
+
+
+try:
+    print(yoshni_tekshir(18))
+    # print(yoshni_tekshir(-5))
+except ValueError as error:
+    print("Xato:", error)
+
+
+# ------------------------------------------------------------
+# print() BILAN DEBUGGING
+# ------------------------------------------------------------
+
+"""
+Debugging — xatoni qidirish va tuzatish jarayoni.
+O‘zgaruvchi ichidagi qiymatni ko‘rish uchun vaqtincha print() yozish
+mumkin.
+"""
+
+
+def chegirma_hisobla(narx, foiz):
+    print("DEBUG → narx:", narx)
+    print("DEBUG → foiz:", foiz)
+
+    chegirma = narx * foiz / 100
+    print("DEBUG → chegirma:", chegirma)
+
+    return narx - chegirma
+
+
+print(chegirma_hisobla(100_000, 10))
+
+
+# ------------------------------------------------------------
+# PYCHARM DEBUGGER
+# ------------------------------------------------------------
+
+"""
+PyCharm’da Debugger ishlatish:
+
+  1. Kod qatori chapiga bosing — qizil nuqta (breakpoint) chiqadi.
+  2. Run o‘rniga Debug tugmasini bosing.
+  3. Dastur breakpointga kelganda to‘xtaydi.
+  4. Variables oynasidan o‘zgaruvchilar qiymatini ko‘ring.
+  5. Step Over bilan keyingi qatorga o‘ting.
+
+Debugger murakkab koddagi xatoni topishning eng yaxshi usullaridan biri.
+"""
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 1 — XAVFSIZ SON KIRITISH
+# ------------------------------------------------------------
+
+
+def xavfsiz_son_olish(xabar):
+    while True:
+        try:
+            return int(input(xabar))
+        except ValueError:
+            print("Iltimos, butun son kiriting")
+
+
+# yosh = xavfsiz_son_olish("Yoshingiz: ")
+# print(yosh)
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 2 — LOGIN TIZIMI
+# ------------------------------------------------------------
+
+foydalanuvchilar = {
+    "admin": "python123",
+    "ali": "12345",
 }
 
-# ── keys() — Barcha kalitlar ──────────────────────────────────
-print(ma_lumot.keys())
-# dict_keys(['ism', 'yosh', 'kasb', 'shahar'])
+login = input("Login: ")
+parol = input("Parol: ")
 
-# Listga aylantirish:
-kalitlar = list(ma_lumot.keys())
-print(kalitlar)   # ['ism', 'yosh', 'kasb', 'shahar']
+if login not in foydalanuvchilar:
+    print("Bunday foydalanuvchi mavjud emas")
+elif foydalanuvchilar[login] != parol:
+    print("Parol noto‘g‘ri")
+else:
+    print("Tizimga xush kelibsiz")
 
-# ── values() — Barcha qiymatlar ───────────────────────────────
-print(ma_lumot.values())
-# dict_values(['Jasur', 22, 'Dasturchi', 'Toshkent'])
-
-# ── items() — Kalit-qiymat juftlari ──────────────────────────
-print(ma_lumot.items())
-# dict_items([('ism', 'Jasur'), ('yosh', 22), ('kasb', 'Dasturchi'), ('shahar', 'Toshkent')])
-
-# ── get() — Xavfsiz qiymat olish (yuqorida ko'rdik) ──────────
-
-# ── update() — Bir nechta qiymat yangilash/qo'shish ──────────
-"""
-update({kalit: qiymat})  — mavjudni yangilaydi, yo'qni qo'shadi
-"""
-ma_lumot.update({"yosh": 23, "email": "jasur@gmail.com"})
-print(ma_lumot)
-# {'ism': 'Jasur', 'yosh': 23, 'kasb': 'Dasturchi', 'shahar': 'Toshkent', 'email': 'jasur@gmail.com'}
-
-# ── pop() — Kalit bo'yicha o'chirish va qaytarish ────────────
-kasb = ma_lumot.pop("kasb")
-print(kasb)       # Dasturchi
-print(ma_lumot)   # kasb o'chirildi
-
-# ── popitem() — Oxirgi kalit-qiymatni o'chirish ──────────────
-oxirgi = ma_lumot.popitem()
-print(oxirgi)     # ('email', 'jasur@gmail.com')  — tuple holida
-print(ma_lumot)
-
-# ── del — O'chirish ───────────────────────────────────────────
-ma_lumot = {"a": 1, "b": 2, "c": 3}
-del ma_lumot["b"]
-print(ma_lumot)   # {'a': 1, 'c': 3}
-# del ma_lumot    — butun dict ni o'chiradi
-
-# ── clear() — Tozalash ───────────────────────────────────────
-ma_lumot.clear()
-print(ma_lumot)   # {}
-
-# ── copy() — Nusxa ───────────────────────────────────────────
-asl   = {"a": 1, "b": 2}
-nusxa = asl.copy()
-nusxa["c"] = 3
-print(asl)    # {'a': 1, 'b': 2}   — o'zgarmadi
-print(nusxa)  # {'a': 1, 'b': 2, 'c': 3}
-
-# ── dict() — Konstruktor bilan yaratish ──────────────────────
-yangi = dict(ism="Ali", yosh=15, sinf="9-A")
-print(yangi)   # {'ism': 'Ali', 'yosh': 15, 'sinf': '9-A'}
-
-# ── len() — Elementlar soni ───────────────────────────────────
-d = {"a": 1, "b": 2, "c": 3}
-print(len(d))   # 3
-
-
-# ============================================================
-# FOR SIKLI BILAN DICTIONARY
-# ============================================================
-
-talaba = {"ism": "Ali", "yosh": 15, "sinf": "9-A", "ball": 87}
-
-# ── Faqat kalitlarni ko'rish ──────────────────────────────────
-for kalit in talaba:
-    print(kalit)
-# ism  yosh  sinf  ball
-
-# ── Faqat qiymatlarni ko'rish ─────────────────────────────────
-for qiymat in talaba.values():
-    print(qiymat)
-# Ali  15  9-A  87
-
-# ── Kalit va qiymatni birga ko'rish — items() ────────────────
-for kalit, qiymat in talaba.items():
-    print(f"{kalit:10} : {qiymat}")
-# ism        : Ali
-# yosh       : 15
-# sinf       : 9-A
-# ball       : 87
-
-
-# ============================================================
-# ICHMA-ICH DICTIONARY (Nested Dictionary)
-# ============================================================
 
 """
-Dictionary qiymatining o'zi ham dictionary bo'lishi mumkin.
-Bu murakkab ma'lumotlarni saqlashda juda qulay.
-"""
+MUSTAQIL MASHQ TOPSHIRIQLARI:
 
-maktab = {
-    "9-A": {
-        "o'quvchilar": ["Ali", "Vali", "Jasur"],
-        "o'qituvchi" : "Karimov A.",
-        "o'quvchi_soni": 30
-    },
-    "9-B": {
-        "o'quvchilar": ["Bobur", "Nodir", "Sanjar"],
-        "o'qituvchi" : "Rahimov B.",
-        "o'quvchi_soni": 28
-    }
-}
-
-# Ichma-ich ga murojaat:
-print(maktab["9-A"]["o'qituvchi"])          # Karimov A.
-print(maktab["9-B"]["o'quvchi_soni"])       # 28
-print(maktab["9-A"]["o'quvchilar"][0])      # Ali
-
-# Ko'rib chiqish:
-for sinf, ma_lumot in maktab.items():
-    print(f"\n{sinf} sinfi:")
-    print(f"  O'qituvchi    : {ma_lumot['o\'qituvchi']}")
-    print(f"  O'quvchilar   : {', '.join(ma_lumot['o\'quvchilar'])}")
-    print(f"  O'quvchi soni : {ma_lumot['o\'quvchi_soni']}")
-
-# ── Ro'yxat ichida dictionary ─────────────────────────────────
-talabalar = [
-    {"ism": "Ali",   "ball": 87},
-    {"ism": "Vali",  "ball": 92},
-    {"ism": "Jasur", "ball": 78}
-]
-
-for t in talabalar:
-    print(f"{t['ism']}: {t['ball']} ball")
-
-# Eng yuqori ball:
-eng_yaxshi = max(talabalar, key=lambda x: x["ball"])
-print(f"Eng yaxshi: {eng_yaxshi['ism']} — {eng_yaxshi['ball']}")
-
-
-# ============================================================
-# DICTIONARY COMPREHENSION
-# ============================================================
-
-"""
-{kalit: qiymat for element in ketma_ketlik}
-"""
-
-# Sonlarning kvadratlari:
-kvadratlar = {x: x**2 for x in range(1, 6)}
-print(kvadratlar)
-# {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-
-# Faqat juft sonlar:
-juft_kv = {x: x**2 for x in range(1, 11) if x % 2 == 0}
-print(juft_kv)
-# {2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
-
-# So'z uzunliklari:
-so_zlar = ["Python", "Java", "C++", "Kotlin"]
-uzunliklar = {so_z: len(so_z) for so_z in so_zlar}
-print(uzunliklar)
-# {'Python': 6, 'Java': 4, 'C++': 3, 'Kotlin': 6}
-
-
-# ============================================================
-# AMALIY DASTUR — Telefon kitobi
-# ============================================================
-
-print("\n=== TELEFON KITOBI ===")
-
-telefon_kitob = {}
-
-while True:
-    print("\n1 — Qo'shish")
-    print("2 — Qidirish")
-    print("3 — O'chirish")
-    print("4 — Hammasini ko'rish")
-    print("5 — Chiqish")
-
-    tanlov = input("\nTanlov: ")
-
-    if tanlov == "1":
-        ism = input("Ism: ").strip().title()
-        tel = input("Tel: ").strip()
-        telefon_kitob[ism] = tel
-        print(f"✓ {ism} qo'shildi!")
-
-    elif tanlov == "2":
-        ism = input("Qidirish (ism): ").strip().title()
-        if ism in telefon_kitob:
-            print(f"{ism}: {telefon_kitob[ism]}")
-        else:
-            print(f"'{ism}' topilmadi!")
-
-    elif tanlov == "3":
-        ism = input("O'chirish (ism): ").strip().title()
-        if ism in telefon_kitob:
-            del telefon_kitob[ism]
-            print(f"✓ {ism} o'chirildi!")
-        else:
-            print(f"'{ism}' topilmadi!")
-
-    elif tanlov == "4":
-        if telefon_kitob:
-            print("\n--- Kontaktlar ---")
-            for ism, tel in sorted(telefon_kitob.items()):
-                print(f"  {ism:15} : {tel}")
-        else:
-            print("Telefon kitobi bo'sh!")
-
-    elif tanlov == "5":
-        print("Xayr!")
-        break
-
-    else:
-        print("Noto'g'ri tanlov!")
-
-
-# ------------------------------------------------------------
-# MUSTAQIL MASHQ TOPSHIRIQLARI
-# ------------------------------------------------------------
-
-"""
-TOPSHIRIQ 1 — Asosiy (Oson):
-  O'zingiz haqingizda dictionary yarating:
-    ism, familya, yosh, shahar, sevimli_rang
-  a) Har bir kalit-qiymatni items() bilan chiqaring
-  b) "telefon" kalitini qo'shing
-  c) "yosh" ni yangilang
-
-TOPSHIRIQ 2 — O'rta:
-  Mahsulotlar narxlari dictionary:
-    {"non": 3000, "sut": 8000, "tuxum": 15000, "yog": 35000}
-  a) Eng qimmat va eng arzon mahsulotni toping
-  b) Barcha narxlarni 10% oshiring
-  c) Yangi mahsulot qo'shing
-  d) Jami qiymatni hisoblang (sum(dict.values()))
-
-TOPSHIRIQ 3 — Qiyin (Ichma-ich):
-  Quyidagi tuzilmani yarating:
-    {
-      "Ali":   {"matematika": 90, "fizika": 85, "ingliz": 88},
-      "Vali":  {"matematika": 78, "fizika": 92, "ingliz": 80},
-      "Jasur": {"matematika": 95, "fizika": 88, "ingliz": 91}
-    }
-  a) Har bir o'quvchining o'rtacha bahosini chiqaring
-  b) Matematikadan eng yuqori baho olgan o'quvchini toping
-  c) Har bir fan bo'yicha sinfning o'rtachasini hisoblang
-
-TOPSHIRIQ 4 — So'z sanagich (Ijodiy):
-  Foydalanuvchidan jumla oling.
-  Har bir so'z necha marta uchraganini dictionary yordamida hisoblang.
-  Natijani chiqaring.
-  Masalan: "ali vali ali jasur vali ali"
-  → {'ali': 3, 'vali': 2, 'jasur': 1}
+1. 2 ta sonni bo‘luvchi dastur yozing. ValueError va
+   ZeroDivisionError holatlarini boshqaring.
+2. Dictionary’dan foydalanuvchi ismini xavfsiz get() bilan oling.
+3. Foydalanuvchidan 0–100 oralig‘ida baho oling.
+   Oraliqdan tashqarida raise ValueError ishlating.
+4. xavfsiz_float_olish(xabar) funksiyasini yarating.
 """
 
 
-# ------------------------------------------------------------
-# BUGUNGI DARSDA NIMALAR O'RGANDIK?
-# ------------------------------------------------------------
-
 """
-✔️ Dictionary nima — {kalit: qiymat} to'plam
-✔️ Qiymatga murojaat: dict[kalit] va dict.get(kalit)
-✔️ Kalit mavjudligi: "kalit" in dict
-✔️ Qiymat qo'shish/yangilash: dict[kalit] = qiymat
-✔️ Dictionary metodlari:
-    keys()      — barcha kalitlar
-    values()    — barcha qiymatlar
-    items()     — kalit-qiymat juftlari
-    get()       — xavfsiz qiymat olish
-    update()    — yangilash/qo'shish
-    pop()       — kalit bo'yicha o'chirish
-    popitem()   — oxirgi elementni o'chirish
-    del         — o'chirish
-    clear()     — tozalash
-    copy()      — nusxa
-    dict()      — konstruktor
-    len()       — uzunlik
-✔️ for sikli bilan dictionary
-✔️ Ichma-ich dictionary
-✔️ Dictionary comprehension
+BUGUNGI DARSDA NIMALAR O‘RGANDIK?
+✔️ Asosiy xato turlarini
+✔️ Traceback matnini o‘qishni
+✔️ try / except / else / finally
+✔️ raise ishlatishni
+✔️ print() va debugger bilan xatoni topishni
 """
