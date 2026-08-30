@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- =========================================================
+     DARS 16: Telegram Mini Apps Asoslari
+     Muallif: Isroilov Rustam (Abruisdev)
+     ========================================================= -->
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Mini App</title>
+</head>
+<body>
+  <h1>Telegram Mini App</h1>
+  <p>Bu Telegram ichida ochiladigan web-ilova.</p>
+
+  <!--
+  BUGUNGI DARSDA:
+    ✔️ Web App / Mini App nima
+    ✔️ Bot va Mini App arxitekturasi
+    ✔️ HTTPS nima uchun kerak
+    ✔️ Web App ishga tushirish usullari
+
+  ARXITEKTURA:
+
+  Telegram foydalanuvchi
+          ↓
+  Aiogram Bot → Web App tugmasi
+          ↓
+  HTML + CSS + JavaScript Mini App
+          ↓
+  FastAPI Backend → PostgreSQL
+
+  WEB APPNI OCHISH USULLARI:
+    1. Reply Keyboard ichidagi web_app tugmasi.
+    2. Inline Keyboard ichidagi web_app tugmasi.
+    3. Bot Menu Button.
+    4. Direct Link.
+
+  MUHIM QOIDA:
+    Production Web App HTTPS URL’da joylashishi kerak.
+    http://localhost faqat development uchun ishlatiladi.
+  -->
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    // Telegram ichida bo‘lsa window.Telegram.WebApp mavjud bo‘ladi.
+    const tg = window.Telegram?.WebApp;
+
+    if (tg) {
+      tg.ready();
+      document.body.insertAdjacentHTML("beforeend", `<p>Telegram user: ${tg.initDataUnsafe.user?.first_name ?? "Noma’lum"}</p>`);
+    } else {
+      document.body.insertAdjacentHTML("beforeend", "<p>Browser preview rejimi.</p>");
+    }
+  </script>
+</body>
+</html>
+
+<!--
+MUSTAQIL MASHQ TOPSHIRIQLARI:
+1. Bot uchun Mini App g‘oyasini tanlang: do‘kon, kursga yozilish yoki to-do.
+2. Yuqoridagi arxitekturani daftarga chizing.
+3. Mini App uchun localhost URL va production URL farqini tushuntiring.
+4. Telegram ichida va oddiy browserda faylni ochib farqini kuzating.
+-->
