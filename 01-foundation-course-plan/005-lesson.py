@@ -1,328 +1,486 @@
 # ============================================================
-#   DARS 5: For Sikl Operatori
-#           range(), Ichma-ich Sikllar
+#   DARS 5: Pythonda For Sikl Operatori
 #   Muallif: Isroilov Rustam (Abruisdev)
 # ============================================================
 
+
 # ------------------------------------------------------------
-# FOR SIKLI NIMA?
+# DARSNING MAQSADI
 # ------------------------------------------------------------
 
 """
-O'tgan darsda while siklini o'rgandik.
-while — shart True bo'lguncha ishlaydi.
+Bugungi darsda:
 
-For sikli esa — ma'lum bir ketma-ketlik (ro'yxat, matn, son oralig'i)
-bo'ylab BIRIN-KETIN o'tadi va har bir element uchun kod bajaradi.
-
-  while  →  "shart bajarilguncha takrorla"
-  for    →  "har bir element uchun bir marta bajara"
-
-Qachon for ishlatiladi?
-  - Aniq necha marta takrorlanishini bilganda
-  - Ro'yxat yoki matn elementlarini birma-bir ko'rib chiqishda
-  - Sonlar oralig'i bo'ylab yurishda
-
-Sintaksis:
-  for o'zgaruvchi in ketma_ketlik:
-      bajariladigan_kod
+  ✔️ for sikli nima ekanini bilib olamiz
+  ✔️ range() funksiyasi bilan ishlaymiz
+  ✔️ range(stop), range(start, stop), range(start, stop, step)
+     ko‘rinishlarini o‘rganamiz
+  ✔️ for + string bilan ishlaymiz
+  ✔️ for + list bilan ishlaymiz
+  ✔️ break va continue operatorlarini for’da ishlatamiz
+  ✔️ Ichma-ich sikllar yozamiz
+  ✔️ Ko‘paytma jadvali tuzamiz
+  ✔️ Tub sonni aniqlaymiz
+  ✔️ Baholar tahlilini qilamiz
+  ✔️ Shakllar chizamiz
+  ✔️ for va while farqini bilib olamiz
 """
 
 
-# ============================================================
-# FOR + RANGE() — SONLAR BO'YLAB YURISH
-# ============================================================
+# ------------------------------------------------------------
+# for SIKLI NIMA?
+# ------------------------------------------------------------
+
+"""
+for sikli — ketma-ketlik ichidagi elementlarni
+birma-bir ko‘rib chiqish uchun ishlatiladi.
+
+Ketma-ketliklar:
+
+  - range()
+  - string
+  - list
+  - tuple
+  - set
+  - dictionary
+
+Sintaksisi:
+
+    for o_zgaruvchi in ketma_ketlik:
+        bajariladigan_kod
+"""
+
+
+# ------------------------------------------------------------
+# ODDIY for SIKLI
+# ------------------------------------------------------------
+
+"""
+for sikli bilan biror matnni bir necha marta chiqarish mumkin.
+"""
+
+for i in range(5):
+    print("Assalomu alaykum!")
+
+# Natija:
+# Assalomu alaykum!
+# Assalomu alaykum!
+# Assalomu alaykum!
+# Assalomu alaykum!
+# Assalomu alaykum!
+
+
+# ------------------------------------------------------------
+# range() FUNKSIYASI
+# ------------------------------------------------------------
 
 """
 range() — sonlar ketma-ketligini yaratadi.
 
-  range(stop)              →  0 dan stop-1 gacha
-  range(start, stop)       →  start dan stop-1 gacha
-  range(start, stop, step) →  start dan stop-1 gacha, step qadam bilan
+range() 3 xil usulda ishlatiladi:
 
-MUHIM: range() oxirgi sonni O'Z ICHIGA OLMAYDI!
-  range(5)     →  0, 1, 2, 3, 4       (5 YO'Q)
-  range(1, 6)  →  1, 2, 3, 4, 5       (6 YO'Q)
-  range(0, 10, 2) → 0, 2, 4, 6, 8    (10 YO'Q)
-"""
+    range(stop)
+    range(start, stop)
+    range(start, stop, step)
 
-# ── range(stop) — 0 dan boshlab ──────────────────────────────
-print("=== range(5) ===")
-for i in range(5):
-    print(i)
-# Natija: 0 1 2 3 4
+Muhim qoida:
 
-# ── range(start, stop) — boshlang'ich bilan ──────────────────
-print("\n=== range(1, 6) ===")
-for i in range(1, 6):
-    print(i)
-# Natija: 1 2 3 4 5
-
-# ── range(start, stop, step) — qadam bilan ───────────────────
-print("\n=== range(0, 20, 2) — juft sonlar ===")
-for i in range(0, 20, 2):
-    print(i, end=" ")
-print()
-# Natija: 0 2 4 6 8 10 12 14 16 18
-
-print("\n=== range(1, 20, 2) — toq sonlar ===")
-for i in range(1, 20, 2):
-    print(i, end=" ")
-print()
-# Natija: 1 3 5 7 9 11 13 15 17 19
-
-print("\n=== range(10, 0, -1) — ortga sanash ===")
-for i in range(10, 0, -1):
-    print(i, end=" ")
-print()
-# Natija: 10 9 8 7 6 5 4 3 2 1
-
-print("\n=== range(0, 51, 5) — 5 lik jadval ===")
-for i in range(0, 51, 5):
-    print(i, end=" ")
-print()
-# Natija: 0 5 10 15 20 25 30 35 40 45 50
-
-# ── While bilan taqqoslash ────────────────────────────────────
-"""
-Bir xil natija — ikki xil usul:
-
-  # while bilan:          # for bilan:
-  i = 1                   for i in range(1, 6):
-  while i <= 5:               print(i)
-      print(i)
-      i += 1
-
-For ancha qisqa va qulay!
+  range()dagi stop qiymati NATIJAGA KIRMAYDI.
 """
 
 
-# ============================================================
-# FOR + MATN (STRING) BO'YLAB YURISH
-# ============================================================
+# ------------------------------------------------------------
+# range(stop)
+# ------------------------------------------------------------
 
 """
-Matn (string) — bu harflar ketma-ketligi.
-For sikli matndagi har bir harfni birin-ketin oladi.
+range(stop) — 0 dan stop - 1 gacha sonlar yaratadi.
 """
 
-print("\n=== Matn bo'ylab yurish ===")
-so_z = "Python"
-for harf in so_z:
-    print(harf)
+for son in range(5):
+    print(son)
+
 # Natija:
-# P
-# y
-# t
-# h
-# o
-# n
+# 0
+# 1
+# 2
+# 3
+# 4
 
-print("\n=== Harflar bir qatorda ===")
-for harf in "Salom":
-    print(harf, end="-")
-print()
-# Natija: S-a-l-o-m-
 
-print("\n=== Harflarni sanash ===")
-# Matndagi harflar sonini hisoblash
-so_z = "dasturlash"
-hisob = 0
-for harf in so_z:
-    hisob += 1
-print(f"'{so_z}' so'zida {hisob} ta harf bor")
-# Natija: 'dasturlash' so'zida 10 ta harf bor
+# ------------------------------------------------------------
+# range(start, stop)
+# ------------------------------------------------------------
 
-print("\n=== Muayyan harfni sanash ===")
-# 'a' harfi necha marta uchraydi?
-matn = "Assalomu alaykum"
-soni = 0
+"""
+range(start, stop) — start dan boshlanadi,
+stop - 1 gacha davom etadi.
+"""
+
+for son in range(1, 6):
+    print(son)
+
+# Natija:
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+# ------------------------------------------------------------
+# range(start, stop, step)
+# ------------------------------------------------------------
+
+"""
+step — qadam miqdorini belgilaydi.
+
+Masalan, 2 qadam bilan yurish:
+"""
+
+for son in range(0, 11, 2):
+    print(son)
+
+# Natija:
+# 0
+# 2
+# 4
+# 6
+# 8
+# 10
+
+
+# Toq sonlarni chiqarish
+for son in range(1, 11, 2):
+    print(son)
+
+# Natija:
+# 1
+# 3
+# 5
+# 7
+# 9
+
+
+# ------------------------------------------------------------
+# TESKARI range()
+# ------------------------------------------------------------
+
+"""
+Teskari sanash uchun step manfiy bo‘ladi.
+
+Masalan:
+
+    range(10, 0, -1)
+
+10 dan boshlanadi va 1 gacha tushadi.
+"""
+
+for son in range(10, 0, -1):
+    print(son)
+
+print("Uchirish!")
+
+
+# ------------------------------------------------------------
+# for + STRING
+# ------------------------------------------------------------
+
+"""
+String — belgilar ketma-ketligi.
+
+for yordamida string ichidagi har bir harfni
+alohida ko‘rib chiqish mumkin.
+"""
+
+ism = "Ali"
+
+for harf in ism:
+    print(harf)
+
+# Natija:
+# A
+# l
+# i
+
+
+# So‘zdagi harflarni tartib raqami bilan chiqarish
+soz = "Python"
+raqam = 1
+
+for harf in soz:
+    print(raqam, "-", harf)
+    raqam += 1
+
+
+# Unli harflarni aniqlash
+matn = "Abruisdev"
+unlilar = "aeiouAEIOU"
+
 for harf in matn:
-    if harf == "a" or harf == "A":
-        soni += 1
-print(f"'a' harfi {soni} marta uchraydi")
+    if harf in unlilar:
+        print(harf, "- unli harf")
 
 
-
-# ============================================================
-# break VA continue — FOR SIKLIDA
-# ============================================================
+# ------------------------------------------------------------
+# for + LIST
+# ------------------------------------------------------------
 
 """
-break va continue for siklida ham xuddi while dagi kabi ishlaydi.
-(O'tgan darsda while bilan ko'rgandik)
+List — bir nechta ma’lumotni bitta joyda saqlash usuli.
 
-  break    →  siklni butunlay to'xtatadi
-  continue →  joriy qadamni o'tkazadi, davom etadi
+List mavzusini keyin batafsil o‘rganamiz.
+Hozircha for bilan list ichidagi elementlarni ko‘rib chiqamiz.
 """
 
-# ── break — for siklida ───────────────────────────────────────
-print("\n=== break — for siklida ===")
-for i in range(1, 11):
-    if i == 6:
-        print("6 ga yetdik, to'xtatamiz!")
+ismlar = ["Ali", "Vali", "Hasan", "Husan"]
+
+for ism in ismlar:
+    print("Assalomu alaykum,", ism)
+
+
+# Sonlardan iborat list
+sonlar = [10, 25, 30, 45, 50]
+
+for son in sonlar:
+    print(son)
+
+
+# List ichidagi sonlarning kvadratini chiqarish
+sonlar = [1, 2, 3, 4, 5]
+
+for son in sonlar:
+    print(son, "ning kvadrati:", son ** 2)
+
+
+# ------------------------------------------------------------
+# break — SIKLDAN CHIQISH
+# ------------------------------------------------------------
+
+"""
+break — siklni darhol to‘xtatadi.
+
+Kerakli qiymat topilganda yoki biror shart bajarilganda
+sikldan chiqish uchun ishlatiladi.
+"""
+
+for son in range(1, 11):
+    print(son)
+
+    if son == 5:
         break
-    print(i, end=" ")
-print()
-# Natija: 1 2 3 4 5 → to'xtaydi
 
-print("\n=== break — ro'yxatda qidirish ===")
-talabalar = ["Ali", "Vali", "Jasur", "Sardor", "Kamol"]
-qidirilayotgan = "Jasur"
+# Natija:
+# 1
+# 2
+# 3
+# 4
+# 5
 
-for ism in talabalar:
-    if ism == qidirilayotgan:
-        print(f"{qidirilayotgan} ro'yxatda bor!")
+
+# List ichidan ism qidirish
+ismlar = ["Ali", "Vali", "Hasan", "Husan"]
+qidirilayotgan_ism = "Hasan"
+
+for ism in ismlar:
+    if ism == qidirilayotgan_ism:
+        print("Ism topildi:", ism)
         break
-else:
-    print(f"{qidirilayotgan} topilmadi")
-# Natija: Jasur ro'yxatda bor!
 
-# ── continue — for siklida ────────────────────────────────────
-print("\n=== continue — for siklida ===")
-for i in range(1, 11):
-    if i % 2 == 0:
-        continue    # juft sonlarni o'tkazib yubor
-    print(i, end=" ")
-print()
-# Natija: 1 3 5 7 9
 
-print("\n=== continue — manfiy sonlarni o'tkazish ===")
-sonlar = [5, -3, 8, -1, 12, -7, 4]
-print("Faqat musbatlar:", end=" ")
+# ------------------------------------------------------------
+# continue — JORIY QADAMNI O‘TKAZIB YUBORISH
+# ------------------------------------------------------------
+
+"""
+continue — joriy qadamdagi qolgan kodni o‘tkazib yuboradi.
+
+Sikl keyingi aylanishga o‘tadi.
+"""
+
+for son in range(1, 11):
+    if son == 5:
+        continue
+
+    print(son)
+
+# Natija:
+# 1
+# 2
+# 3
+# 4
+# 6
+# 7
+# 8
+# 9
+# 10
+
+
+# Juft sonlarni o‘tkazib yuborish
+for son in range(1, 11):
+    if son % 2 == 0:
+        continue
+
+    print(son)
+
+# Natija:
+# 1
+# 3
+# 5
+# 7
+# 9
+
+
+# Manfiy sonlarni o‘tkazib yuborish
+sonlar = [10, -5, 20, -8, 15, 0]
+
 for son in sonlar:
     if son < 0:
         continue
-    print(son, end=" ")
-print()
-# Natija: Faqat musbatlar: 5 8 12 4
+
+    print(son)
 
 
-# ============================================================
-# FOR + ELSE
-# ============================================================
-
-"""
-For siklida ham else ishlatish mumkin.
-else — sikl ODATIY tugaganda bajariladi (break bo'lmasa).
-
-  for element in ketma_ketlik:
-      kod...
-  else:
-      # break bo'lmasa — bu bajariladi
-"""
-
-print("\n=== for + else ===")
-# Juft sonni qidirish — topilmasa xabar ber
-sonlar = [3, 7, 11, 15, 9]
-for son in sonlar:
-    if son % 2 == 0:
-        print(f"Juft son topildi: {son}")
-        break
-else:
-    print("Ro'yxatda juft son yo'q!")
-# Natija: Ro'yxatda juft son yo'q!
-
-
-# ============================================================
-# ICHMA-ICH SIKLLAR (Nested Loops)
-# ============================================================
+# ------------------------------------------------------------
+# ICHMA-ICH SIKLLAR (NESTED LOOPS)
+# ------------------------------------------------------------
 
 """
-Ichma-ich sikl — bir siklning ichida boshqa sikl.
+Ichma-ich sikl — for ichida yana for ishlatish.
 
-  for tashqi in ...:
-      for ichki in ...:
-          kod...
+Tashqi sikl 1 marta aylanganda,
+ichki sikl to‘liq aylanib chiqadi.
 
-ISHLASH TARTIBI:
-  Tashqi siklning har bir qadami uchun
-  ichki sikl TO'LIQLIGICHA bajariladi.
+Masalan:
 
-  Misol: tashqi 3 marta, ichki 4 marta ishlasa
-         kod jami: 3 × 4 = 12 marta bajariladi.
+    tashqi sikl: 3 marta
+    ichki sikl: 2 marta
 
-  ┌─────────────────────────────────────────────────┐
-  │  tashqi: i=1                                    │
-  │    ichki: j=1, j=2, j=3, j=4  (4 marta)        │
-  │  tashqi: i=2                                    │
-  │    ichki: j=1, j=2, j=3, j=4  (4 marta)        │
-  │  tashqi: i=3                                    │
-  │    ichki: j=1, j=2, j=3, j=4  (4 marta)        │
-  │  Jami: 3 × 4 = 12 marta                        │
-  └─────────────────────────────────────────────────┘
+    jami: 3 * 2 = 6 marta ishlaydi
 """
 
-# ── ENG ODDIY ICHMA-ICH SIKL ─────────────────────────────────
-print("\n=== Oddiy ichma-ich ===")
-for i in range(1, 4):       # tashqi: 1, 2, 3
-    for j in range(1, 4):   # ichki:  1, 2, 3
-        print(f"i={i}, j={j}")
+for tashqi in range(1, 4):
+    print("Tashqi sikl:", tashqi)
 
-# Natija:
-# i=1, j=1
-# i=1, j=2
-# i=1, j=3
-# i=2, j=1
-# i=2, j=2
-# ... va hokazo
+    for ichki in range(1, 3):
+        print("   Ichki sikl:", ichki)
 
 
-# ============================================================
-# ICHMA-ICH SIKL — KO'PAYTMA JADVALI
-# ============================================================
+# ------------------------------------------------------------
+# AMALIY MISOL 1 — KO‘PAYTMA JADVALI
+# ------------------------------------------------------------
 
-print("\n=== Ko'paytma jadvali (1 dan 5 gacha) ===")
-for i in range(1, 6):           # tashqi: 1 dan 5 gacha
-    for j in range(1, 6):       # ichki:  1 dan 5 gacha
-        natija = i * j
-        print(f"{natija:3}", end=" ")   # :3 — 3 belgili joy (tekis chiqarish)
-    print()   # har qator tugagach yangi qatorga o't
-# Natija:
-#   1  2  3  4  5
-#   2  4  6  8 10
-#   3  6  9 12 15
-#   4  8 12 16 20
-#   5 10 15 20 25
+son = int(input("Ko‘paytma jadvali uchun son kiriting: "))
 
-print("\n=== Faqat 3 ning jadvali (for bilan) ===")
 for i in range(1, 11):
-    print(f"3 × {i:2} = {3*i:3}")
-# Natija:
-# 3 ×  1 =   3
-# 3 ×  2 =   6
-# ...
-# 3 × 10 =  30
+    print(son, "x", i, "=", son * i)
 
 
-# ============================================================
-# ICHMA-ICH SIKL — SHAKLLAR CHIZISH
-# ============================================================
+# 1 dan 10 gacha barcha ko‘paytma jadvali
+for son in range(1, 11):
+    print("\n---", son, "karra jadvali ---")
+
+    for i in range(1, 11):
+        print(son, "x", i, "=", son * i)
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 2 — TUB SONNI ANIQLASH
+# ------------------------------------------------------------
 
 """
-Ichma-ich sikllarning eng yaxshi mashqi — shakllar chizish.
-Tashqi sikl — QATORLARNI boshqaradi (nechta qator)
-Ichki sikl  — USTUNLARNI boshqaradi (har qatorda nechta belgi)
+Tub son — faqat 1 ga va o‘ziga bo‘linadigan son.
+
+Masalan:
+
+  Tub sonlar:
+      2, 3, 5, 7, 11, 13
+
+  Tub bo‘lmagan sonlar:
+      1, 4, 6, 8, 9, 10
 """
 
-# ── To'g'ri to'rtburchak ──────────────────────────────────────
-print("\n=== To'g'ri to'rtburchak (4×6) ===")
-for i in range(4):          # 4 ta qator
-    for j in range(6):      # har qatorda 6 ta yulduz
-        print("*", end="")
-    print()   # qator tugadi → yangi qatorga
-# Natija:
-# ******
-# ******
-# ******
-# ******
+son = int(input("Son kiriting: "))
 
-# ── O'ng uchburchak ───────────────────────────────────────────
-print("\n=== O'ng uchburchak ===")
-for i in range(1, 6):       # 1, 2, 3, 4, 5
-    for j in range(i):      # i marta yulduz
-        print("*", end="")
+if son < 2:
+    print(son, "tub son emas")
+else:
+    tub_son = True
+
+    for boluvchi in range(2, son):
+        if son % boluvchi == 0:
+            tub_son = False
+            break
+
+    if tub_son:
+        print(son, "tub son")
+    else:
+        print(son, "tub son emas")
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 3 — BAHOLAR TAHLILI
+# ------------------------------------------------------------
+
+baholar = [85, 72, 90, 55, 68, 100, 43]
+
+yigindi = 0
+
+for baho in baholar:
+    print("Baho:", baho)
+    yigindi += baho
+
+orta_baho = yigindi / len(baholar)
+
+print("Baholar yig‘indisi:", yigindi)
+print("O‘rtacha baho:", orta_baho)
+print("Eng katta baho:", max(baholar))
+print("Eng kichik baho:", min(baholar))
+
+
+# O‘tgan va o‘tmagan o‘quvchilar soni
+otganlar = 0
+otmaganlar = 0
+
+for baho in baholar:
+    if baho >= 56:
+        otganlar += 1
+    else:
+        otmaganlar += 1
+
+print("O‘tganlar soni:", otganlar)
+print("O‘tmaganlar soni:", otmaganlar)
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 4 — TO‘G‘RI TO‘RTBURCHAK CHIZISH
+# ------------------------------------------------------------
+
+qatorlar = 4
+ustunlar = 6
+
+for qator in range(qatorlar):
+    for ustun in range(ustunlar):
+        print("*", end=" ")
+
     print()
+
+# Natija:
+# * * * * * *
+# * * * * * *
+# * * * * * *
+# * * * * * *
+
+
+# ------------------------------------------------------------
+# AMALIY MISOL 5 — UCHBURCHAK CHIZISH
+# ------------------------------------------------------------
+
+qatorlar = 5
+
+for qator in range(1, qatorlar + 1):
+    print("*" * qator)
+
 # Natija:
 # *
 # **
@@ -330,12 +488,16 @@ for i in range(1, 6):       # 1, 2, 3, 4, 5
 # ****
 # *****
 
-# ── Teskari uchburchak ────────────────────────────────────────
-print("\n=== Teskari uchburchak ===")
-for i in range(5, 0, -1):   # 5, 4, 3, 2, 1
-    for j in range(i):
-        print("*", end="")
-    print()
+
+# ------------------------------------------------------------
+# AMALIY MISOL 6 — TESKARI UCHBURCHAK
+# ------------------------------------------------------------
+
+qatorlar = 5
+
+for qator in range(qatorlar, 0, -1):
+    print("*" * qator)
+
 # Natija:
 # *****
 # ****
@@ -343,30 +505,19 @@ for i in range(5, 0, -1):   # 5, 4, 3, 2, 1
 # **
 # *
 
-# ── Son uchburchak ────────────────────────────────────────────
-print("\n=== Son uchburchagi ===")
-for i in range(1, 6):
-    for j in range(1, i + 1):
-        print(j, end=" ")
-    print()
-# Natija:
-# 1
-# 1 2
-# 1 2 3
-# 1 2 3 4
-# 1 2 3 4 5
 
-# ── Piramida ─────────────────────────────────────────────────
-print("\n=== Piramida ===")
-n = 5
-for i in range(1, n + 1):
-    # Oldin bo'sh joy (chapga tekislash uchun)
-    for j in range(n - i):
-        print(" ", end="")
-    # Keyin yulduzlar
-    for j in range(2 * i - 1):
-        print("*", end="")
-    print()
+# ------------------------------------------------------------
+# AMALIY MISOL 7 — PIRAMIDA
+# ------------------------------------------------------------
+
+qatorlar = 5
+
+for qator in range(1, qatorlar + 1):
+    bosh_joy = " " * (qatorlar - qator)
+    yulduzlar = "*" * (2 * qator - 1)
+
+    print(bosh_joy + yulduzlar)
+
 # Natija:
 #     *
 #    ***
@@ -374,124 +525,47 @@ for i in range(1, n + 1):
 #  *******
 # *********
 
-# ── Raqamli kvadrat ───────────────────────────────────────────
-print("\n=== Raqamli kvadrat ===")
-for i in range(1, 5):
-    for j in range(1, 5):
-        print(i * j, end="\t")   # \t — tab belgisi (tekis joy)
-    print()
-# Natija:
-# 1	2	3	4
-# 2	4	6	8
-# 3	6	9	12
-# 4	8	12	16
 
-
-# ============================================================
-# ICHMA-ICH SIKL — AMALIY MISOLLAR
-# ============================================================
-
-print("\n=== Tub sonlar (1 dan 30 gacha) ===")
-# Tub son — faqat 1 ga va o'ziga bo'linadigan son (2, 3, 5, 7, 11...)
-for son in range(2, 31):
-    tub = True
-    for bolovchi in range(2, son):   # 2 dan son-1 gacha tekshir
-        if son % bolovchi == 0:
-            tub = False
-            break
-    if tub:
-        print(son, end=" ")
-print()
-# Natija: 2 3 5 7 11 13 17 19 23 29
-
-print("\n=== Juft × toq juftlari ===")
-# 1-5 orasidagi juft va toq sonlarning barcha juftlari
-for juft in range(2, 11, 2):    # juft: 2, 4, 6, 8, 10
-    for toq in range(1, 10, 2): # toq:  1, 3, 5, 7, 9
-        print(f"({juft},{toq})", end=" ")
-    print()
-
-
-# ============================================================
-# FOR VA WHILE — QACHON QAYSI?
-# ============================================================
+# ------------------------------------------------------------
+# for VA while FARQI
+# ------------------------------------------------------------
 
 """
-  ┌──────────────────────────────────────────────────────────┐
-  │              FOR yoki WHILE?                             │
-  ├─────────────────────┬────────────────────────────────────┤
-  │        FOR          │            WHILE                   │
-  ├─────────────────────┼────────────────────────────────────┤
-  │ Necha marta         │ Qachon to'xtashini oldindan        │
-  │ takrorlanishini     │ bilmaganingizda                    │
-  │ bilganda            │                                    │
-  │                     │                                    │
-  │ Ro'yxat, matn       │ Foydalanuvchi "chiq" deyguncha     │
-  │ bo'ylab yurganda    │                                    │
-  │                     │                                    │
-  │ range() bilan       │ while True + break bilan           │
-  │ aniq oraliqda       │                                    │
-  └─────────────────────┴────────────────────────────────────┘
+for va while ikkalasi ham sikl, lekin ishlatilish holati farq qiladi.
 
-Amalda:
-  "5 marta bajara"        →  for i in range(5)
-  "Ro'yxatni ko'rib chiq" →  for element in ro'yxat
-  "To'g'ri javob berilguncha so'ra" →  while True + break
+for ishlatiladi:
+
+  ✔️ Takrorlanish soni oldindan ma’lum bo‘lsa
+  ✔️ range() bilan ishlaganda
+  ✔️ String yoki list ichidagi elementlarni ko‘rganda
+
+while ishlatiladi:
+
+  ✔️ Takrorlanish soni oldindan noma’lum bo‘lsa
+  ✔️ Foydalanuvchi "exit" yozmaguncha ishlaydigan dasturda
+  ✔️ To‘g‘ri parol kiritilmaguncha ishlaydigan dasturda
+  ✔️ Menyu tizimida
+
+Misol:
+
+  1 dan 10 gacha sonlarni chiqarish:
+      for qulayroq
+
+  Parol to‘g‘ri kiritilmaguncha so‘rash:
+      while qulayroq
 """
 
 
-# ============================================================
-# TO'LIQ AMALIY DASTUR
-# ============================================================
+# for misoli
+for son in range(1, 6):
+    print(son)
 
-# --- Ko'paytma Jadvali Generatori ---
+# while misoli
+son = 1
 
-print("Ko'paytma jadvali generatori")
-son = int(input("Qaysi sonning jadvalini ko'rmoqchisiz? "))
-gacha = int(input("Qancha gacha? (masalan 10): "))
-
-print(f"\n{'='*25}")
-print(f"  {son} ning ko'paytma jadvali")
-print(f"{'='*25}")
-
-for i in range(1, gacha + 1):
-    natija = son * i
-    print(f"  {son} × {i:2} = {natija:4}")
-
-print(f"{'='*25}")
-
-# --- Sinf Baholar Tahlili ---
-
-n = int(input("Nechta talaba bor? "))
-baholar = []
-
-for i in range(1, n + 1):
-    ball = int(input(f"{i}-talabaning bali (0-100): "))
-    baholar.append(ball)
-
-# Tahlil
-eng_yuqori = baholar[0]
-eng_past    = baholar[0]
-jami        = 0
-a_soni      = 0
-
-for ball in baholar:
-    jami += ball
-    if ball > eng_yuqori:
-        eng_yuqori = ball
-    if ball < eng_past:
-        eng_past = ball
-    if ball >= 90:
-        a_soni += 1
-
-print(f"\n{'='*30}")
-print("  SINF NATIJALARI")
-print(f"{'='*30}")
-print(f"  O'rtacha ball  : {round(jami/n, 1)}")
-print(f"  Eng yuqori ball: {eng_yuqori}")
-print(f"  Eng past ball  : {eng_past}")
-print(f"  'A' olganlar   : {a_soni} ta")
-print(f"{'='*30}")
+while son <= 5:
+    print(son)
+    son += 1
 
 
 # ------------------------------------------------------------
@@ -499,95 +573,103 @@ print(f"{'='*30}")
 # ------------------------------------------------------------
 
 """
-TOPSHIRIQ 1 — range() bilan:
-  a) 1 dan 100 gacha barcha sonlarni bir qatorda chiqaring
-  b) 100 dan 1 gacha teskari chiqaring
-  c) 1 dan 50 gacha faqat 3 ga bo'linadigan sonlarni chiqaring
+TOPSHIRIQ 1 — Sonlarni chiqarish:
 
-TOPSHIRIQ 2 — Matn bilan:
-  Foydalanuvchidan so'z oling.
-    - Harflarini birin-ketin chiqaring (har biri yangi qatorda)
-    - So'zdagi harflar sonini hisoblang (len() ishlatmasdan!)
-    - So'zdagi 'a' yoki 'A' harflari necha marta uchrashini toping
+  for va range() yordamida 1 dan 100 gacha
+  bo‘lgan sonlarni ekranga chiqaring.
 
-TOPSHIRIQ 3 — Ko'paytma jadvali:
-  For sikli bilan 1 dan 10 gacha barcha sonlarning
-  ko'paytma jadvalini chiqaring:
-    1 × 1 = 1   1 × 2 = 2  ...
-    2 × 1 = 2   2 × 2 = 4  ...
-    ...
 
-TOPSHIRIQ 4 — Shakllar:
-  Quyidagi shakllarni for + ichma-ich for bilan chiqaring:
+TOPSHIRIQ 2 — Juft sonlar:
 
-  a) To'g'ri to'rtburchak (5×10):
-     **********
-     **********
-     **********
-     **********
-     **********
+  1 dan 50 gacha bo‘lgan faqat juft sonlarni chiqaring.
 
-  b) Chap uchburchak:
-     *
-     **
-     ***
-     ****
-     *****
 
-  c) Teskari piramida:
-     *********
-      *******
-       *****
-        ***
-         *
+TOPSHIRIQ 3 — Teskari sanash:
 
-TOPSHIRIQ 5 — Yig'indi va ko'paytma:
-  For sikli bilan:
-    a) 1 dan 10 gacha sonlar yig'indisi
-    b) 1 dan 10 gacha sonlar ko'paytmasi (faktorial emas, shunchaki 1×2×3...×10)
-    c) 1 dan 100 gacha toq sonlar yig'indisi
+  20 dan 1 gacha teskari sanang.
 
-TOPSHIRIQ 6 (Qo'shimcha) — Tub sonlar:
-  Foydalanuvchidan ikkita son oling (start va end).
-  O'sha oraliqda barcha TUB sonlarni chiqaring.
-  (Tub son — 1 va o'zidan boshqa hech narsaga bo'linmaydi)
+  Oxirida:
+
+      "Uchirish!"
+
+  deb chiqaring.
+
+
+TOPSHIRIQ 4 — Ismdagi harflar:
+
+  Foydalanuvchidan ism oling.
+
+  for yordamida ismdagi har bir harfni alohida qatorga chiqaring.
+
+
+TOPSHIRIQ 5 — Unli harflar:
+
+  Foydalanuvchidan so‘z oling.
+
+  Ushbu so‘zdagi unli harflar sonini aniqlang.
+
+  Unli harflar:
+
+      a, e, i, o, u
+
+
+TOPSHIRIQ 6 — Ko‘paytma jadvali:
+
+  Foydalanuvchidan son oling.
+
+  Shu sonning 1 dan 10 gacha ko‘paytma jadvalini chiqaring.
+
+
+TOPSHIRIQ 7 — Tub son:
+
+  Foydalanuvchidan son oling.
+
+  for yordamida ushbu son tub yoki tub emasligini aniqlang.
+
+
+TOPSHIRIQ 8 — Shakl chizish:
+
+  Quyidagi shaklni for yordamida chiqaring:
+
+      *
+      **
+      ***
+      ****
+      *****
+
+
+TOPSHIRIQ 9 — Baholar:
+
+  Quyidagi baholar listi berilgan:
+
+      baholar = [65, 80, 45, 90, 55, 100, 72]
+
+  for yordamida:
+
+    - O‘rtacha bahoni aniqlang
+    - Nechta o‘quvchi o‘tganini aniqlang
+    - Nechta o‘quvchi o‘tmaganini aniqlang
 """
 
 
 # ------------------------------------------------------------
-# QUSHIMCHA RESURSLAR (Uyga vazifa uchun)
+# BUGUNGI DARSDA NIMALAR O‘RGANDIK?
 # ------------------------------------------------------------
 
 """
-📚 RASMIY HUJJATLAR:
-   https://docs.python.org/3/tutorial/controlflow.html#for-statements
-   — for sikli haqida rasmiy ma'lumot
-
-🌐 W3SCHOOLS:
-   https://www.w3schools.com/python/python_for_loops.asp
-   — for sikli, range(), ichma-ich sikllar
-"""
-
-
-# ------------------------------------------------------------
-# BUGUNGI DARSDA NIMALAR O'RGANDIK?
-# ------------------------------------------------------------
-
-"""
-✔️ for sikli — sintaksis va ishlash tartibi
-✔️ range() — uch xil ishlatish:
-     range(stop)
-     range(start, stop)
-     range(start, stop, step)
-✔️ for + matn  — har bir harfni birin-ketin olish
-✔️ for + ro'yxat — har bir elementni ko'rib chiqish
-✔️ break va continue — for siklida ham ishlaydi
-✔️ for + else — shart bajarilmay tugaganda
-✔️ Ichma-ich sikllar (nested loops):
-     tashqi sikl × ichki sikl = jami bajarilish
-✔️ Shakllar chizish:
-     to'rtburchak, uchburchak, piramida
-✔️ Amaliy misollar:
-     ko'paytma jadvali, tub sonlar, baholar tahlili
-✔️ for vs while — qachon qaysi birini tanlash
+✔️ for sikli nima ekanini
+✔️ range(stop) ishlatishni
+✔️ range(start, stop) ishlatishni
+✔️ range(start, stop, step) ishlatishni
+✔️ Teskari range() yozishni
+✔️ for + string bilan ishlashni
+✔️ for + list bilan ishlashni
+✔️ break bilan sikldan chiqishni
+✔️ continue bilan joriy qadamni o‘tkazib yuborishni
+✔️ Ichma-ich sikllarni
+✔️ Ko‘paytma jadvalini yozishni
+✔️ Tub sonni aniqlashni
+✔️ Baholarni tahlil qilishni
+✔️ Shakllar chizishni
+✔️ for va while farqini
 """
